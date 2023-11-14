@@ -1,0 +1,57 @@
+        <footer class="Footer">
+            <div class="Container">
+                <div class="grid">
+                    <div class="col-1-1 col-lg-1-4">
+                        <div class="h3 underline-small">Links</div>
+                        {{ _api.navigation.get.key('footer') }}
+                    </div>
+                    <div class="col-1-1 col-lg-1-4">
+                        {% if _core.settings.companyPhone %}
+                            <div class="mb-5">
+                                <div class="h3 underline-small">Contact</div>
+                                <a href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}">
+                                    {{ _core.settings.companyPhone }}
+                                </a>
+                            </div>
+                        {% endif %}
+                        {% if _core.theme.settings.social|first.url %}
+                            <div class="h3 underline-small">Social Media</div>
+                            <div class="flex gx-1">
+                                {% import 'macros/macros' as macros %}
+                                {% set socialNames = {facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', pinterest: 'Pinterest', twitter: 'Twitter', youtube: 'YouTube'} %}
+                                {% for social in _core.theme.settings.social %}
+                                    <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopenner noreferrer" class="Footer-socialLink">
+                                        {{ macros.iconImg(social.icon, social.name, "Footer-icon") }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-1-1 col-lg-2-4 text-center flex flex-col justify-center">
+                        {% if _core.theme.settings.footerLogo %}
+                            <a href="/" title="return to home page" class="flex justify-center mb-3">
+                                {% set _core.theme.settings.footerLogo.class = "Footer-logo" %}
+                                {% do _core.theme.settings.footerLogo.resize(_core.theme.settings.footerLogoWidth + 100) %}
+                                {{ _core.theme.settings.footerLogo.tag }}
+                            </a>
+                        {% endif %}
+                        <div>&copy; {{ _core.settings.companyName }}, {{ _core.date.year }}</div>
+                        <a href="https://www.aptuitiv.com" target="_blank" class="Footer-link Footer-creditLink">Website by Aptuitiv</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% if _core.service.recaptchaV3.isUsable %}
+            {% if _page.hasJs('recaptchaV3') == false %}
+                {% do _page.registerJs('recaptchaV3') %}
+                {{ _core.service.recaptchaV3.js.tag }}
+                {{ _core.service.recaptchaV3.script.tag }}
+            {% endif %}
+            {% inlinecss %}
+                .grecaptcha-badge { visibility: hidden; }
+            {% endinlinecss %}
+        {% endif %}
+        {{ _page.js() }}
+        {{ _page.bodyEndCode() }}
+    </body>
+</html>

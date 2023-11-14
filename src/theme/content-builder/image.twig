@@ -1,0 +1,11 @@
+<div class="Container Container--block">
+    {% if caption and image.alt|length == 0 %}
+        {% set image.alt = caption %}
+    {% endif %}
+    {% set image.class = 'col-1-1' %}
+    {% set image.loading = 'lazy' %}
+    {{ image.tag }}
+    {% if caption %}
+        <div class="mt-1">{{ caption }}</div>
+    {% endif %}
+</div>

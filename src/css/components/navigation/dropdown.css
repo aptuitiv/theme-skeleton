@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Dropdown
+   ========================================================================== */
+
+/** @define Dropdown */
+
+/**
+ * Drop-down navigation menu.
+ */
+
+/* :root {
+    --Dropdown-minWidth: 220px;
+    --Dropdown-maxWidth: 300px;
+    --Dropdown-fontSize: inherit;
+    --Dropdown-lineHeight: inherit;
+    --Dropdown-background: #fff;
+    --Dropdown-background--sm: #6c9d41;
+    
+    --Dropdown-link-paddingVertical: 12px;
+    --Dropdown-link-paddingHorizontal: 30px;
+    --Dropdown-link-letterSpacing: 0;
+    --Dropdown-link-color: #00263e;
+    --Dropdown-link-color--sm: #fff;
+} */
+
+.Dropdown {
+    position: relative;
+}
+
+/* ------------------------------------ *\
+    Menu
+\* ------------------------------------ */
+
+.Dropdown-menu {
+    background: transparent;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Dropdown-menu .Dropdown-menu {
+    margin: 0;
+}
+
+/* postcss-bem-linter: ignore */
+.MainNav-item.is-first .Dropdown-menu {
+    left: 0;
+}
+
+.Dropdown-menu .Dropdown-menu {
+    padding-top: 0;
+}
+
+.Dropdown-item {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.Dropdown-link {
+    background: var(--Dropdown-background--sm);
+    color: var(--Dropdown-link-color--sm) !important;
+    display: block;
+    font-size: var(--Dropdown-fontSize);
+    font-weight: 400;
+    letter-spacing: var(--Dropdown-link-letterSpacing);
+    line-height: var(--Dropdown-lineHeight);
+    padding: var(--Dropdown-link-paddingVertical) var(--Dropdown-link-paddingHorizontal);
+    text-align: center;
+    text-decoration: none;
+}
+
+.Dropdown-link:hover,
+.Dropdown-link.is-current,
+.Dropdown-link.is-currentParent {
+    background-color: var(--Dropdown-background--hover);
+    color: var(--Dropdown-link-color--hover) !important;
+}
+
+.Dropdown-link:hover {
+    text-decoration: none;
+}
+
+/* ------------------------------------ *\
+    States
+\* ------------------------------------ */
+
+/* show sub-menus under hovered items */
+.Dropdown.is-active > .Dropdown-menu {
+    display: block;
+}
+
+/* display sub-menus under the last item to the right */
+.Dropdown.is-last:hover > .Dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/* fly-out to the right */
+.Dropdown-item.is-active > .Dropdown-menu {
+    display: block;
+    left: 100%;
+    top: 0;
+    transform: none;
+}
+
+/* fly-out to the left if root parent is last item */
+.Dropdown.is-last .Dropdown-item:hover > .Dropdown-menu,
+.Dropdown.is-last .Dropdown-item.is-active > .Dropdown-menu {
+    display: block;
+    left: auto;
+    right: 100%;
+}
+
+/* ------------------------------------ *\
+    #PARENT ITEMS
+\* ------------------------------------ */
+
+.Dropdown-link--parent {
+    position: relative;
+}
+
+/* ------------------------------------ *\
+    Reposnsive
+\* ------------------------------------ */
+
+@media (--c-bp-xl) {
+    .Dropdown-menu {
+        margin-top: 0;
+        max-width: var(--Dropdown-maxWidth);
+        min-width: var(--Dropdown-minWidth);
+        padding: 10px 0;
+        position: absolute;
+        top: 100%;
+        width: max-content;
+        z-index: 999;
+    }
+    
+    .Dropdown-item--smallScreen {
+        display: none;
+    }
+    
+    .Dropdown-link {
+        background: var(--Dropdown-background);
+        color: var(--Dropdown-link-color) !important;
+    }
+    
+    .Dropdown:hover > .Dropdown-menu,
+    .Dropdown-item:hover > .Dropdown-menu {
+        display: block;
+    }
+    
+    .Dropdown-item:hover > .Dropdown-menu {
+        display: block;
+        left: 100%;
+        top: 0;
+        transform: none;
+    }
+    
+    .Dropdown-link--parent::before,
+    .Dropdown-link--parent::after {
+        background: var(--Dropdown-link-color);
+        content: '';
+        display: inline-block;
+        height: 1px;
+        margin-top: -1px;
+        position: absolute;
+        right: calc(var(--MainNav-item-paddingHorizontal) / 2);
+        top: 50%;
+        transform-origin: 7px 50%;
+        width: 7px;
+    }
+
+    .Dropdown-link--parent::after {
+        transform: rotate(-45deg);
+    }
+
+    .Dropdown-link--parent::before {
+        transform: rotate(45deg);
+    }
+}

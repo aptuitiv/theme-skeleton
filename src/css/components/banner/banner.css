@@ -1,0 +1,74 @@
+/* =========================================================================== *\
+    Banner
+\* =========================================================================== */
+
+/* :root {
+    --Banner-color: #fff;
+    --Banner-background: #00263e;
+    
+    --Banner-paddingTop: 200px;
+    --Banner-paddingBottom: 80px;
+    --Banner-paddingHorizontal: 100px;
+    --Banner-paddingTop--sm: 100px;
+    --Banner-paddingBottom--sm: 50px;
+    --Banner-paddingHorizontal--sm: 50px;
+    
+    --Banner-title-fontSize: 6.5rem;
+    --Banner-title-fontSize--sm: 3.5rem;
+    --Banner-title-fontWeight: 600;
+    --Banner-title-lineHeight: 1.2;
+    --Banner-title-textTransform: uppercase;
+} */
+
+/* @define Banner */
+.Banner {
+    position: relative;
+}
+
+.Banner-bg {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.Banner-picture {
+    height: 100%;
+}
+
+.Banner-image {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.Banner-fg {
+    background-color: var(--Banner-background);
+    padding: var(--Banner-paddingTop--sm) var(--Banner-paddingHorizontal--sm) var(--Banner-paddingBottom--sm);
+    position: relative;
+    z-index: 20;
+}
+
+.Banner-fg * {
+    color: var(--Banner-color);
+}
+
+.Banner-title {
+    font-size: var(--Banner-title-fontSize--sm);
+    font-weight: var(--Banner-title-fontWeight);
+    line-height: var(--Banner-title-lineHeight);
+    margin-bottom: 0;
+    text-transform: var(--Banner-title-textTransform);
+}
+
+@media (--c-bp-lg) {
+    .Banner-fg {
+        padding: var(--Banner-paddingTop) var(--Banner-paddingHorizontal) var(--Banner-paddingBottom);
+    }
+    
+    .Banner-title {
+        font-size: var(--Banner-title-fontSize);
+    }
+}

@@ -1,0 +1,38 @@
+<div class="Banner">
+    {% if image %}
+        <div class="Banner-bg">
+            {% set maxWidth = 0 %}
+            {% set bannerImageSizes = _core.theme.settings.bannerImageSizes|sort_by_key("maxWidth") %}
+            {% for imageOption in bannerImageSizes %}
+                {% do image.addSource("(max-width: " ~ imageOption.maxWidth ~ "px)")
+                    .crop({
+                        width: imageOption.maxWidth,
+                        height: imageOption.maxHeight,
+                        crop: _core.theme.settings.bannerImageCrop
+                    })
+                    .preloadMedia(
+                        loop.first ?
+                        "(max-width: "  ~ imageOption.maxWidth ~"px)" :
+                        "(min-width: " ~ (maxWidth + 1) ~ "px) and (max-width: "  ~ imageOption.maxWidth ~"px)"
+                    )
+                %}
+                {% set maxWidth = imageOption.maxWidth %}
+            {% endfor %}
+            {% set image.picture.class = "Banner-picture" %}
+            {% set image.class = "Banner-image" %}
+            {% do image.prioritize({ media: "(min-width: " ~ (maxWidth + 1) ~ "px)" }) %}
+            {{ image.tag }}
+        </div>
+    {% endif %}
+    <div class="Banner-fg">
+        <div class="Container">
+            {% if title %}
+                {% if isTitleHeading %}
+                    <h1 class="Banner-title">{{ title }}</h1>
+                {% else %}
+                    <div class="Banner-title">{{ title }}</div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+/* =========================================================================== *\
+    Form Description
+\* =========================================================================== */
+
+/* :root {
+    --FormDescription-fontSize: 1.4rem;
+    --FormDescription-fontStyle: italic;
+} */
+
+/* @define FormDescription */
+.FormDescription {
+    font-size: var(--FormDescription-fontSize);
+    font-style: var(--FormDescription-fontStyle);
+    margin-bottom: 0;
+}
