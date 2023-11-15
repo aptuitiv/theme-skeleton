@@ -1,7 +1,7 @@
 {% import 'macros/macros' as macros %}
 
 {% if slides %}
-    <div class="Container Container--block">
+    <div class="Container Container--pad">
         {% set class = 'js-imageSlider--' ~ random_string() %}
         <div class="Slider splide {{ class }}" role="group" aria-label="Image Slider">
             <div class="splide__track">

@@ -1,4 +1,4 @@
-<div class="Container Container--block">
+<div class="Container Container--pad">
     {% for url in embedUrl.urlInfo %}
         <div class="embed my-5 aspect-{{ embedRatio|replace(':', '-') }}">
             <iframe frameborder="0" allowfullscreen src="{{ url.iframeEmbed.src }}" title="{{ url.title }}" loading="lazy"></iframe>
