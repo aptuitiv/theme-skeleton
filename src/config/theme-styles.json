@@ -1020,146 +1020,166 @@
             "description": "Styles for the \"Image Slider\" block.",
             "sections": [
                 {
-                    "name": "General",
+                    "name": "Content",
                     "fields": [
                         {
-                            "name": "imageSliderBackground",
-                            "label": "Background color",
-                            "type": "color",
-                            "default": "#f2f2f2",
+                            "name": "sliderContentPaddingVertical",
+                            "label": "Vertical padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "20",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-background"
+                                "cssVariable": "--Slider-content-paddingVertical",
+                                "template": "{{ value }}px"
                             }
                         },
                         {
-                            "name": "imageSliderColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#333",
+                            "name": "sliderContentPaddingHorizontal",
+                            "label": "Horizontal padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "20",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-color"
+                                "cssVariable": "--Slider-content-paddingHorizontal",
+                                "template": "{{ value }}px"
                             }
-                        }
-                    ]
-                },
-                {
-                    "name": "Title",
-                    "fields": [
+                        },
                         {
-                            "name": "imageSliderTitleFontSize",
+                            "name": "sliderContentFontSize",
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
                             "default": "20",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-title-font-size",
+                                "cssVariable": "--Slider-content-fontSize",
                                 "template": "{{ value / 10 }}rem"
                             }
                         },
                         {
-                            "name": "imageSliderTitleFontWeight",
+                            "name": "sliderContentFontWeight",
                             "label": "Font weight",
                             "type": "fontWeight",
-                            "default": "400",
+                            "default": "700",
                             "fontFamilyField": "themeTypographyFontFamily",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-title-font-weight"
+                                "cssVariable": "--Slider-content-fontWeight"
                             }
                         },
                         {
-                            "name": "imageSliderTitleBackground",
-                            "label": "Background color",
-                            "type": "color",
-                            "default": "#f2f2f2",
+                            "name": "sliderContentLineHeight",
+                            "label": "Line height",
+                            "type": "stepper",
+                            "step": "0.1",
+                            "decimals": "2",
+                            "default": "1.2",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-title-background"
+                                "cssVariable": "--Slider-content-lineHeight"
                             }
                         },
                         {
-                            "name": "imageSliderTitleColor",
-                            "label": "Text color",
+                            "name": "sliderContentTextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Slider-content-textTransform"
+                            }
+                        },
+                        {
+                            "name": "sliderContentBackground",
+                            "label": "Background color",
                             "type": "color",
                             "default": "#fff",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-title-color"
+                                "cssVariable": "--Slider-content-background"
                             }
                         },
                         {
-                            "name": "imageSliderTitleBackgroundHover",
-                            "label": "Background color (hover)",
+                            "name": "sliderContentColor",
+                            "label": "Text color",
                             "type": "color",
-                            "default": "#f2f2f2",
+                            "default": "#333",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-title-background-hover"
+                                "cssVariable": "--Slider-content-color"
                             }
                         },
                         {
-                            "name": "imageSliderTitleColorHover",
+                            "name": "sliderContentBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "default": "#333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Slider-content-background--hover"
+                            }
+                        },
+                        {
+                            "name": "sliderContentColorHover",
                             "label": "Text color (hover)",
                             "type": "color",
                             "default": "#fff",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-title-color-hover"
+                                "cssVariable": "--Slider-content-color--hover"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Hover",
-                    "description": "Styles for the \"Hover\" type.",
+                    "name": "Arrows",
                     "fields": [
                         {
-                            "name": "imageSliderHoverBackground",
-                            "label": "Background color (hover)",
+                            "name": "sliderArrowBackground",
+                            "label": "Background color",
                             "type": "color",
-                            "default": "#f2f2f2",
+                            "default": "#fff",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-hover-background"
+                                "cssVariable": "--Slider-arrow-background"
                             }
                         },
                         {
-                            "name": "imageSliderHoverColor",
+                            "name": "sliderArrowColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "default": "#333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Slider-arrow-color"
+                            }
+                        },
+                        {
+                            "name": "sliderArrowBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "default": "#333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Slider-arrow-background--hover"
+                            }
+                        },
+                        {
+                            "name": "sliderArrowColorHover",
                             "label": "Text color (hover)",
                             "type": "color",
                             "default": "#fff",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageSlider-hover-color"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Cover",
-                    "description": "Styles for the \"Cover\" type.",
-                    "fields": [
-                        {
-                            "name": "imageSliderCoverBackground",
-                            "label": "Background color",
-                            "type": "color",
-                            "default": "#f2f2f2",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--ImageSlider-cover-background"
-                            }
-                        },
-                        {
-                            "name": "imageSliderCoverColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#fff",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--ImageSlider-cover-color"
+                                "cssVariable": "--Slider-arrow-color--hover"
                             }
                         }
                     ]
