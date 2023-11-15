@@ -4,8 +4,8 @@
             {% if thumbnail %}
                 {% do thumbnail.crop({ ar: '16x9' }) %}
             {% endif %}
-            <video controls class="w-100" {{ thumbnail ? 'poster="' ~ thumbnail.src ~ '"' }}>
-                <source src="{{ video.src }}" type="video/mp4">
+            <video controls preload="none" class="w-100" {{ thumbnail ? 'poster="' ~ thumbnail.src ~ '"' }}>
+                <source src="{{ video.src }}">
                 Your browser does not support the video tag.
             </video>
         </div>
