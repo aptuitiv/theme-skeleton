@@ -3,7 +3,7 @@
 \* =========================================================================== */
 
 /* :root {
-    --Message-paddingVertical: 10px;
+    --Message-paddingVertical: 20px;
     --Message-paddingHorizontal: 20px;
     --Message-borderRadius: 0;
     --Message-background--success: #0c263c;
@@ -16,7 +16,6 @@
 .Message {
     border-radius: var(--Message-borderRadius);
     padding: var(--Message-paddingVertical) var(--Message-paddingHorizontal);
-    text-align: center;
 }
 
 .Message--success {

@@ -1674,7 +1674,7 @@
                     "label": "Vertical padding",
                     "type": "stepper",
                     "after": "px",
-                    "default": "10",
+                    "default": "20",
                     "preview": {
                         "type": "css-head",
                         "cssVariable": "--Message-paddingVertical",
