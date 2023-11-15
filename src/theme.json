@@ -72,6 +72,30 @@
                         ]
                     },
                     {
+                        "key": "audio-upload",
+                        "name": "Audio Upload",
+                        "type": "full",
+                        "template": "audio",
+                        "enabled": true,
+                        "parse": true,
+                        "description": "",
+                        "fields": [
+                            {
+                                "key": "audio",
+                                "name": "Audio",
+                                "type": "file",
+                                "value": "",
+                                "description": "We recommend using a .mp3 file type.",
+                                "configuration": {
+                                    "obfuscatePath": 0,
+                                    "path": "/docs",
+                                    "replaceExisting": 0,
+                                    "useProcessScript": 0
+                                }
+                            }
+                        ]
+                    },
+                    {
                         "key": "_bd-content",
                         "name": "Content",
                         "type": "full",
@@ -649,7 +673,7 @@
                                 "name": "Video",
                                 "type": "file",
                                 "value": "",
-                                "description": "",
+                                "description": "We recommend using a .mp4 file type.",
                                 "configuration": {
                                     "obfuscatePath": 0,
                                     "path": "/docs",
@@ -1002,6 +1026,32 @@
                     "size": "medium",
                     "value": "yes",
                     "configuration": []
+                },
+                {
+                    "key": "titleAlignment",
+                    "name": "Title alignment",
+                    "description": "See Theme Styles -> Banner -> Title to set the default option.",
+                    "type": "select",
+                    "size": "medium",
+                    "value": "",
+                    "values": [
+                        {
+                            "value": "Default",
+                            "default": false
+                        },
+                        {
+                            "value": "Left",
+                            "default": false
+                        },
+                        {
+                            "value": "Center",
+                            "default": false
+                        },
+                        {
+                            "value": "Right",
+                            "default": false
+                        }
+                    ]
                 }
             ]
         }
@@ -1226,6 +1276,10 @@
         {
             "key": "content-builder/video",
             "name": "Video Upload"
+        },
+        {
+            "key": "content-builder/audio",
+            "name": "Audio Upload"
         },
         {
             "key": "content-layouts/banner",
