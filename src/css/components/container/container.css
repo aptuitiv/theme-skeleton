@@ -18,6 +18,10 @@
     padding: 0 30px;
 }
 
+.Container--pad .Container--pad {
+    padding: 0;
+}
+
 .Container--narrow {
     max-width: calc(var(--Container-narrow-width) + 60px);
     padding: 0 30px;
