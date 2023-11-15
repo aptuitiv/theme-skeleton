@@ -750,26 +750,6 @@
                                 "cssVariable": "--TextInput-paddingHorizontal",
                                 "template": "{{ value }}px"
                             }
-                        },
-                        {
-                            "name": "textInputErrorColor",
-                            "label": "Error color",
-                            "type": "color",
-                            "default": "#f00",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--TextInput-errorColor"
-                            }
-                        },
-                        {
-                            "name": "textInputSuccessColor",
-                            "label": "Success color",
-                            "type": "color",
-                            "default": "#0f0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--TextInput-successColor"
-                            }
                         }
                     ]
                 },
@@ -853,25 +833,88 @@
                                 "cssVariable": "--SelectInput-paddingHorizontal",
                                 "template": "{{ value }}px"
                             }
-                        },
+                        }
+                    ]
+                },
+                {
+                    "name": "Field Labels",
+                    "fields": [
                         {
-                            "name": "selectInputErrorColor",
-                            "label": "Error color",
-                            "type": "color",
-                            "default": "#f00",
+                            "name": "formLabelFontSize",
+                            "label": "Font size",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "18",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--SelectInput-errorColor"
+                                "cssVariable": "--FormLabel-fontSize",
+                                "template": "{{ value / 10 }}rem"
                             }
                         },
                         {
-                            "name": "selectInputSuccessColor",
-                            "label": "Success color",
-                            "type": "color",
-                            "default": "#0f0",
+                            "name": "formLabelFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "400",
+                            "fontFamilyField": "themeTypographyFontFamily",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--SelectInput-successColor"
+                                "cssVariable": "--FormLabel-fontWeight"
+                            }
+                        },
+                        {
+                            "name": "formLabelLineHeight",
+                            "label": "Line height",
+                            "type": "stepper",
+                            "step": "0.1",
+                            "decimals": "2",
+                            "default": "1.2",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormLabel-lineHeight"
+                            }
+                        },
+                        {
+                            "name": "formLabelTextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "uppercase",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormLabel-textTransform"
+                            }
+                        },
+                        {
+                            "name": "formLabelMarginBottom",
+                            "label": "Bottom margin",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "5",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormLabel-marginBottom",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Required Asterisk",
+                    "fields": [
+                        {
+                            "name": "formRequiredColor",
+                            "label": "Color",
+                            "type": "color",
+                            "default": "#b2130c",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormRequired-color"
                             }
                         }
                     ]
@@ -892,6 +935,45 @@
                             }
                         },
                         {
+                            "name": "formDescriptionFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "400",
+                            "fontFamilyField": "themeTypographyFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormDescription-fontWeight"
+                            }
+                        },
+                        {
+                            "name": "formDescriptionLineHeight",
+                            "label": "Line height",
+                            "type": "stepper",
+                            "step": "0.1",
+                            "decimals": "2",
+                            "default": "1.2",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormDescription-lineHeight"
+                            }
+                        },
+                        {
+                            "name": "formDescriptionTextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormDescription-textTransform"
+                            }
+                        },
+                        {
                             "name": "formDescriptionFontStyle",
                             "label": "Font style",
                             "type": "select",
@@ -902,6 +984,83 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--FormDescription-fontStyle"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Form Overlay",
+                    "description": "Styles for the overlay which pops up on a form submission.",
+                    "fields": [
+                        {
+                            "name": "formOverlayFontSize",
+                            "label": "Font size",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "30",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormOverlay-fontSize",
+                                "template": "{{ value / 10 }}rem"
+                            }
+                        },
+                        {
+                            "name": "formOverlayFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "700",
+                            "fontFamilyField": "themeTypographyFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormOverlay-fontWeight"
+                            }
+                        },
+                        {
+                            "name": "formOverlayLineHeight",
+                            "label": "Line height",
+                            "type": "stepper",
+                            "step": "0.1",
+                            "decimals": "2",
+                            "default": "2",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormOverlay-lineHeight"
+                            }
+                        },
+                        {
+                            "name": "formOverlayTextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "uppercase",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormOverlay-textTransform"
+                            }
+                        },
+                        {
+                            "name": "formOverlayBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#000000b3",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormOverlay-background"
+                            }
+                        },
+                        {
+                            "name": "formOverlayColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "default": "#fff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormOverlay-color"
                             }
                         }
                     ]

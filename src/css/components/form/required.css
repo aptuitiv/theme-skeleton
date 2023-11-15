@@ -1,9 +1,12 @@
 /* =========================================================================== *\
-    REQUIRED MESSAGE
+    Required Asterisk
 \* =========================================================================== */
 
-/** @define FormRequired */
+/* :root {
+    --FormRequired-color: #b2130c;
+} */
 
+/* @define FormRequired */
 .FormRequired {
-    color: #b2130c;
+    color: var(--FormRequired-color);
 }
