@@ -61,10 +61,21 @@
                             "name": "bannerBackground",
                             "label": "Background color",
                             "type": "color",
-                            "default": "#00263e",
+                            "default": "#00263e6e",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Banner-background"
+                            }
+                        },
+                        {
+                            "name": "bannerBackgroundNoImage",
+                            "label": "Background color (no image)",
+                            "description": "Background color if no image is uploaded.",
+                            "type": "color",
+                            "default": "#00263e",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-background--noImage"
                             }
                         }
                     ]

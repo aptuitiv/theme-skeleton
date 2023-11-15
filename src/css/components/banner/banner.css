@@ -4,7 +4,8 @@
 
 /* :root {
     --Banner-color: #fff;
-    --Banner-background: #00263e;
+    --Banner-background: 1D26306E;
+    --Banner-background--noImage: #00263e;
     
     --Banner-paddingTop: 200px;
     --Banner-paddingBottom: 80px;
@@ -53,6 +54,10 @@
 
 .Banner-fg * {
     color: var(--Banner-color);
+}
+
+.Banner-fg--noImage {
+    background-color: var(--Banner-background--noImage);
 }
 
 .Banner-title {

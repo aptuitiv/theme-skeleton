@@ -24,7 +24,7 @@
             {{ image.tag }}
         </div>
     {% endif %}
-    <div class="Banner-fg">
+    <div class="Banner-fg {{ not image ? 'Banner-fg--noImage' }}">
         <div class="Container">
             {% if title %}
                 {% if isTitleHeading %}
