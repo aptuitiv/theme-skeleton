@@ -28,9 +28,9 @@
         <div class="Container">
             {% if title %}
                 {% if isTitleHeading %}
-                    <h1 class="Banner-title">{{ title }}</h1>
+                    <h1 class="Banner-title Banner-title--{{ titleAlignment|camel }}">{{ title }}</h1>
                 {% else %}
-                    <div class="Banner-title">{{ title }}</div>
+                    <div class="Banner-title Banner-title--{{ titleAlignment|camel }}">{{ title }}</div>
                 {% endif %}
             {% endif %}
         </div>

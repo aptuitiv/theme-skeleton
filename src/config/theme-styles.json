@@ -58,24 +58,24 @@
                             }
                         },
                         {
-                            "name": "bannerBackground",
-                            "label": "Background color",
+                            "name": "bannerBackgroundOverlay",
+                            "label": "Overlay color",
                             "type": "color",
                             "default": "#00263e6e",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-background"
+                                "cssVariable": "--Banner-overlay"
                             }
                         },
                         {
-                            "name": "bannerBackgroundNoImage",
-                            "label": "Background color (no image)",
-                            "description": "Background color if no image is uploaded.",
+                            "name": "bannerBackground",
+                            "label": "Background color",
+                            "description": "Background color will only be seen if no image is uploaded.",
                             "type": "color",
                             "default": "#00263e",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-background--noImage"
+                                "cssVariable": "--Banner-background"
                             }
                         }
                     ]
@@ -118,7 +118,12 @@
                                 "cssVariable": "--Banner-paddingHorizontal",
                                 "template": "{{ value }}px"
                             }
-                        },
+                        }
+                    ]
+                },
+                {
+                    "name": "Padding (Small Screens)",
+                    "fields": [
                         {
                             "name": "bannerPaddingTopSm",
                             "label": "Top padding (small screens)",
@@ -152,6 +157,48 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Banner-paddingHorizontal--sm",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Padding (No Image)",
+                    "description": "Padding when no image is uploaded.",
+                    "fields": [
+                        {
+                            "name": "bannerPaddingTopNoImage",
+                            "label": "Top padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "100",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-paddingTop--noImage",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "bannerPaddingBottomNoImage",
+                            "label": "Bottom padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "50",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-paddingBottom--noImage",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "bannerPaddingHorizontalNoImage",
+                            "label": "Horizontal padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "50",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-paddingHorizontal--noImage",
                                 "template": "{{ value }}px"
                             }
                         }
@@ -221,6 +268,34 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Banner-title-textTransform"
+                            }
+                        },
+                        {
+                            "name": "bannerTitleLetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-title-letterSpacing",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "bannerTitleTextAlign",
+                            "label": "Default text alignment",
+                            "description": "This value can be override on a per-page basis in the \"Banner\" content layout.",
+                            "type": "select",
+                            "default": "left",
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "template": ".Banner-title { text-align: {{ value }}; }"
                             }
                         }
                     ]
