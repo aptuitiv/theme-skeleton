@@ -1487,10 +1487,28 @@
                             }
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "name": "Main Navigation - Dropdowns",
+            "description": "Styles for the main navigation dropdowns.",
+            "sections": [
                 {
-                    "name": "Dropdowns",
+                    "name": "General",
                     "fields": [
+                        {
+                            "name": "dropdownPaddingVertical",
+                            "label": "Vertical padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "10",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-paddingVertical",
+                                "template": "{{ value }}px"
+                            }
+                        },
                         {
                             "name": "dropdownMinWidth",
                             "label": "Minimum width",
@@ -1512,6 +1530,112 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-maxWidth",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "dropdownBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#00000000",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-background"
+                            }
+                        },
+                        {
+                            "name": "dropdownLeft",
+                            "label": "Position",
+                            "type": "select",
+                            "default": "0",
+                            "options": {
+                                "0": "Left",
+                                "-50%": "Center"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-left"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Links",
+                    "fields": [
+                        {
+                            "name": "dropdownFontSize",
+                            "label": "Font size",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "17",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-fontSize",
+                                "template": "{{ value / 10 }}rem"
+                            }
+                        },
+                        {
+                            "name": "dropdownFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "400",
+                            "fontFamilyField": "themeTypographyFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-fontWeight"
+                            }
+                        },
+                        {
+                            "name": "dropdownLineHeight",
+                            "label": "Line height",
+                            "type": "stepper",
+                            "step": "0.1",
+                            "decimals": "2",
+                            "default": "1.2",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-lineHeight"
+                            }
+                        },
+                        {
+                            "name": "dropdownTextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "uppercase",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-textTransform"
+                            }
+                        },
+                        {
+                            "name": "dropdownTextAlign",
+                            "label": "Text alignment",
+                            "type": "select",
+                            "default": "center",
+                            "options": {
+                                "left": "Left",
+                                "center": "Center"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-textAlign"
+                            }
+                        },
+                        {
+                            "name": "dropdownLinkLetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-letterSpacing",
                                 "template": "{{ value }}px"
                             }
                         },
@@ -1540,49 +1664,13 @@
                             }
                         },
                         {
-                            "name": "dropdownFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "17",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "dropdownLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.2",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "dropdownLinkLetterSpacing",
-                            "label": "Letter spacing",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-letterSpacing",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
                             "name": "mainNavDropdownBackground",
                             "label": "Background color",
                             "type": "color",
                             "default": "#fff",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-background"
+                                "cssVariable": "--Dropdown-link-background"
                             }
                         },
                         {
@@ -1594,27 +1682,12 @@
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-link-color"
                             }
-                        },
-                        {
-                            "name": "navDropdownBackgroundSm",
-                            "label": "Background color (small screens)",
-                            "type": "color",
-                            "default": "#6c9d41",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-background--sm"
-                            }
-                        },
-                        {
-                            "name": "mainNavDropdownColorSm",
-                            "label": "Text color (small screens)",
-                            "type": "color",
-                            "default": "#fff",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-color--sm"
-                            }
-                        },
+                        }
+                    ]
+                },
+                {
+                    "name": "Links (Hover)",
+                    "fields": [
                         {
                             "name": "navDropdownBackgroundHover",
                             "label": "Background color (hover)",
@@ -1622,7 +1695,7 @@
                             "default": "#600303",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-background--hover"
+                                "cssVariable": "--Dropdown-link-background--hover"
                             }
                         },
                         {
@@ -1633,6 +1706,31 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-link-color--hover"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Links (Small Screens)",
+                    "fields": [
+                        {
+                            "name": "navDropdownBackgroundSm",
+                            "label": "Background color (small screens)",
+                            "type": "color",
+                            "default": "#6c9d41",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-background--sm"
+                            }
+                        },
+                        {
+                            "name": "mainNavDropdownColorSm",
+                            "label": "Text color (small screens)",
+                            "type": "color",
+                            "default": "#fff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Dropdown-link-color--sm"
                             }
                         }
                     ]
