@@ -541,65 +541,6 @@
             ]
         },
         {
-            "name": "Content Wrapper Block",
-            "description": "Styles for the \"Content Wrapper Block\" block.",
-            "sections": [
-                {
-                    "name": "Padding",
-                    "fields": [
-                        {
-                            "name": "wrapperPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "45",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--wrapper-paddingVertical",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "wrapperPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "160",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--wrapper-paddingHorizontal",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "wrapperPaddingVerticalSm",
-                            "label": "Vertical padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--wrapper-paddingVertical--sm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "wrapperPaddingHorizontalSm",
-                            "label": "Horizontal padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--wrapper-paddingHorizontal--sm",
-                                "template": "{{ value }}px"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "Footer",
             "description": "Styles for the footer of the website.",
             "sections": [
