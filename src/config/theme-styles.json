@@ -205,6 +205,47 @@
                     ]
                 },
                 {
+                    "name": "Padding (No Image, Small Screens)",
+                    "fields": [
+                        {
+                            "name": "bannerPaddingTopNoImageSm",
+                            "label": "Top padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "50",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-paddingTop--noImageSm",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "bannerPaddingBottomNoImageSm",
+                            "label": "Bottom padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "50",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-paddingBottom--noImageSm",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "bannerPaddingHorizontalNoImageSm",
+                            "label": "Horizontal padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "50",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-paddingHorizontal--noImageSm",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Title",
                     "fields": [
                         {
@@ -1577,7 +1618,7 @@
                             "label": "Vertical padding",
                             "type": "stepper",
                             "after": "px",
-                            "default": "10",
+                            "default": "0",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-paddingVertical",
