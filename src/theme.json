@@ -125,41 +125,6 @@
                         ]
                     },
                     {
-                        "key": "content-wrapper",
-                        "name": "Content Wrapper",
-                        "type": "full",
-                        "template": "content-wrapper",
-                        "enabled": true,
-                        "parse": true,
-                        "description": "",
-                        "fields": [
-                            {
-                                "key": "background",
-                                "name": "Background",
-                                "type": "select",
-                                "value": "",
-                                "description": "",
-                                "options": [
-                                    {
-                                        "value": "White",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Light Blue Gradient",
-                                        "default": false
-                                    }
-                                ]
-                            },
-                            {
-                                "key": "blocks",
-                                "name": "Blocks",
-                                "type": "parent",
-                                "value": "",
-                                "description": ""
-                            }
-                        ]
-                    },
-                    {
                         "key": "_bd-form",
                         "name": "Form",
                         "type": "full",
@@ -295,113 +260,11 @@
                         "description": "",
                         "fields": [
                             {
-                                "key": "width",
-                                "name": "Width",
-                                "type": "select",
-                                "value": "",
-                                "description": "",
-                                "options": [
-                                    {
-                                        "value": "Standard",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Narrow",
-                                        "default": false
-                                    }
-                                ]
-                            },
-                            {
-                                "key": "style",
-                                "name": "Style",
-                                "type": "select",
-                                "value": "",
-                                "description": "",
-                                "options": [
-                                    {
-                                        "value": "White",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Dark",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Light",
-                                        "default": false
-                                    }
-                                ]
-                            },
-                            {
-                                "key": "title",
-                                "name": "Title",
-                                "type": "text",
-                                "size": "medium",
-                                "value": "",
-                                "description": "",
-                                "configuration": {
-                                    "allowCode": "no"
-                                }
-                            },
-                            {
                                 "key": "content",
                                 "name": "Content",
                                 "type": "richTextEditor",
                                 "value": "",
                                 "description": ""
-                            },
-                            {
-                                "key": "buttons",
-                                "name": "Buttons",
-                                "type": "repeating",
-                                "value": "",
-                                "description": "",
-                                "fields": [
-                                    {
-                                        "key": "text",
-                                        "name": "Text",
-                                        "type": "text",
-                                        "size": "medium",
-                                        "value": "",
-                                        "description": "",
-                                        "configuration": {
-                                            "allowCode": "no"
-                                        }
-                                    },
-                                    {
-                                        "key": "link",
-                                        "name": "Link",
-                                        "type": "url",
-                                        "size": "medium",
-                                        "value": "",
-                                        "description": ""
-                                    },
-                                    {
-                                        "key": "style",
-                                        "name": "Style",
-                                        "type": "select",
-                                        "value": "",
-                                        "description": "",
-                                        "options": [
-                                            {
-                                                "value": "Primary",
-                                                "default": false
-                                            },
-                                            {
-                                                "value": "Secondary",
-                                                "default": false
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "configuration": {
-                                    "collectionItemDelete": "1",
-                                    "collectionItemName": "Button",
-                                    "collectionItemSort": "1",
-                                    "collectionMaxNumItems": "",
-                                    "collectionMinNumItems": "",
-                                    "collectionOrientation": "vertical"
-                                }
                             },
                             {
                                 "key": "imagePosition",
@@ -443,18 +306,22 @@
                         "description": "",
                         "fields": [
                             {
-                                "key": "headingType",
-                                "name": "Heading type",
+                                "key": "columns",
+                                "name": "Columns",
                                 "type": "select",
                                 "value": "",
                                 "description": "",
                                 "options": [
                                     {
-                                        "value": "H2",
+                                        "value": "2",
                                         "default": false
                                     },
                                     {
-                                        "value": "H3",
+                                        "value": "3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "4",
                                         "default": false
                                     }
                                 ]
@@ -510,41 +377,8 @@
                         "description": "",
                         "fields": [
                             {
-                                "key": "displayContent",
-                                "name": "Display Content",
-                                "type": "select",
-                                "value": "",
-                                "description": "Showing text \"Behind Image\" will have the text show when you hover over the image.",
-                                "options": [
-                                    {
-                                        "value": "Below Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Right of Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Left of Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Over Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Behind Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Hide",
-                                        "default": false
-                                    }
-                                ]
-                            },
-                            {
                                 "key": "sliderSpeed",
-                                "name": "Slider Speed",
+                                "name": "Slider speed",
                                 "type": "select",
                                 "value": "",
                                 "description": "",
@@ -576,7 +410,7 @@
                                 ],
                                 "configuration": {
                                     "0": "",
-                                    "after": " seconds"
+                                    "after": "seconds"
                                 }
                             },
                             {
@@ -586,6 +420,60 @@
                                 "value": "no",
                                 "description": "",
                                 "configuration": []
+                            },
+                            {
+                                "key": "slidesPerPage",
+                                "name": "Number of slides per page",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "2",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3",
+                                        "default": true
+                                    },
+                                    {
+                                        "value": "4",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "5",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "aspectRatio",
+                                "name": "Aspect ratio",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "4:3",
+                                        "default": true
+                                    },
+                                    {
+                                        "value": "16:9",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "1:1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "None",
+                                        "default": false
+                                    }
+                                ]
                             },
                             {
                                 "key": "slides",
@@ -601,18 +489,9 @@
                                         "value": "",
                                         "description": "",
                                         "configuration": {
-                                            "height": 600,
                                             "path": "/images/slides",
-                                            "width": 600
+                                            "width": 1500
                                         }
-                                    },
-                                    {
-                                        "key": "link",
-                                        "name": "Link",
-                                        "type": "url",
-                                        "size": "medium",
-                                        "value": "",
-                                        "description": ""
                                     },
                                     {
                                         "key": "title",
@@ -626,9 +505,10 @@
                                         }
                                     },
                                     {
-                                        "key": "content",
-                                        "name": "Content",
-                                        "type": "richTextEditor",
+                                        "key": "link",
+                                        "name": "Link",
+                                        "type": "url",
+                                        "size": "medium",
                                         "value": "",
                                         "description": ""
                                     }
@@ -697,7 +577,7 @@
                         "name": "Small Image",
                         "type": "full",
                         "template": "small-image",
-                        "enabled": true,
+                        "enabled": false,
                         "parse": true,
                         "description": "",
                         "fields": [
@@ -1099,7 +979,6 @@
                     "size": "medium",
                     "value": "",
                     "configuration": {
-                        "height": 650,
                         "path": "/images/banner",
                         "width": 2000
                     }
@@ -1321,10 +1200,6 @@
             "name": "Content Snippet"
         },
         {
-            "key": "content-builder/content-wrapper",
-            "name": "Content Wrapper"
-        },
-        {
             "key": "content-builder/iframe-embed",
             "name": "Iframe Embed"
         },
@@ -1402,7 +1277,7 @@
         "robots_text": "",
         "tinymce_allow_scripts": "0",
         "tinymce_allow_unsafe_link_target_protection": "1",
-        "tinymce_block_classes": "",
+        "tinymce_block_classes": [],
         "tinymce_css": "",
         "tinymce_file_browser": "apBrowser",
         "tinymce_font_family": [
@@ -1487,10 +1362,10 @@
         "tinymce_image_title": "0",
         "tinymce_import_stylesheets": [
             {
-                "import_file": "/theme/custom/css/main.css"
+                "import_file": "https://bcms-files.s3.amazonaws.com/Vq1lbqn3yJ-1807/theme/custom/css/main.css"
             }
         ],
-        "tinymce_inline_classes": "",
+        "tinymce_inline_classes": [],
         "tinymce_invalid_styles": [
             {
                 "tag": "table",
@@ -1523,7 +1398,7 @@
                 "class": "Button Button--sm"
             }
         ],
-        "tinymce_link_rel": "",
+        "tinymce_link_rel": [],
         "tinymce_link_target": [
             {
                 "title": "New window",
@@ -1533,8 +1408,8 @@
         "tinymce_paste_as_text": "0",
         "tinymce_show_contextmenu": "0",
         "tinymce_table_allow_resize": "1",
-        "tinymce_table_cell_classes": "",
-        "tinymce_table_classes": "",
+        "tinymce_table_cell_classes": [],
+        "tinymce_table_classes": [],
         "tinymce_table_column_resizing": "preservetable",
         "tinymce_table_default_attributes": [
             {
@@ -1552,7 +1427,7 @@
                 "val": "100%"
             }
         ],
-        "tinymce_table_row_classes": "",
+        "tinymce_table_row_classes": [],
         "tinymce_table_sizing_mode": "auto",
         "tinymce_use_background_color": "0",
         "tinymce_use_font": "0",

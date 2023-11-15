@@ -31,6 +31,7 @@
                     "label": "Banner crop",
                     "description": "The crop style for banner images on small screens.",
                     "type": "select",
+                    "default": "center",
                     "options": {
                         "left": "Left",
                         "center": "Center",
@@ -61,12 +62,6 @@
                         "cssVariable": "--Footer-logo-width",
                         "template": "{{ value }}px"
                     }
-                },
-                {
-                    "name": "footerAccentImage",
-                    "label": "Background accent image",
-                    "type": "image",
-                    "path": "images"
                 }
             ]
         },
