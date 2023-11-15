@@ -99,6 +99,8 @@ const config = {
         {
             name: 'main.js',
             src: [
+                src + '/js/script-loader.js',
+                src + '/js/iframe-loader.js',
                 src + '/js/navigation.js',
                 src + '/js/accordion.js',
                 src + '/js/main.js'
