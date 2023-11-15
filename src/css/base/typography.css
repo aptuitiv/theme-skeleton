@@ -58,10 +58,16 @@ html {
 body {
     color: var(--base-typography-color);
     font-family: var(--base-typography-fontFamily);
-    font-size: var(--base-typography-fontSize);
+    font-size: calc(var(--base-typography-fontSize) * .9);
     font-weight: var(--base-typography-fontWeight);
     letter-spacing: var(--base-typography-letterSpacing);
     line-height: var(--base-typography-lineHeight);
+}
+
+@media (--c-bp-md) {
+    body {
+        font-size: var(--base-typography-fontSize);
+    }
 }
 
 /**
