@@ -111,6 +111,7 @@ blockquote p:last-child {
 a {
     color: var(--base-typography-link-color);
     text-decoration: var(--base-typography-link-textDecoration);
+    transition: all 250ms;
 }
 
 a:hover {
