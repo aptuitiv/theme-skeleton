@@ -101,6 +101,7 @@ const config = {
             src: [
                 src + '/js/script-loader.js',
                 src + '/js/iframe-loader.js',
+                src + '/js/notifications.js',
                 src + '/js/navigation.js',
                 src + '/js/accordion.js',
                 src + '/js/main.js'
