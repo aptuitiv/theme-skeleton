@@ -2152,6 +2152,134 @@
             ]
         },
         {
+            "name": "Popup on Load",
+            "description": "Styles for the optional popup that shows on page load.",
+            "sections": [
+                {
+                    "name": "General",
+                    "fields": [
+                        {
+                            "name": "modalBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#fff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-background"
+                            }
+                        },
+                        {
+                            "name": "modalColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "default": "#333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-color"
+                            }
+                        },
+                        {
+                            "name": "modalWidth",
+                            "label": "Width",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "500",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-width",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "modalBorderRadius",
+                            "label": "Border radius",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-borderRadius",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Overlay",
+                    "fields": [
+                        {
+                            "name": "modalOverlayBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "rgba(0, 0, 0, .6)",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-overlay-background"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Header",
+                    "fields": [
+                        {
+                            "name": "modalHeaderPaddingVertical",
+                            "label": "Vertical padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "20",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-header-paddingVertical",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "modalHeaderPaddingHorizontal",
+                            "label": "Horizontal padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "20",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-header-paddingHorizontal",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Content",
+                    "fields": [
+                        {
+                            "name": "modalContentPaddingVertical",
+                            "label": "Vertical padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "20",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-content-paddingVertical",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "modalContentPaddingHorizontal",
+                            "label": "Horizontal padding",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "20",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Modal-content-paddingHorizontal",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Typography",
             "description": "Styles for typography throughout the website.",
             "groups": [

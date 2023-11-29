@@ -1,4 +1,4 @@
-/* global smallScreenNav:readonly, navAccess:readonly, accordion:readonly, setupNotifications:readonly */
+/* global smallScreenNav:readonly, navAccess:readonly, accordion:readonly, setupNotifications:readonly, MicroModal:readonly */
 
 /**
  * Initializes all Javascript bundled into main.js
@@ -9,6 +9,9 @@ const init = () => {
     navAccess.init();
     accordion.init();
     setupNotifications();
+    MicroModal.init({
+        disableFocus: true,
+    });
 };
 
 // Wait until page is ready before running any scripts

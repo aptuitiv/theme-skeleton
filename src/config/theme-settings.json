@@ -127,6 +127,36 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "Popup on Load",
+            "description": "Options for the optional popup that shows on page load.",
+            "fields": [
+                {
+                    "name": "popupDisplay",
+                    "label": "Display the popup",
+                    "type": "switch"
+                },
+                {
+                    "name": "popupSeconds",
+                    "label": "Seconds to wait before showing the popup",
+                    "type": "stepper",
+                    "after": "seconds",
+                    "default": "5"
+                },
+                {
+                    "name": "popupCookieExpiration",
+                    "label": "Number of days to show popup again after closing",
+                    "type": "stepper",
+                    "after": "days",
+                    "default": "30"
+                },
+                {
+                    "name": "popupContent",
+                    "label": "Content",
+                    "type": "richTextEditor"
+                }
+            ]
         }
     ]
 }

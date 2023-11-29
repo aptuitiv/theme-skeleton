@@ -99,6 +99,7 @@ const config = {
         {
             name: 'main.js',
             src: [
+                'node_modules/micromodal/dist/micromodal.min.js',
                 src + '/js/script-loader.js',
                 src + '/js/iframe-loader.js',
                 src + '/js/notifications.js',

@@ -7,6 +7,7 @@
 @import './header';
 @import './icon';
 @import './message';
+@import './modal';
 @import './navigation';
 @import './notifications';
 @import './pagination';
