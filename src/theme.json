@@ -1331,7 +1331,38 @@
         "robots_text": "",
         "tinymce_allow_scripts": "0",
         "tinymce_allow_unsafe_link_target_protection": "1",
-        "tinymce_block_classes": [],
+        "tinymce_block_classes": [
+            {
+                "title": "H1 Style",
+                "class": "h1",
+                "tag": "p,div"
+            },
+            {
+                "title": "H2 Style",
+                "class": "h2",
+                "tag": "p,div"
+            },
+            {
+                "title": "H3 Style",
+                "class": "h3",
+                "tag": "p,div"
+            },
+            {
+                "title": "H4 Style",
+                "class": "h4",
+                "tag": "p,div"
+            },
+            {
+                "title": "H5 Style",
+                "class": "h5",
+                "tag": "p,div"
+            },
+            {
+                "title": "H6 Style",
+                "class": "h6",
+                "tag": "p,div"
+            }
+        ],
         "tinymce_css": "",
         "tinymce_file_browser": "apBrowser",
         "tinymce_font_family": [
