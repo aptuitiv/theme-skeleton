@@ -15,6 +15,7 @@ import { jslint, scripts } from './gulp/javascript.js';
 import { sprite } from './gulp/svg.js';
 import { processTheme, processThemeConfig, processLegacyThemeConfig, pullTheme, pushTheme } from './gulp/theme.js';
 
+import notifier from 'node-notifier';
 
 /**
  * Watch for file changes and then process the files
@@ -64,12 +65,27 @@ function watch(done) {
     gulp.watch(config.paths.dist.base)
         .on('add', function (path) {
             deployFile(path);
+            notifier.notify({
+                title: 'Gulp Deploy',
+                message: 'File added to FTP server!',
+                sound: true
+            });
         })
         .on('change', function (path) {
             deployFile(path);
+            notifier.notify({
+                title: 'Gulp Deploy',
+                message: 'File changed on FTP server!',
+                sound: true
+            });
         })
         .on('unlink', function (path) {
             deleteFile(path);
+            notifier.notify({
+                title: 'Gulp Deploy',
+                message: 'File deleted from FTP server!',
+                sound: true
+            });
         });
 
     done();

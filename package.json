@@ -46,6 +46,7 @@
     "gulp-uglify": "^3.0.2",
     "merge-stream": "^2.0.0",
     "moment": "^2.29.1",
+    "node-notifier": "^10.0.1",
     "penthouse": "^2.3.2",
     "postcss": "^8.4.4",
     "postcss-custom-media": "^8.0.0",
