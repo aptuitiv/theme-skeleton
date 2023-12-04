@@ -996,6 +996,24 @@
             ],
             "fields": [
                 {
+                    "key": "mediaType",
+                    "name": "Media type",
+                    "description": "",
+                    "type": "selectDisplay",
+                    "size": "medium",
+                    "value": "",
+                    "values": [
+                        {
+                            "value": "Image",
+                            "default": false
+                        },
+                        {
+                            "value": "Video",
+                            "default": false
+                        }
+                    ]
+                },
+                {
                     "key": "image",
                     "name": "Image",
                     "description": "",
@@ -1005,6 +1023,20 @@
                     "configuration": {
                         "path": "/images/banner",
                         "width": 2000
+                    }
+                },
+                {
+                    "key": "video",
+                    "name": "Video",
+                    "description": "",
+                    "type": "file",
+                    "size": "medium",
+                    "value": "",
+                    "configuration": {
+                        "obfuscatePath": 0,
+                        "path": "/docs/banner",
+                        "replaceExisting": 0,
+                        "useProcessScript": 0
                     }
                 },
                 {
