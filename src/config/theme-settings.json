@@ -49,7 +49,11 @@
                     "label": "Logo",
                     "type": "image",
                     "path": "images",
-                    "default": "/theme/custom/images/logo.svg"
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".Footer-logo",
+                        "template": "<img src=\"{{ url }}\" height=\"{{ imageHeight }}\" width=\"{{ imageWidth }}\" alt=\"{{ alt }}\" class=\"Footer-logo\">"
+                    }
                 },
                 {
                     "name": "footerLogoWidth",
