@@ -28,10 +28,12 @@
                     {% else %}
                         {% set image.image.class = 'fit-contain' %}
                     {% endif %}
-                    <a data-fslightbox data-type="image" class="link-subtle" href="{{ image.image.src }}" {{ image.title ? 'data-caption="' ~ image.title ~ '"' }}>
+                    <a data-fslightbox data-type="image" class="block link-subtle" href="{{ image.image.src }}" {{ image.title ? 'data-caption="' ~ image.title ~ '"' }}>
+                        <span class="flex aspect-{{ imageAspectRatio|replace('x', '-') }}">
                         {{ image.image.tag }}
+                        </span>
                         {% if image.title %}
-                            <div class="text-center mt-1">{{ image.title }}</div>
+                            <span class="mt-1 block text-center">{{ image.title }}</span>
                         {% endif %}
                     </a>
                 </div>
