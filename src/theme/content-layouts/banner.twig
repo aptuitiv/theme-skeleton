@@ -9,7 +9,7 @@
                         .crop({
                             width: imageOption.maxWidth,
                             height: imageOption.maxHeight,
-                            crop: _core.theme.settings.bannerImageCrop
+                            crop: imageCropAlignment
                         })
                         .preloadMedia(
                             loop.first ?
@@ -21,7 +21,12 @@
                 {% endfor %}
                 {% set image.picture.class = "Banner-picture" %}
                 {% set image.class = "Banner-image" %}
-                {% do image.prioritize({ media: "(min-width: " ~ (maxWidth + 1) ~ "px)" }) %}
+                {# Adjust the image based on the largest image size aspect ratio #}
+                {% set largestSize = bannerImageSizes|last %}
+                {% if largestSize|length > 0 %}
+                    {% do image.prioritize({ media: "(min-width: " ~ (largestSize.maxWidth + 1) ~ "px)" }) %}
+                    {% do image.crop({ar: largestSize.maxWidth ~ 'x' ~ largestSize.maxHeight, crop: imageCropAlignment}) %}
+                {% endif %}
                 {{ image.tag }}
             {% elseif mediaType == 'Video' and video %}
                 <video class="Banner-video" autoplay muted loop playsinline src="{{ video.src }}"></video>
