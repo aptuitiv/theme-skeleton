@@ -14,11 +14,6 @@
     padding: var(--Header-paddingVertical--sm) var(--Header-paddingHorizontal--sm);
 }
 
-.Header-logoLink {
-    display: block;
-    width: max-content;
-}
-
 .Header-logo {
     max-width: var(--Header-logo-width);
     width: 100%;
