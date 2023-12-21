@@ -19,16 +19,20 @@
     padding: var(--Footer-paddingVertical--sm) var(--Footer-paddingHorizontal--sm);
 }
 
+/* postcss-bem-linter: ignore */
 .Footer * {
     color: var(--Footer-color);
     text-decoration: none;
 }
 
+/* postcss-bem-linter: ignore */
 .Footer a:focus-visible {
     color: var(--Footer-color--hover);
 }
 
 @media (hover: hover) and (pointer: fine) {
+
+    /* postcss-bem-linter: ignore */
     .Footer a:hover {
         color: var(--Footer-color--hover);
     }
