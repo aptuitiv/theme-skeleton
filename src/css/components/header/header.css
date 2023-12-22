@@ -19,6 +19,11 @@
     width: 100%;
 }
 
+.Header-logoLink {
+    display: contents; /* This fixes an issue where in Firefox the link tag would collapse around and SVG logo. */
+    text-decoration: none;
+}
+
 .Header-nav {
     overflow: visible !important;
 }
