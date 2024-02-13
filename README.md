@@ -1,12 +1,15 @@
 # theme-skeleton
+
 A basic starting point for an Aptuitiv theme.
 
 ## Usage
+
 The goal of this theme is to be copied to another repository for the site you're working on. From there, you can install it on the website, and edit it as needed.
 
 ## Installation
 
 ### Set Up Repo
+
 You'll want to create a new git repository for the site that this is being installed to. Copy the contents of this repo to that repo. That will allow you to make modifications that only affect that website.
 
 From that folder, you'll need to install the dependencies, run an initial build, and set up FTP. You can set up FTP using [create-ftp-env](https://github.com/aptuitiv/create-ftp-env) or by following the [FTP section below](#ftp). When prompted for credentials, you can find them in the CMS under Settings -> Domain / FTP / DNS.
@@ -18,6 +21,7 @@ create-ftp-env
 ```
 
 ### Preparing the CMS
+
 Before deploying, you'll want to log into the CMS for the new site and do the following. These prepare the CMS for deploying the theme files.
 
 1. Turn on **SSL** by enabling "My site supports SSL", "Entire public site is secure", and "Entire administration is secure" from Settings -> Security.
@@ -40,9 +44,11 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
 1. Set a sensible **Admin Theme** under Settings -> Admin Theme.
 
 ### Deploying the Theme
+
 Deploy the theme files using the `gulp deploy` command and wait until completed (~30 seconds).
 
 ### Configuring the Theme
+
 To finish the installation, you'll need to configure some basic options of the theme.
 
 1. Update the **Company Information** under Settings -> Company Information.
@@ -57,12 +63,15 @@ To finish the installation, you'll need to configure some basic options of the t
 You've now got an instance of Skeleton installed and configured on your new site. From here you can customize the styles in the *Theme Editor* or make template changes.
 
 ## Making Changes
+
 If you want to make changes, all you have to do is run `gulp watch` while making all file changes. They will be deployed automatically.
 
 ## FTP
+
 We recommend using [create-ftp-env](https://github.com/aptuitiv/create-ftp-env) for generating the `.env` file automatically.
 
 You can alternatively create a manual `.env` file with the following data instead:
+
 ```.env
 FTP_ENVIRONMENT = live
 FTP_SERVER = ftp1.branchcms.com
