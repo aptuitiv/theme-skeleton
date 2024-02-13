@@ -351,6 +351,63 @@
                                     {
                                         "value": "4",
                                         "default": false
+                                    },
+                                    {
+                                        "value": "5",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "6",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "imageAspectRatio",
+                                "name": "Image aspect ratio",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "Auto",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "1x1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "5x4",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "4x3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "7x5",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3x2",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "16x9",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "2x1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "7x3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3x1",
+                                        "default": false
                                     }
                                 ]
                             },
@@ -430,6 +487,10 @@
                                 "description": "",
                                 "options": [
                                     {
+                                        "value": "Auto",
+                                        "default": false
+                                    },
+                                    {
                                         "value": "2",
                                         "default": false
                                     },
@@ -439,6 +500,59 @@
                                     },
                                     {
                                         "value": "4",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "5",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "6",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "imageAspectRatio",
+                                "name": "Image aspect ratio",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "1x1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "5x4",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "4x3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "7x5",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3x2",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "16x9",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "2x1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "7x3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3x1",
                                         "default": false
                                     }
                                 ]
@@ -1120,9 +1234,7 @@
             "availableOnSnippets": true,
             "availableOnContentAreas": "specific",
             "parseOnRequest": true,
-            "contentAreas": [
-                "banner"
-            ],
+            "contentAreas": ["banner"],
             "fields": [
                 {
                     "key": "mediaType",
@@ -1153,6 +1265,28 @@
                         "path": "/images/banner",
                         "width": 2000
                     }
+                },
+                {
+                    "key": "imageCropAlignment",
+                    "name": " Image crop alignment",
+                    "description": "",
+                    "type": "select",
+                    "size": "medium",
+                    "value": "",
+                    "values": [
+                        {
+                            "value": "Center",
+                            "default": false
+                        },
+                        {
+                            "value": "Top",
+                            "default": false
+                        },
+                        {
+                            "value": "Bottom",
+                            "default": false
+                        }
+                    ]
                 },
                 {
                     "key": "video",
@@ -1328,19 +1462,14 @@
             "name": "One Column",
             "default": true,
             "adminBar": true,
-            "contentAreas": [
-                "banner"
-            ]
+            "contentAreas": ["banner"]
         },
         {
             "key": "two-column",
             "name": "Two Column",
             "default": false,
             "adminBar": true,
-            "contentAreas": [
-                "banner",
-                "sidebar"
-            ]
+            "contentAreas": ["banner", "sidebar"]
         },
         {
             "key": "404",
