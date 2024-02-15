@@ -299,7 +299,7 @@
                             "name": "bannerTitleTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -340,6 +340,22 @@
                             }
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "Body",
+            "description": "Base styles for the website body. See the Typography section for core font styles.",
+            "fields": [
+                {
+                    "name": "bodyBackground",
+                    "label": "Background color",
+                    "type": "color",
+                    "default": "#ffffff",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--base-body-background"
+                    }
                 }
             ]
         },
@@ -434,7 +450,7 @@
                             "name": "buttonTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -766,7 +782,7 @@
                             "name": "footerNavTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -994,7 +1010,7 @@
                             "name": "formLabelTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -1147,7 +1163,7 @@
                             "name": "formOverlayTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -1457,7 +1473,7 @@
                             "name": "mainNavTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -1717,7 +1733,7 @@
                             "name": "dropdownTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -2089,7 +2105,7 @@
                             "name": "notificationTitleTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -2411,7 +2427,7 @@
                             "name": "modalTitleTextTransform",
                             "label": "Text case",
                             "type": "select",
-                            "default": "uppercase",
+                            "default": "none",
                             "options": {
                                 "none": "Default",
                                 "capitalize": "Capitalize",
@@ -2580,6 +2596,17 @@
                             }
                         },
                         {
+                            "name": "linkTypographyFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "400",
+                            "fontFamilyField": "themeTypographyFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-link-fontWeight"
+                            }
+                        },
+                        {
                             "name": "baseTypographyLinkTextDecoration",
                             "label": "Text decoration",
                             "type": "select",
@@ -2620,71 +2647,38 @@
                     ]
                 },
                 {
-                    "name": "Headings",
+                    "name": "H1",
                     "fields": [
                         {
-                            "name": "themeTypographyHeadingFontFamily",
+                            "name": "baseTypographyH1Color",
+                            "label": "Color",
+                            "type": "color",
+                            "default": "#920504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--theme-typography-h1-color"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH1FontFamily",
                             "label": "Font family",
                             "type": "fontFamily",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--theme-typography-heading-fontFamily"
+                                "cssVariable": "--base-typography-h1-fontFamily"
                             }
                         },
                         {
-                            "name": "baseTypographyHeadingFontWeight",
+                            "name": "baseTypographyH1FontWeight",
                             "label": "Font weight",
                             "type": "fontWeight",
                             "default": "700",
                             "fontFamilyField": "themeTypographyHeadingFontFamily",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--base-typography-heading-fontWeight"
+                                "cssVariable": "--base-typography-h1-fontWeight"
                             }
                         },
-                        {
-                            "name": "baseTypographyHeadingLetterSpacing",
-                            "label": "Letter spacing",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--base-typography-heading-letterSpacing",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "baseTypographyHeadingTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "uppercase",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--base-typography-heading-textTransform"
-                            }
-                        },
-                        {
-                            "name": "themeTypographyHeadingColor",
-                            "label": "Heading color",
-                            "type": "color",
-                            "default": "#920504",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--theme-typography-heading-color"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "H1",
-                    "fields": [
                         {
                             "name": "baseTypographyH1FontSize",
                             "label": "Font size",
@@ -2698,6 +2692,18 @@
                             }
                         },
                         {
+                            "name": "baseTypographyH1LetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h1-letterSpacing",
+                                "template": "{{ value }}px"
+                            }
+                        },
+                        {
                             "name": "baseTypographyH1LineHeight",
                             "label": "Line height",
                             "type": "stepper",
@@ -2708,6 +2714,22 @@
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h1-lineHeight"
                             }
+                        },
+                        {
+                            "name": "baseTypographyH1TextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h1-textTransform"
+                            }
                         }
                     ]
                 },
@@ -2715,15 +2737,57 @@
                     "name": "H2",
                     "fields": [
                         {
+                            "name": "baseTypographyH2Color",
+                            "label": "Color",
+                            "type": "color",
+                            "default": "#920504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--theme-typography-h2-color"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH2FontFamily",
+                            "label": "Font family",
+                            "type": "fontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h2-fontFamily"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH2FontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "700",
+                            "fontFamilyField": "themeTypographyHeadingFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h2-fontWeight"
+                            }
+                        },
+                        {
                             "name": "baseTypographyH2FontSize",
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "25",
+                            "default": "27",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h2-fontSize",
                                 "template": "{{ value / 10 }}rem"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH2LetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h2-letterSpacing",
+                                "template": "{{ value }}px"
                             }
                         },
                         {
@@ -2737,6 +2801,22 @@
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h2-lineHeight"
                             }
+                        },
+                        {
+                            "name": "baseTypographyH2TextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h2-textTransform"
+                            }
                         }
                     ]
                 },
@@ -2744,15 +2824,57 @@
                     "name": "H3",
                     "fields": [
                         {
+                            "name": "baseTypographyH3Color",
+                            "label": "Color",
+                            "type": "color",
+                            "default": "#920504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--theme-typography-h3-color"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH3FontFamily",
+                            "label": "Font family",
+                            "type": "fontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h3-fontFamily"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH3FontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "700",
+                            "fontFamilyField": "themeTypographyHeadingFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h3-fontWeight"
+                            }
+                        },
+                        {
                             "name": "baseTypographyH3FontSize",
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "23",
+                            "default": "27",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h3-fontSize",
                                 "template": "{{ value / 10 }}rem"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH3LetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h3-letterSpacing",
+                                "template": "{{ value }}px"
                             }
                         },
                         {
@@ -2766,6 +2888,22 @@
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h3-lineHeight"
                             }
+                        },
+                        {
+                            "name": "baseTypographyH3TextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h3-textTransform"
+                            }
                         }
                     ]
                 },
@@ -2773,15 +2911,57 @@
                     "name": "H4",
                     "fields": [
                         {
+                            "name": "baseTypographyH4Color",
+                            "label": "Color",
+                            "type": "color",
+                            "default": "#920504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--theme-typography-h4-color"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH4FontFamily",
+                            "label": "Font family",
+                            "type": "fontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h4-fontFamily"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH4FontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "700",
+                            "fontFamilyField": "themeTypographyHeadingFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h4-fontWeight"
+                            }
+                        },
+                        {
                             "name": "baseTypographyH4FontSize",
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "20",
+                            "default": "27",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h4-fontSize",
                                 "template": "{{ value / 10 }}rem"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH4LetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h4-letterSpacing",
+                                "template": "{{ value }}px"
                             }
                         },
                         {
@@ -2795,6 +2975,22 @@
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h4-lineHeight"
                             }
+                        },
+                        {
+                            "name": "baseTypographyH4TextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h4-textTransform"
+                            }
                         }
                     ]
                 },
@@ -2802,15 +2998,57 @@
                     "name": "H5",
                     "fields": [
                         {
+                            "name": "baseTypographyH5Color",
+                            "label": "Color",
+                            "type": "color",
+                            "default": "#920504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--theme-typography-h5-color"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH5FontFamily",
+                            "label": "Font family",
+                            "type": "fontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h5-fontFamily"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH5FontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "700",
+                            "fontFamilyField": "themeTypographyHeadingFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h5-fontWeight"
+                            }
+                        },
+                        {
                             "name": "baseTypographyH5FontSize",
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "18",
+                            "default": "27",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h5-fontSize",
                                 "template": "{{ value / 10 }}rem"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH5LetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h5-letterSpacing",
+                                "template": "{{ value }}px"
                             }
                         },
                         {
@@ -2824,6 +3062,22 @@
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h5-lineHeight"
                             }
+                        },
+                        {
+                            "name": "baseTypographyH5TextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h5-textTransform"
+                            }
                         }
                     ]
                 },
@@ -2831,15 +3085,57 @@
                     "name": "H6",
                     "fields": [
                         {
+                            "name": "baseTypographyH6Color",
+                            "label": "Color",
+                            "type": "color",
+                            "default": "#920504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--theme-typography-h6-color"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH6FontFamily",
+                            "label": "Font family",
+                            "type": "fontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h6-fontFamily"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH6FontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "default": "700",
+                            "fontFamilyField": "themeTypographyHeadingFontFamily",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h6-fontWeight"
+                            }
+                        },
+                        {
                             "name": "baseTypographyH6FontSize",
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "18",
+                            "default": "27",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h6-fontSize",
                                 "template": "{{ value / 10 }}rem"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH6LetterSpacing",
+                            "label": "Letter spacing",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h6-letterSpacing",
+                                "template": "{{ value }}px"
                             }
                         },
                         {
@@ -2852,6 +3148,22 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h6-lineHeight"
+                            }
+                        },
+                        {
+                            "name": "baseTypographyH6TextTransform",
+                            "label": "Text case",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "Default",
+                                "capitalize": "Capitalize",
+                                "uppercase": "UPPERCASE",
+                                "lowercase": "lowercase"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--base-typography-h6-textTransform"
                             }
                         }
                     ]

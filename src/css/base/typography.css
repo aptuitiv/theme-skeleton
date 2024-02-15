@@ -108,6 +108,7 @@ blockquote p:last-child {
 
 a {
     color: var(--base-typography-link-color);
+    font-weight: var(--base-typography-link-fontWeight);
     text-decoration: var(--base-typography-link-textDecoration);
     transition: all 250ms;
 }
@@ -193,47 +194,71 @@ h6,
 .h4,
 .h5,
 .h6 {
-    color: var(--theme-typography-heading-color);
-    font-family: var(--theme-typography-heading-fontFamily);
-    font-weight: var(--base-typography-heading-fontWeight);
-    letter-spacing: var(--base-typography-heading-letterSpacing);
     margin: var(--base-typography-spacing) 0 calc(var(--base-typography-spacing) / 2);
-    text-transform: var(--base-typography-heading-textTransform);
 }
 
 h1,
 .h1 {
+    color: var(--theme-typography-h1-color);
+    font-family: var(--base-typography-h1-fontFamily);
     font-size: var(--base-typography-h1-fontSize);
+    font-weight: var(--base-typography-h1-fontWeight);
+    letter-spacing: var(--base-typography-h1-letterSpacing);
     line-height: var(--base-typography-h1-lineHeight);
-    margin-top: 0;
+    text-transform: var(--base-typography-h1-textTransform);
 }
 
 h2,
 .h2 {
+    color: var(--theme-typography-h2-color);
+    font-family: var(--base-typography-h2-fontFamily);
     font-size: var(--base-typography-h2-fontSize);
+    font-weight: var(--base-typography-h2-fontWeight);
+    letter-spacing: var(--base-typography-h2-letterSpacing);
     line-height: var(--base-typography-h2-lineHeight);
+    text-transform: var(--base-typography-h2-textTransform);
 }
 
 h3,
 .h3 {
+    color: var(--theme-typography-h3-color);
+    font-family: var(--base-typography-h3-fontFamily);
     font-size: var(--base-typography-h3-fontSize);
+    font-weight: var(--base-typography-h3-fontWeight);
+    letter-spacing: var(--base-typography-h3-letterSpacing);
     line-height: var(--base-typography-h3-lineHeight);
+    text-transform: var(--base-typography-h3-textTransform);
 }
 
 h4,
 .h4 {
+    color: var(--theme-typography-h4-color);
+    font-family: var(--base-typography-h4-fontFamily);
     font-size: var(--base-typography-h4-fontSize);
+    font-weight: var(--base-typography-h4-fontWeight);
+    letter-spacing: var(--base-typography-h4-letterSpacing);
     line-height: var(--base-typography-h4-lineHeight);
+    text-transform: var(--base-typography-h4-textTransform);
 }
 
 h5,
 .h5 {
+    color: var(--theme-typography-h5-color);
+    font-family: var(--base-typography-h5-fontFamily);
     font-size: var(--base-typography-h5-fontSize);
+    font-weight: var(--base-typography-h5-fontWeight);
+    letter-spacing: var(--base-typography-h5-letterSpacing);
     line-height: var(--base-typography-h5-lineHeight);
+    text-transform: var(--base-typography-h5-textTransform);
 }
 
 h6,
 .h6 {
+    color: var(--theme-typography-h6-color);
+    font-family: var(--base-typography-h6-fontFamily);
     font-size: var(--base-typography-h6-fontSize);
+    font-weight: var(--base-typography-h6-fontWeight);
+    letter-spacing: var(--base-typography-h6-letterSpacing);
     line-height: var(--base-typography-h6-lineHeight);
+    text-transform: var(--base-typography-h6-textTransform);
 }
