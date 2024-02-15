@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 /**
  * Get a cookie value
+ *
  * @param {string} cname Cookie name
- * @returns string
+ * @returns {string}
  */
 const getCookieValue = (cname) => {
     const b = document.cookie.match(`(^|;)\\s*${cname}\\s*=\\s*([^;]+)`);
@@ -10,6 +12,7 @@ const getCookieValue = (cname) => {
 
 /**
  * Set a cookie
+ *
  * @param {string} cname Cookie name
  * @param {string} cvalue Cookie value
  * @param {number} exdays Number of days to set cookie for
@@ -32,10 +35,11 @@ const setCookie = (cname, cvalue, exdays) => {
 const setupNotifications = () => {
     const notification = document.querySelector('.js-notification');
     const close = document.querySelector('.js-notificationClose');
-    if (close != undefined) {
+    if (close !== null) {
         close.addEventListener('click', () => {
             notification.classList.add('hidden');
             if (typeof notificationBarCookieExpirationDuration !== 'undefined') {
+                // eslint-disable-next-line no-undef
                 setCookie(`notificationMsgHide${notification.dataset.id}`, 'hidden', notificationBarCookieExpirationDuration);
             } else {
                 setCookie(`notificationMsgHide${notification.dataset.id}`, 'hidden', 10);

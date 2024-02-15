@@ -8,17 +8,24 @@
 
 // eslint-disable-next-line
 const smallScreenNav = {
+    /**
+     * Holds the button object
+     *
+     * @type {Element}
+     */
     button: null,
     /**
      * Holds the navigation object
-     * @type jQuery
+     *
+     * @type {Element}
      * @private
      */
     nav: null,
 
     /**
      * The max window width where the small screen navigation is shown
-     * @type number
+     *
+     * @type {number}
      * @private
      */
     width: 1050,
@@ -48,7 +55,9 @@ const smallScreenNav = {
             }
         });
 
-        // Function to toggle showing and hiding the small screen navigation
+        /**
+         * Function to toggle showing and hiding the small screen navigation
+         */
         function toggleNav() {
             button.classList.toggle('is-active');
             if (nav.style.display === 'flex') {
@@ -116,7 +125,8 @@ const navAccess = {
 
     /**
      * Sets up the menu for accessibility
-     * @param {Element} menu
+     *
+     * @param {Element} menu The menu element to set up
      */
     setupMenu(menu) {
         const nav = menu.querySelectorAll('.js-navLink');
@@ -168,9 +178,11 @@ const navAccess = {
 
     /**
      * Move the focus to the next/previous element
+     *
      * @param {object} event The event that triggered the focus
      * @param {Element} el The target of the keydown event
      * @param {boolean} [next] Whether or not moving to the next item
+     * @param {boolean} jumping Whether jumping to the next/previous top level navigation link
      */
     focus(event, el, next, jumping) {
         let focusEl = null;
@@ -228,7 +240,8 @@ const navAccess = {
 
     /**
      * Activates a drop down
-     * @param {Element} el
+     *
+     * @param {Element} el The element to activate
      */
     activate(el) {
         if (el.classList.contains('js-dropdownParent')) {
@@ -240,7 +253,8 @@ const navAccess = {
 
     /**
      * Deactivates a drop down
-     * @param {Element} el
+     *
+     * @param {Element} el The element to deactivate
      */
     deactivateParent(el) {
         const parent = this.getParent(el);
@@ -249,7 +263,12 @@ const navAccess = {
         parent.setAttribute('aria-expanded', 'false');
     },
 
-    // Returns returns true is the first element of a dropdown list
+    /**
+     * Returns returns true is the first element of a dropdown list
+     *
+     * @param {Element} el The element to check
+     * @returns {boolean}
+     */
     isDropdownFirst(el) {
         const dropdownNavs = Array.prototype.slice.call(
             this.getParent(el).parentNode.querySelectorAll('.js-navLink'),
@@ -258,14 +277,25 @@ const navAccess = {
         return dropdownNavs.indexOf(el) === 1;
     },
 
-    // Returns true if the last element of a dropdown
+    /**
+     * Returns true if the last element of a dropdown
+     *
+     * @param {Element} el The element to check
+     * @returns {boolean}
+     */
     isDropdownLast(el) {
         const dropdownNavs = Array.prototype.slice.call(
             this.getParent(el).parentNode.querySelectorAll('.js-navLink'),
         ); // get all children links in dropdown
         return dropdownNavs.indexOf(el) === dropdownNavs.length - 1; // if it is the last link
     },
-    // Returns the index of this link out of all other navLinks
+
+    /**
+     * Returns the index of this link out of all other navLinks
+     *
+     * @param {Element} el The element to work with
+     * @returns {number}
+     */
     getLinkIndex(el) {
         const list = Array.prototype.slice.call(
             document.querySelectorAll('.js-navLink'),
@@ -273,13 +303,23 @@ const navAccess = {
         return list.indexOf(el);
     },
 
-    // Returns the index of the parent top level navigation
+    /**
+     * Returns the index of the parent top level navigation
+     *
+     * @param {Element} el The element to work with
+     * @returns {number}
+     */
     getParentIndex(el) {
         const list = Array.prototype.slice.call(el.parentNode.children);
         return list.indexOf(el);
     },
 
-    // Returns the previous navLink
+    /**
+     * Returns the previous navLink
+     *
+     * @param {Element} el The element to work with
+     * @returns {Element}
+     */
     getPrevLink(el) {
         const list = Array.prototype.slice.call(
             document.querySelectorAll('.js-navLink'),
@@ -287,7 +327,12 @@ const navAccess = {
         return list[this.getLinkIndex(el) - 1];
     },
 
-    // Returns the next navLink
+    /**
+     *  Returns the next navLink
+     *
+     * @param {Element} el The element to work with
+     * @returns {Element}
+     */
     getNextLink(el) {
         const list = Array.prototype.slice.call(
             document.querySelectorAll('.js-navLink'),
@@ -295,7 +340,12 @@ const navAccess = {
         return list[this.getLinkIndex(el) + 1];
     },
 
-    // Returns the parent navigation link
+    /**
+     *  Returns the parent navigation link
+     *
+     * @param {Element} el The element to work with
+     * @returns {Element}
+     */
     getParent(el) {
         let node = el;
         while (node !== document.body) {
@@ -310,19 +360,30 @@ const navAccess = {
         return this.getLink(node);
     },
 
-    // Returns the direct sibling navigation link before the active one
+    /**
+     *  Returns the direct sibling navigation link before the active one
+     *
+     * @param {Element} el The element to work with
+     * @returns {Element}
+     */
     getPrevInLevel(el) {
         return this.getLink(el.parentNode.previousElementSibling);
     },
 
-    // Returns the direct sibling navigation link after the active one
+    /**
+     *  Returns the direct sibling navigation link after the active one
+     *
+     * @param {Element} el The element to work with
+     * @returns {Element}
+     */
     getNextInLevel(el) {
         return this.getLink(el.parentNode.nextElementSibling);
     },
 
     /**
      * Gets the first navigation in the element
-     * @param {Element} el
+     *
+     * @param {Element} el The element to work with
      * @returns {Element}
      */
     getLink(el) {
