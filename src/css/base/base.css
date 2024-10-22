@@ -106,7 +106,3 @@ button:focus {
 [hidden] {
     display: none !important;
 }
-
-main {
-    overflow: hidden;
-}
