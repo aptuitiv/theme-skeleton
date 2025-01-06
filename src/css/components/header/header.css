@@ -28,7 +28,7 @@
     overflow: visible !important;
 }
 
-@media (--c-bp-lg) {
+@media (--m-lg) {
     .Header {
         padding: var(--Header-paddingVertical) var(--Header-paddingHorizontal);
     }

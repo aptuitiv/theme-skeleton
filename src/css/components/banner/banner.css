@@ -97,7 +97,7 @@
     text-align: right !important;
 }
 
-@media (--c-bp-lg) {
+@media (--m-lg) {
     .Banner-fg {
         padding: var(--Banner-paddingTop) var(--Banner-paddingHorizontal) var(--Banner-paddingBottom);
     }

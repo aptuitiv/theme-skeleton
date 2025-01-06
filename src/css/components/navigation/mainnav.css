@@ -69,7 +69,7 @@
     Responsive
 \* ------------------------------------ */
 
-@media (--c-bp-xl) {
+@media (--m-xl) {
     .MainNav {
         display: flex;
         flex-direction: row;

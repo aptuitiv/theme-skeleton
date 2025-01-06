@@ -57,7 +57,7 @@
     Responsive
 \* ------------------------------------ */
 
-@media (--c-bp-lg) {
+@media (--m-lg) {
     .Footer {
         padding: var(--Footer-paddingVertical) var(--Footer-paddingHorizontal);
     }

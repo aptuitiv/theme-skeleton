@@ -62,7 +62,7 @@ body {
     line-height: var(--base-typography-lineHeight);
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     body {
         font-size: var(--base-typography-fontSize);
     }
