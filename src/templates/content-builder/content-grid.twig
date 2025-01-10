@@ -6,8 +6,10 @@
         {% set count = columns|length %}
     {% endif %}
 
+    {% set ncClass = "nc-1" %}
     {% if count % 4 == 0 %}
         {% set class = 'col-1-4 col-1-3-lg col-1-2-md col-1-1' %}
+        {% set ncClass = "nc-1 nc-3-lg" %}
     {% elseif count % 3 == 0 %}
         {% set class = 'col-1-3 col-1-2-md col-1-1' %}
     {% elseif count == 2 %}
@@ -18,7 +20,7 @@
         {% set class = 'col-1-1' %}
     {% endif %}
 
-    <div class="grid g-3 ContentGrid">
+    <div class="grid g-3 ContentGrid {{ ncClass }}">
         {% for column in columns %}
             <div class="{{ class }} ContentGrid-cell">
                 <div class="ContentGrid-item">
