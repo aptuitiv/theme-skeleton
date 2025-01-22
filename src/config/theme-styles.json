@@ -2478,190 +2478,163 @@
         {
             "name": "Main Navigation",
             "description": "Styles for the main website navigation.",
-            "sections": [
-                {
-                    "name": "General",
-                    "fields": [
-                        {
-                            "name": "mainNavFontFamily",
-                            "label": "Font family",
-                            "type": "fontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-fontFamily"
-                            }
-                        },
-                        {
-                            "name": "mainNavFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "16",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "mainNavLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.2",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "mainNavTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-textTransform"
-                            }
-                        }
-                    ]
-                },
+            "groups": [
                 {
                     "name": "Items",
                     "fields": [
                         {
+                            "name": "mainNavAlignment",
+                            "label": "Navigation horizontal alignment",
+                            "type": "radio",
+                            "defaultValue": "end",
+                            "options": {
+                                "start": "Left",
+                                "center": "Center",
+                                "end": "Right"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-horizontal-alignment"
+                            }
+                        },
+                        {
                             "name": "mainNavItemGap",
                             "label": "Gap between items",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "10",
-                            "preview": {
+                            "type": "size",
+                            "defaultValue": "20px",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-item-gap",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--MainNav-item-gap"
                             }
                         },
                         {
-                            "name": "mainNavItemPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
+                            "name": "mainNavTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useFontSizeHover": false,
+                            "useTextDecoration": false,
+                            "useTextDecorationHover": false,
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingVertical",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--MainNav"
                             }
                         },
                         {
-                            "name": "mainNavItemPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "25",
-                            "preview": {
+                            "name": "mainNavItemPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "defaultValue": "6px 10px",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--MainNav-item-padding"
                             }
                         },
                         {
-                            "name": "mainNavItemPaddingVerticalSm",
-                            "label": "Vertical padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "10",
-                            "preview": {
+                            "name": "mainNavItemPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "defaultValue": "6px 10px",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingVertical--sm",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--MainNav-item-padding-sm"
                             }
                         },
-                        {
-                            "name": "mainNavItemPaddingHorizontalSm",
-                            "label": "Horizontal padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "25",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingHorizontal--sm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "400",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-item-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemLetterSpacing",
-                            "label": "Letter spacing",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-item-letterSpacing",
-                                "template": "{{ value }}px"
-                            }
-                        },
+
                         {
                             "name": "mainNavLinkBackground",
                             "label": "Background color",
                             "type": "color",
-                            "default": "#00000000",
-                            "preview": {
+                            "render": {
                                 "type": "css-head",
                                 "cssVariable": "--MainNav-link-background"
                             }
                         },
                         {
-                            "name": "mainNavLinkColor",
-                            "label": "Text color",
+                            "name": "mainNavLinkBackgroundHover",
+                            "label": "Background color (hover)",
                             "type": "color",
-                            "default": "#00263E",
-                            "preview": {
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-link-color"
+                                "cssVariable": "--MainNav-link-background-hover"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Items (Hover)",
+                    "name": "Items (small screens)",
                     "fields": [
                         {
-                            "name": "mainNavLinkBackgroundHover",
-                            "label": "Background color (hover)",
+                            "name": "mainNavItemBackgroundSm",
+                            "label": "Background color (small screens)",
                             "type": "color",
-                            "default": "#00000000",
-                            "preview": {
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-link-background--hover"
+                                "cssVariable": "--MainNav-link-background-sm"
                             }
                         },
                         {
-                            "name": "mainNavLinkColorHover",
-                            "label": "Text color (hover)",
+                            "name": "mainNavItemBackgroundHoverSm",
+                            "label": "Hover/active background color (small screens)",
                             "type": "color",
-                            "default": "#6AAC44",
-                            "preview": {
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-link-color--hover"
+                                "cssVariable": "--MainNav-link-background-hover-sm"
+                            }
+                        },
+                        {
+                            "name": "mmainNavItemColorSm",
+                            "label": "Text color (small screens)",
+                            "type": "color",
+                            "defaultValue": "#fff",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-color-sm"
+                            }
+                        },
+                        {
+                            "name": "mainNavItemColorHoverSm",
+                            "label": "Hover/active text color (small screens)",
+                            "type": "color",
+                            "defaultValue": "#fff",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-color-hover-sm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Menu small screen styles",
+                    "fields": [
+                        {
+                            "name": "mainNavBackgroundSm",
+                            "label": "Background (small screens)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-background-sm"
+                            }
+                        },
+                        {
+                            "name": "mainNavMarginSm",
+                            "label": "Margin (small screens)",
+                            "type": "margin",
+                            "defaultValue": "10px 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-margin-sm"
+                            }
+                        },
+                        {
+                            "name": "mainNavPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "defaultValue": "10px 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-padding-sm"
                             }
                         }
                     ]
@@ -2671,52 +2644,47 @@
         {
             "name": "Main Navigation - Dropdowns",
             "description": "Styles for the main navigation dropdowns.",
-            "sections": [
+            "groups": [
                 {
                     "name": "General",
                     "fields": [
                         {
-                            "name": "dropdownPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
+                            "name": "dropdownPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-paddingVertical",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-padding"
                             }
                         },
                         {
                             "name": "dropdownMinWidth",
                             "label": "Minimum width",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "220",
-                            "preview": {
+                            "type": "size",
+                            "allowedUnits": ["px"],
+                            "defaultValue": "220",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-minWidth",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-min-width"
                             }
                         },
                         {
                             "name": "dropdownMaxWidth",
                             "label": "Maximum width",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "300",
-                            "preview": {
+                            "type": "size",
+                            "allowedUnits": ["px"],
+                            "defaultValue": "300",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-maxWidth",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-max-width"
                             }
                         },
                         {
                             "name": "dropdownBackground",
                             "label": "Background color",
                             "type": "color",
-                            "default": "#00000000",
-                            "preview": {
+                            "defaultValue": "#fff",
+                            "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-background"
                             }
@@ -2725,14 +2693,14 @@
                             "name": "dropdownLeft",
                             "label": "Position",
                             "type": "select",
-                            "default": "0",
+                            "defaultValue": "0",
                             "options": {
                                 "0": "Left",
                                 "-50%": "Center"
                             },
-                            "preview": {
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-left"
+                                "template": ":root {--Dropdown-left: {{ value }}; --Dropdown-transform: {% if value == '50%' %}translateX(-50%){% else %}none{% endif %};}"
                             }
                         }
                     ]
@@ -2741,153 +2709,59 @@
                     "name": "Links",
                     "fields": [
                         {
-                            "name": "dropdownFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "17",
-                            "preview": {
+                            "name": "dropdownLinkTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-fontSize",
-                                "template": "{{ value / 10 }}rem"
+                                "cssVariable": "--Dropdown-link"
                             }
                         },
                         {
-                            "name": "dropdownFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "400",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
+                            "name": "dropdownLinkPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "defaultValue": "6px 25px",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "dropdownLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.2",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "dropdownTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-textTransform"
-                            }
-                        },
-                        {
-                            "name": "dropdownTextAlign",
-                            "label": "Text alignment",
-                            "type": "select",
-                            "default": "center",
-                            "options": {
-                                "left": "Left",
-                                "center": "Center"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-textAlign"
-                            }
-                        },
-                        {
-                            "name": "dropdownLinkLetterSpacing",
-                            "label": "Letter spacing",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-letterSpacing",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "dropdownLinkPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "12",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-paddingVertical",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "dropdownLinkPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "30",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-link-padding"
                             }
                         },
                         {
                             "name": "mainNavDropdownBackground",
                             "label": "Background color",
                             "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "defaultValue": "#008576",
+                            "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-link-background"
                             }
                         },
                         {
-                            "name": "mainNavDropdownColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#00263e",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-color"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Links (Hover)",
-                    "fields": [
-                        {
                             "name": "navDropdownBackgroundHover",
                             "label": "Background color (hover)",
                             "type": "color",
-                            "default": "#600303",
-                            "preview": {
+                            "defaultValue": "#591108",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-background--hover"
+                                "cssVariable": "--Dropdown-link-background-hover"
                             }
                         },
                         {
-                            "name": "mainNavDropdownColorHover",
-                            "label": "Text color (hover)",
-                            "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "name": "navDropdownArrowOffset",
+                            "label": "Right offset for the arrow if a dropdown as sub navigation",
+                            "type": "size",
+                            "defaultValue": "10px",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-color--hover"
+                                "cssVariable": "--Dropdown-arrow-offset"
                             }
                         }
                     ]
                 },
+
                 {
                     "name": "Links (Small Screens)",
                     "fields": [
@@ -2895,20 +2769,20 @@
                             "name": "navDropdownBackgroundSm",
                             "label": "Background color (small screens)",
                             "type": "color",
-                            "default": "#6c9d41",
-                            "preview": {
+                            "defaultValue": "#008576",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-background--sm"
+                                "cssVariable": "--Dropdown-link-background-sm"
                             }
                         },
                         {
                             "name": "mainNavDropdownColorSm",
                             "label": "Text color (small screens)",
                             "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "defaultValue": "#fff",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-color--sm"
+                                "cssVariable": "--Dropdown-link-color-sm"
                             }
                         }
                     ]
@@ -2923,8 +2797,7 @@
                     "name": "smScBtnBackground",
                     "label": "Background color",
                     "type": "color",
-                    "default": "#0000001a",
-                    "preview": {
+                    "render": {
                         "type": "css-head",
                         "cssVariable": "--SmScBtn-background"
                     }
@@ -2933,8 +2806,8 @@
                     "name": "smScBtnColor",
                     "label": "Hamburger color",
                     "type": "color",
-                    "default": "#fff",
-                    "preview": {
+                    "defaultValue": "#008576",
+                    "render": {
                         "type": "css-head",
                         "cssVariable": "--SmScBtn-color"
                     }
