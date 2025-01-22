@@ -1,17 +1,23 @@
+/**
+ * Styles for this website
+ * App styles should come after components because sometimes they need to override
+ * component styles.
+ */
+
+@import './base';
+@import './components';
+
 /* =========================================================================== *\
     Cacao CSS
 
-    To be included by a project to selectively include modules.
+    The Cacao styles need to come after site styles so that they can override
+    where necessary. For example, the "hidden" style should be able to override
+    some styles when it's added to an element.
 
-    Ideally located at "my-project/src/css/main.css".
-
-    Most imports are commented out by default. You should uncomment
-    modules that your project needs. This keeps the CSS lean and mean.
+    https://aptuitiv.github.io/cacao/import
 \* =========================================================================== */
 
-/* stylelint-disable */
-
-/* Config */
+/* Media queries */
 @import 'cacao-css/dist/media.css';
 
 /* Reset */
@@ -20,64 +26,29 @@
 /* Base */
 @import 'cacao-css/dist/base.css';
 
-/* Embed */
-@import 'cacao-css/dist/embed/embed.css';
+/* --------------------------------------------*
+   Aspect Ratios
+ * ------------------------------------------- */
 
-/* Aspect Ratios */
 @import 'cacao-css/dist/aspect/horizontal.css';
 
-/* Images */
-@import 'cacao-css/dist/image/image.css';
+/* --------------------------------------------*
+   Clearfix
+ * ------------------------------------------- */
 
-/* Clearfix */
 @import 'cacao-css/dist/clearfix/clearfix.css';
 
-/* Fit */
-@import 'cacao-css/dist/fit/fit.css';
+/* --------------------------------------------*
+   Display
+ * ------------------------------------------- */
 
-/* Links */
-@import 'cacao-css/dist/link/link.css';
-
-/* Spacing */
-@import 'cacao-css/dist/spacing/spacing.css';
-
-/* Height and width */
-@import 'cacao-css/dist/height/height-1.css';
-@import 'cacao-css/dist/width/width-1.css';
-
-/* Height and width (sm) */
-/* @import 'cacao-css/dist/height/sm/height-1.css';
-@import 'cacao-css/dist/width/sm/width-1.css'; */
-
-/* Height and width (md) */
-/* @import 'cacao-css/dist/height/md/height-1.css';
-@import 'cacao-css/dist/width/md/width-1.css'; */
-
-/* Height and width (lg) */
-@import 'cacao-css/dist/height/lg/height-1.css';
-@import 'cacao-css/dist/width/lg/width-1.css';
-
-/* Height and width (xl) */
-/* @import 'cacao-css/dist/height/xl/height-1.css';
-@import 'cacao-css/dist/width/xl/width-1.css'; */
-
-/* Typography */
-@import 'cacao-css/dist/typography/align.css';
-@import 'cacao-css/dist/typography/transform.css';
-
-/* Typography (lg) */
-@import 'cacao-css/dist/typography/lg/align.css';
-
-/* Display */
 @import 'cacao-css/dist/display/align.css';
 @import 'cacao-css/dist/display/display.css';
 @import 'cacao-css/dist/display/flex.css';
 @import 'cacao-css/dist/display/justify.css';
 
-/* Display (sm) */
-
 /* Display (md) */
-
+@import 'cacao-css/dist/display/md/flex.css';
 @import 'cacao-css/dist/display/md/justify.css';
 
 /* Display (lg) */
@@ -90,12 +61,23 @@
 /* Display (xl) */
 @import 'cacao-css/dist/display/xl/align.css';
 @import 'cacao-css/dist/display/xl/display.css';
-
 @import 'cacao-css/dist/display/xl/justify.css';
 
 /* --------------------------------------------*
-    Grid
-  * ------------------------------------------- */
+   Embed
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/embed/embed.css';
+
+/* --------------------------------------------*
+   Fit
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/fit/fit.css';
+
+/* --------------------------------------------*
+   Grid
+ * ------------------------------------------- */
 
 @import 'cacao-css/dist/grid/grid.css';
 @import 'cacao-css/dist/grid/num-columns.css';
@@ -110,94 +92,124 @@
 @import 'cacao-css/dist/grid/lg/num-columns.css';
 
 /* --------------------------------------------*
-    Grid Columns
-  * ------------------------------------------- */
+   Grid Columns
+ * ------------------------------------------- */
 
 @import 'cacao-css/dist/grid-column/col-1.css';
 @import 'cacao-css/dist/grid-column/col-2.css';
-
 @import 'cacao-css/dist/grid-column/col-4.css';
 
-/* Grid (sm) */
-
+/* Grid Columns (sm) */
 @import 'cacao-css/dist/grid-column/sm/col-2.css';
 
-/* Grid (md) */
-
+/* Grid Columns (md) */
 @import 'cacao-css/dist/grid-column/md/col-2.css';
 @import 'cacao-css/dist/grid-column/md/col-3.css';
 @import 'cacao-css/dist/grid-column/md/col-4.css';
 @import 'cacao-css/dist/grid-column/md/col-5.css';
 
-/* Grid (lg) */
-
+/* Grid Columns (lg) */
 @import 'cacao-css/dist/grid-column/lg/col-2.css';
 @import 'cacao-css/dist/grid-column/lg/col-3.css';
 @import 'cacao-css/dist/grid-column/lg/col-4.css';
 @import 'cacao-css/dist/grid-column/lg/col-5.css';
 @import 'cacao-css/dist/grid-column/lg/col-6.css';
 
-/* Grid (xl) */
-
+/* Grid Columns (xl) */
 @import 'cacao-css/dist/grid-column/xl/col-3.css';
 @import 'cacao-css/dist/grid-column/xl/col-4.css';
 
-/* Gutter */
+/* --------------------------------------------*
+   Gutter
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/gutter/variables.css';
 @import 'cacao-css/dist/gutter/all.css';
 @import 'cacao-css/dist/gutter/horizontal.css';
 @import 'cacao-css/dist/gutter/vertical.css';
 
-/* Gutter (sm) */
-
-/* Gutter (md) */
-
 /* Gutter (lg) */
 @import 'cacao-css/dist/gutter/lg/all.css';
 
-/* Gutter (xl) */
+/* --------------------------------------------*
+   Height
+ * ------------------------------------------- */
 
-/* Margin */
-@import 'cacao-css/dist/margin/all.css';
-@import 'cacao-css/dist/margin/bottom.css';
-@import 'cacao-css/dist/margin/end.css';
-@import 'cacao-css/dist/margin/horizontal.css';
-@import 'cacao-css/dist/margin/start.css';
-@import 'cacao-css/dist/margin/top.css';
-@import 'cacao-css/dist/margin/vertical.css';
+@import 'cacao-css/dist/height/height-1.css';
 
-/* Margin (sm) */
+/* --------------------------------------------*
+   Images
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/image/variables.css';
+@import 'cacao-css/dist/image/image.css';
+
+/* --------------------------------------------*
+   Links
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/link/link.css';
+
+/* --------------------------------------------*
+   Margin
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/margin/variables.css';
+
+/* Include all Margin files */
+@import 'cacao-css/dist/margin/combined-import';
 
 /* Margin (md) */
+@import 'cacao-css/dist/margin/md/start.css';
 
 /* Margin (lg) */
-
+@import 'cacao-css/dist/margin/lg/bottom.css';
 @import 'cacao-css/dist/margin/lg/top.css';
 
-/* Margin (xl) */
+/* --------------------------------------------*
+   Padding
+ * ------------------------------------------- */
 
-/* Padding */
-@import 'cacao-css/dist/padding/all.css';
-@import 'cacao-css/dist/padding/bottom.css';
-@import 'cacao-css/dist/padding/end.css';
-@import 'cacao-css/dist/padding/horizontal.css';
-@import 'cacao-css/dist/padding/start.css';
-@import 'cacao-css/dist/padding/top.css';
-@import 'cacao-css/dist/padding/vertical.css';
+@import 'cacao-css/dist/padding/variables.css';
 
-/* Padding (sm) */
-
-/* Padding (md) */
+/* Include all Padding files */
+@import 'cacao-css/dist/padding/combined-import';
 
 /* Padding (lg) */
 @import 'cacao-css/dist/padding/lg/all.css';
+@import 'cacao-css/dist/padding/lg/end.css';
+@import 'cacao-css/dist/padding/lg/horizontal.css';
+@import 'cacao-css/dist/padding/lg/start.css';
+@import 'cacao-css/dist/padding/lg/vertical.css';
 
-/* Padding (xl) */
+/* --------------------------------------------*
+   Push
+ * ------------------------------------------- */
 
-/* stylelint-enable */
+/* Push (md) */
+@import 'cacao-css/dist/push/md/push-6.css';
 
-/**
- * Styles for this website
- */
+/* --------------------------------------------*
+   Spacing
+ * ------------------------------------------- */
 
-@import './base';
-@import './components';
+@import 'cacao-css/dist/spacing/spacing.css';
+
+/* --------------------------------------------*
+   Typography
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/typography/align.css';
+@import 'cacao-css/dist/typography/transform.css';
+
+/* Typography (lg) */
+@import 'cacao-css/dist/typography/lg/align.css';
+
+/* --------------------------------------------*
+   Width
+ * ------------------------------------------- */
+
+@import 'cacao-css/dist/width/width-1.css';
+
+/* Width (sm) */
+@import 'cacao-css/dist/width/sm/width-auto.css';

@@ -9,16 +9,14 @@
                         {% if _core.settings.companyPhone %}
                             <div class="mb-5">
                                 <div class="h3 underline-small">Contact</div>
-                                <a href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}">
-                                    {{ _core.settings.companyPhone }}
-                                </a>
+                                <a href="tel:{{ _core.settings.companyPhone|replace({'(': '', '}': '', '-': '', ' ': ''}) }}">{{ _core.settings.companyPhone }}</a>
                             </div>
                         {% endif %}
                         {% if _core.theme.settings.social|first.url %}
                             <div class="h3 underline-small">Social Media</div>
                             <div class="flex gx-1">
                                 {% import 'macros/macros' as macros %}
-                                {% set socialNames = {facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', pinterest: 'Pinterest', twitter: 'Twitter', youtube: 'YouTube'} %}
+                                {% set socialNames = {facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', pinterest: 'Pinterest', x: 'X', youtube: 'YouTube'} %}
                                 {% for social in _core.theme.settings.social %}
                                     <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopenner noreferrer" class="Footer-socialLink">
                                         {{ macros.iconImg(social.icon, attribute(socialNames, social.icon)|default(social.icon), "Footer-icon") }}
@@ -41,7 +39,7 @@
                 </div>
             </div>
         </footer>
-        
+
         {# Do this before you output any inline Javascript in the footer #}
         {% if _core.service.recaptchaV3.isUsable %}
             {% if _page.hasJs('recaptchaV3') == false %}
@@ -61,7 +59,7 @@
         {% endif %}
         {{ _page.js() }}
         {{ _page.bodyEndCode() }}
-        
+
         {# Optional Modal #}
         {% nevercache %}
             {% verbatim %}

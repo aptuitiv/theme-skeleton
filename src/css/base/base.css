@@ -12,7 +12,7 @@
  */
 
 body {
-    background: var(--base-body-background); /* 1 */
+    background: var(--body-background, #fff); /* 1 */
 }
 
 /**
@@ -94,9 +94,7 @@ textarea {
 
 button:focus {
     outline: 1px dotted;
-    /* stylelint-disable */
     outline: 5px auto -webkit-focus-ring-color;
-    /* stylelint-enable */
 }
 
 /**
