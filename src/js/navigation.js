@@ -6,40 +6,20 @@
  * Small screen navigation
  */
 
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars -- This is a global variable
 const smallScreenNav = {
-    /**
-     * Holds the button object
-     *
-     * @type {Element}
-     */
-    button: null,
-    /**
-     * Holds the navigation object
-     *
-     * @type {Element}
-     * @private
-     */
-    nav: null,
-
-    /**
-     * The max window width where the small screen navigation is shown
-     *
-     * @type {number}
-     * @private
-     */
-    width: 1050,
 
     /**
      * Initialization
      */
     init() {
         // The max window width where the small screen navigation is shown
-        const width = 1280;
+        const width = 1024;
 
         // Select elements
+        const body = document.querySelector('body');
         const button = document.querySelector('.js-ssNavBtn');
-        const nav = document.querySelector('.js-mainNav');
+        const nav = document.querySelector('.js-navBar');
         const dropdowns = document.querySelectorAll('.js-dropdown');
 
         // Make sure that the navigation gets displayed if the window resizes.
@@ -60,10 +40,22 @@ const smallScreenNav = {
          */
         function toggleNav() {
             button.classList.toggle('is-active');
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none';
+            if (nav.dataset.open === 'yes') {
+                // Hide the menu
+                nav.dataset.open = 'no';
+                button.setAttribute('aria-expanded', 'false');
+                body.style.overflow = '';
             } else {
-                nav.style.display = 'flex';
+                // Show the menu
+                nav.dataset.open = 'yes';
+                button.setAttribute('aria-expanded', 'true');
+                // Set the offset position for the menu
+                const buttonPosition = button.getBoundingClientRect().top + button.offsetHeight + 10;
+                nav.style.setProperty('--navbar-offset', `${buttonPosition}px`);
+                // Prevent scrolling on the body tag.
+                // Unfortunately, this doesn't work on iOS devices as of 2024. This is a known issue with no good workaround
+                // except to add "position: fixed" to the body tag, but that causes other issues.
+                body.style.overflow = 'hidden';
             }
         }
 
@@ -111,14 +103,13 @@ const smallScreenNav = {
  * Add "js-dropdownParent" class to a <li> tag that contains a sub list for a drop down.
  * Add "js-dropdown" to any link tags that have a drop down.
  */
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars -- This is a global variable
 const navAccess = {
     init() {
         const menus = document.querySelectorAll('[data-access-nav]');
-        const self = this;
         if (menus.length > 0) {
             menus.forEach((menu) => {
-                self.setupMenu(menu);
+                this.setupMenu(menu);
             });
         }
     },
@@ -126,11 +117,10 @@ const navAccess = {
     /**
      * Sets up the menu for accessibility
      *
-     * @param {Element} menu The menu element to set up
+     * @param {Element} menu The menu to work with
      */
     setupMenu(menu) {
         const nav = menu.querySelectorAll('.js-navLink');
-        const self = this;
         let key;
         const next = ['ArrowDown', 'Down', 'Tab', 'Spacebar', ' '];
         const prev = ['ArrowUp', 'Up', 'Tab', 'Spacebar', ' '];
@@ -145,30 +135,30 @@ const navAccess = {
                     // Going forwards
                     if (e.shiftKey) {
                         // Shift key was down
-                        self.focus(e, e.target);
+                        this.focus(e, e.target);
                     } else {
                         // Moving forward
-                        self.focus(e, e.target, true);
+                        this.focus(e, e.target, true);
                     }
                 } else if (prev.indexOf(key) >= 0) {
                     // Going backwards
                     if (e.shiftKey) {
                         // Negating going backwards so going forwards
-                        self.focus(e, e.target, true);
+                        this.focus(e, e.target, true);
                     } else {
-                        self.focus(e, e.target);
+                        this.focus(e, e.target);
                     }
                 } else if (left.indexOf(key) >= 0) {
                     // Jumping backwards
-                    self.focus(e, e.target, false, true);
+                    this.focus(e, e.target, false, true);
                 } else if (right.indexOf(key) >= 0) {
                     // Jumping forwards
-                    self.focus(e, e.target, true, true);
+                    this.focus(e, e.target, true, true);
                 } else if (key === 'Escape') {
                     // Close the menu
-                    const parentLi = self.getParent(e.target).parentNode;
+                    const parentLi = this.getParent(e.target).parentNode;
                     if (parentLi !== null) {
-                        focusEl = self.getLink(parentLi);
+                        focusEl = this.getLink(parentLi);
                         focusEl.focus();
                     }
                 }
@@ -182,7 +172,7 @@ const navAccess = {
      * @param {object} event The event that triggered the focus
      * @param {Element} el The target of the keydown event
      * @param {boolean} [next] Whether or not moving to the next item
-     * @param {boolean} jumping Whether jumping to the next/previous top level navigation link
+     * @param {boolean} jumping Whether or not jumping to the next top level navigation link
      */
     focus(event, el, next, jumping) {
         let focusEl = null;
@@ -248,6 +238,10 @@ const navAccess = {
             el.classList.add('is-active');
             // change the aria-expanded and aria-hidden values on the <ul> tag
             el.querySelector('a').setAttribute('aria-expanded', 'true');
+            const dropdownMenu = el.querySelector('ul.js-dropdownMenu');
+            if (dropdownMenu) {
+                dropdownMenu.setAttribute('aria-hidden', 'false');
+            }
         }
     },
 
@@ -261,13 +255,17 @@ const navAccess = {
         parent.parentNode.classList.remove('is-active');
         // change the aria-expanded and aria-hidden values on the <ul> tag
         parent.setAttribute('aria-expanded', 'false');
+        const dropdownMenu = parent.querySelector('ul.js-dropdownMenu');
+        if (dropdownMenu) {
+            dropdownMenu.setAttribute('aria-hidden', 'true');
+        }
     },
 
     /**
      * Returns returns true is the first element of a dropdown list
      *
-     * @param {Element} el The element to check
-     * @returns {boolean}
+     * @param {Element} el The element to work with
+     * @returns {Element}
      */
     isDropdownFirst(el) {
         const dropdownNavs = Array.prototype.slice.call(
@@ -280,8 +278,8 @@ const navAccess = {
     /**
      * Returns true if the last element of a dropdown
      *
-     * @param {Element} el The element to check
-     * @returns {boolean}
+     * @param {Element} el The element to work with
+     * @returns {Element}
      */
     isDropdownLast(el) {
         const dropdownNavs = Array.prototype.slice.call(
@@ -294,7 +292,7 @@ const navAccess = {
      * Returns the index of this link out of all other navLinks
      *
      * @param {Element} el The element to work with
-     * @returns {number}
+     * @returns {Element}
      */
     getLinkIndex(el) {
         const list = Array.prototype.slice.call(
@@ -307,7 +305,7 @@ const navAccess = {
      * Returns the index of the parent top level navigation
      *
      * @param {Element} el The element to work with
-     * @returns {number}
+     * @returns {Element}
      */
     getParentIndex(el) {
         const list = Array.prototype.slice.call(el.parentNode.children);
@@ -328,7 +326,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the next navLink
+     * Returns the next navLink
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -341,7 +339,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the parent navigation link
+     * Returns the parent navigation link
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -361,7 +359,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the direct sibling navigation link before the active one
+     * Returns the direct sibling navigation link before the active one
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -371,7 +369,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the direct sibling navigation link after the active one
+     * Returns the direct sibling navigation link after the active one
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -383,7 +381,7 @@ const navAccess = {
     /**
      * Gets the first navigation in the element
      *
-     * @param {Element} el The element to work with
+     * @param {Element} el The element to get the link for
      * @returns {Element}
      */
     getLink(el) {
