@@ -1213,11 +1213,28 @@
             ]
         },
         {
-            "name": "Blocks - Image Slider",
-            "description": "Styles for the \"Image Slider\" block.",
+            "name": "Blocks - Image Gallery / Slider",
+            "description": "Styles for the \"Image Gallery\" block. This includes styles when it's displayed as a Grid or as a Slider.",
             "groups": [
                 {
-                    "name": "General",
+                    "name": "Grid - General",
+                    "description": "General styles for the image gallery when it's displayed as a Grid.",
+                    "fields": [
+                        {
+                            "name": "blocksImageGalleryGridMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "defaultValue": "2.5rem 0 2.5rem 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGallery-margin"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Slider - General",
+                    "description": "General styles for the image gallery when it's displayed as a Slider.",
                     "fields": [
                         {
                             "name": "blocksImageSliderMargin",
@@ -1232,7 +1249,8 @@
                     ]
                 },
                 {
-                    "name": "Content",
+                    "name": "Slider - Content",
+                    "description": "Styles for the content that shows on the slider.",
                     "fields": [
                         {
                             "name": "blocksImageSliderContentBackground",
@@ -1272,7 +1290,8 @@
                     ]
                 },
                 {
-                    "name": "Arrows",
+                    "name": "Slider - Arrows",
+                    "description": "Styles for the arrows on the slider.",
                     "fields": [
                         {
                             "name": "blocksImageSliderArrowBackground",
