@@ -108,9 +108,7 @@
                             "label": "Icon size",
                             "type": "size",
                             "defaultValue": "12px",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Accordion-icon-size"
@@ -211,13 +209,28 @@
                             "type": "select",
                             "defaultValue": "center",
                             "options": {
-                                "start": "Left",
+                                "start": "Top",
                                 "center": "Center",
-                                "end": "Right"
+                                "end": "Bottom"
                             },
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Banner-align-vertical"
+                            }
+                        },
+                        {
+                            "name": "bannerContentWithMediaAlignVertical",
+                            "label": "Vertical alignment when there is an image or video",
+                            "type": "select",
+                            "defaultValue": "center",
+                            "options": {
+                                "start": "Top",
+                                "center": "Center",
+                                "end": "Bottom"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-align-vertical-with-media"
                             }
                         },
                         {
@@ -648,8 +661,151 @@
             ]
         },
         {
+            "name": "Blocks - Columned Content",
+            "description": "Styles for the \"Columned Content\" block.",
+            "fields": [
+                {
+                    "name": "blockColumnContentDefaultNumColumns",
+                    "label": "Default number of columns",
+                    "type": "select",
+                    "defaultValue": "3",
+                    "options": {
+                        "2": "2",
+                        "3": "3",
+                        "4": "4",
+                        "5": "5",
+                        "6": "6"
+                    }
+                },
+                {
+                    "name": "blockColumnContentGap",
+                    "label": "Gap between columns",
+                    "type": "size",
+                    "defaultValue": "20px",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--ColumnContent-gap"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Google Ratings Bar",
+            "description": "Styles for the \"Google Ratings Bar\" block.",
+            "groups": [
+                {
+                    "name": "Review link",
+                    "fields": [
+                        {
+                            "name": "googleRatingsBarReviewsLink",
+                            "label": "URL to view reviews on Google",
+                            "type": "url",
+                            "showLinkTextField": true
+                        }
+                    ]
+                },
+                {
+                    "name": "General styles",
+                    "fields": [
+                        {
+                            "name": "blockGoogleRatingsBarBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--GoogleRatingBar-background"
+                            }
+                        },
+                        {
+                            "name": "blockGoogleRatingsBarPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--GoogleRatingBar-padding"
+                            }
+                        },
+                        {
+                            "name": "blockGoogleRatingsBarTypography",
+                            "label": "Overall typography",
+                            "type": "typography",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--GoogleRatingBar"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Company name",
+                    "fields": [
+                        {
+                            "name": "blockGoogleRatingsBarCompanyNameTypography",
+                            "label": "Company name typography",
+                            "type": "typography",
+                            "useTextAlign": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--GoogleRatingBar-company"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Rating",
+                    "fields": [
+                        {
+                            "name": "blockGoogleRatingsBarRatingTypography",
+                            "label": "Rating typography",
+                            "type": "typography",
+                            "description": "Styles for the average rating, total number of stars, and total number of reviews",
+                            "useTextAlign": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--GoogleRatingBar-rating"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stars",
+                    "fields": [
+                        {
+                            "name": "blockGoogleRatingsBarStarsTypography",
+                            "label": "Stars typography",
+                            "type": "typography",
+                            "description": "Styles for the stars and the average rating text before the stars",
+                            "useTextAlign": false,
+                            "usePadding": true,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--GoogleRatingBar-stars"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Review link",
+                    "fields": [
+                        {
+                            "name": "blockGoogleRatingsBarLinkTypography",
+                            "label": "Reviews link typography",
+                            "type": "typography",
+                            "description": "Styles for the link text to view reviews",
+                            "useTextAlign": false,
+                            "useHover": true,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--GoogleRatingBar-link"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Blocks - Icon Grid",
-            "description": "Styles for the \"Image Grid\" block.",
+            "description": "Styles for the \"Icon Grid\" block.",
             "groups": [
                 {
                     "name": "General styles",
@@ -1259,6 +1415,175 @@
             ]
         },
         {
+            "name": "Blocks - Image Row",
+            "description": "Styles for the \"Image Row\" block.",
+            "fields": [
+                {
+                    "name": "blockImageRowBackground",
+                    "label": "Background color",
+                    "type": "color",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageRow-background"
+                    }
+                },
+                {
+                    "name": "blockImageRowImageGrayscale",
+                    "label": "Display the images as grayscale until hover",
+                    "type": "switch"
+                },
+                {
+                    "name": "blockImageRowGap",
+                    "label": "Gap between images",
+                    "type": "size",
+                    "defaultValue": "30px",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageRow-gap"
+                    }
+                },
+                {
+                    "name": "blockImageRowGapSm",
+                    "label": "Gap between images (small screens)",
+                    "type": "size",
+                    "defaultValue": "10px",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageRow-gap-sm"
+                    }
+                },
+                {
+                    "name": "blockImageRowImageMaxHeight",
+                    "label": "Maximum height of images",
+                    "type": "size",
+                    "allowAuto": true,
+                    "defaultValue": "auto",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageRow-image-max-height"
+                    }
+                },
+                {
+                    "name": "blockImageRowPadding",
+                    "label": "Padding",
+                    "type": "padding",
+                    "defaultValue": "0 20px",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageRow-padding"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Staff",
+            "description": "Styles for the \"Staff\" block.",
+            "groups": [
+                {
+                    "name": "Person's name",
+                    "description": "Styles for the person's name",
+                    "fields": [
+                        {
+                            "name": "blockStaffNameTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useMargin": true,
+                            "margin": {
+                                "defaultValue": "0 0 6px 0"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-name"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Title",
+                    "description": "Styles for the person's title",
+                    "fields": [
+                        {
+                            "name": "blockStaffTitleTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useMargin": true,
+                            "fontWeight": {
+                                "defaultValue": "700"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-title"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Email",
+                    "description": "Styles for the person's email link",
+                    "fields": [
+                        {
+                            "name": "blockStaffEmailTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-emailLink"
+                            }
+                        },
+                        {
+                            "name": "blockStaffEmailMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-email"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone",
+                    "description": "Styles for the person's phone number",
+                    "fields": [
+                        {
+                            "name": "blockStaffPhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-phoneLink"
+                            }
+                        },
+                        {
+                            "name": "blockStaffPhoneMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-phone"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Biography",
+                    "description": "Styles for the person's biography or description",
+                    "fields": [
+                        {
+                            "name": "blockStaffBioMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "defaultValue": "20px 0 0 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-bio"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Blocks - Wrapper",
             "description": "Styles for the \"Wrapper\" block.",
             "fields": [
@@ -1421,9 +1746,189 @@
                             "name": "size",
                             "label": "Size",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ]
+                            "allowedUnits": ["px"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Blog - Recent Posts Block",
+            "description": "Styles for the blog recent posts block.",
+            "groups": [
+                {
+                    "name": "General",
+                    "fields": [
+                        {
+                            "name": "blogRecentPostsPadding",
+                            "label": "Padding around the content",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--BlogRecentPosts-padding"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Heading",
+                    "fields": [
+                        {
+                            "name": "blogRecentPostsHeadingTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useMargin": true,
+                            "textAlign": {
+                                "defaultValue": "center"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-heading"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Post - general",
+                    "description": "Styles for the individual posts",
+                    "fields": [
+                        {
+                            "name": "blogRecentPostsCardBorder",
+                            "label": "Border",
+                            "type": "border",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-card"
+                            }
+                        },
+                        {
+                            "name": "blogRecentPostsCardBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-card"
+                            }
+                        },
+                        {
+                            "name": "blogRecentPostsCardBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-card",
+                                "cssProperty": "background"
+                            }
+                        },
+                        {
+                            "name": "blogRecentPostsCardPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-card"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Post - title",
+                    "fields": [
+                        {
+                            "name": "blogRecentPostsTitleTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useHover": true,
+                            "fontSize": {
+                                "defaultValue": "2rem"
+                            },
+                            "fontWeight": {
+                                "defaultValue": "700"
+                            },
+                            "textDecoration": {
+                                "defaultValue": "none"
+                            },
+                            "textDecorationHover": {
+                                "defaultValue": "underline"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-titleLink"
+                            }
+                        },
+                        {
+                            "name": "blogRecentPostsTitleMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "defaultValue": "0 0 4px 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-title"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Post - date",
+                    "fields": [
+                        {
+                            "name": "blogRecentPostsDateTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "fontSize": {
+                                "defaultValue": "1.6rem"
+                            },
+                            "fontStyle": {
+                                "defaultValue": "italic"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-date"
+                            }
+                        },
+                        {
+                            "name": "blogRecentPostsDateMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-date"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Posts - abstract",
+                    "fields": [
+                        {
+                            "name": "blogRecentPostsAbstractMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "defaultValue": "10px 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".RecentPosts-abstract"
+                            }
+                        },
+                        {
+                            "name": "blogRecentPostsAbstractNumLines",
+                            "label": "Number of lines to show",
+                            "type": "radio",
+                            "defaultValue": "4",
+                            "options": {
+                                "1": "1",
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6",
+                                "7": "7",
+                                "8": "8"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--RecentPosts-abstract-lines"
+                            }
                         }
                     ]
                 }
@@ -1878,6 +2383,277 @@
             ]
         },
         {
+            "name": "Calendar - Grid",
+            "description": "Styles for the calendar when it's displayed as a grid.",
+            "groups": [
+                {
+                    "name": "General grid cell styles",
+                    "fields": [
+                        {
+                            "name": "calendarGridCellBorderSize",
+                            "label": "Border size",
+                            "type": "size",
+                            "defaultValue": "1px",
+                            "allowedUnits": ["px"],
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-cell-border-size"
+                            }
+                        },
+                        {
+                            "name": "calendarGridCellBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "default": "#e6e6e6",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-cell-border-color"
+                            }
+                        },
+                        {
+                            "name": "calendarGridCellPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "10px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-cell-padding"
+                            }
+                        },
+                        {
+                            "name": "calendarGridEmptyCellBackground",
+                            "label": "Empty cell background",
+                            "type": "color",
+                            "description": "The background of the cell when it has no date.",
+                            "default": "#e9e9e9",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-empty-cell-background"
+                            }
+                        },
+                        {
+                            "name": "calendarGridEndCellBackground",
+                            "label": "Weekend cell background",
+                            "type": "color",
+                            "default": "#f5f5f5",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-end-cell-background"
+                            }
+                        },
+                        {
+                            "name": "calendarGridEndCellColor",
+                            "label": "Weekend cell color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-end-cell-color"
+                            }
+                        },
+                        {
+                            "name": "calendarGridTodayCellBackground",
+                            "label": "Today cell background",
+                            "type": "color",
+                            "description": "The background of the current day cell.",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-today-cell-background"
+                            }
+                        },
+                        {
+                            "name": "calendarGridTodayCellColor",
+                            "label": "Today cell color",
+                            "type": "color",
+                            "description": "The color of the current day cell.",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-today-cell-color"
+                            }
+                        },
+                        {
+                            "name": "calendarGridTodayCellOutlineColor",
+                            "label": "Today cell outline color",
+                            "type": "color",
+                            "description": "The outline color of the current day cell. Use an outline instead of a background color for a subtle highlight",
+                            "defaultValue": "#1456A7",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-today-cell-outline-color"
+                            }
+                        },
+                        {
+                            "name": "calendarGridTodayCellOutlineSize",
+                            "label": "Today cell outline size",
+                            "type": "size",
+                            "description": "The outline size of the current day cell. Use an outline instead of a background color for a subtle highlight",
+                            "default": "2px",
+                            "allowedUnits": ["px"],
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-today-cell-outline-size"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Heading cells",
+                    "description": "These are the grid cells that show the day of the week.",
+                    "fields": [
+                        {
+                            "name": "calendarGridHeadingBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#0E766A",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarGrid-heading-background"
+                            }
+                        },
+                        {
+                            "name": "calendarGridHeadingTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "color": {
+                                "defaultValue": "#fff"
+                            },
+                            "useLetterSpacing": false,
+                            "useTextAlign": false,
+                            "useTextTransform": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".CalendarGrid-headCell"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Calendar - Mini Grid",
+            "description": "The mini grid that shows in the sidebar of calendar pages",
+            "groups": [
+                {
+                    "name": "General grid cell styles",
+                    "fields": [
+                        {
+                            "name": "calendarMiniGridCellBorderSize",
+                            "label": "Border size",
+                            "type": "size",
+                            "defaultValue": "1px",
+                            "allowedUnits": ["px"],
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-cell-border-size"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridCellBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "default": "#e6e6e6",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-cell-border-color"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridCellPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-cell-padding"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridEmptyCellBackground",
+                            "label": "Empty cell background",
+                            "type": "color",
+                            "description": "The background of the cell when it has no date.",
+                            "default": "#e9e9e9",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-empty-cell-background"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridEndCellBackground",
+                            "label": "Weekend cell background",
+                            "type": "color",
+                            "default": "#f5f5f5",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-end-cell-background"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridEndCellColor",
+                            "label": "Weekend cell color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-end-cell-color"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridTodayCellBackground",
+                            "label": "Today cell background",
+                            "type": "color",
+                            "description": "The background of the current day cell.",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-today-cell-background"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridTodayCellColor",
+                            "label": "Today cell color",
+                            "type": "color",
+                            "description": "The color of the current day cell.",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-today-cell-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Day links",
+                    "description": "Styles for grid days that are links.",
+                    "fields": [
+                        {
+                            "name": "calendarMiniGridDateLinkColor",
+                            "label": "Link color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-date-link-color"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridDateLinkColorHover",
+                            "label": "Link color(hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-date-link-color-hover"
+                            }
+                        },
+                        {
+                            "name": "calendarMiniGridDateLinkBackgroundHover",
+                            "label": "Cell background (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--CalendarMiniGrid-date-link-background-hover"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Container Widths",
             "description": "Styles for page width containers.",
             "fields": [
@@ -1925,7 +2701,7 @@
         {
             "name": "Footer",
             "description": "Styles for the footer of the website.",
-            "sections": [
+            "groups": [
                 {
                     "name": "General",
                     "fields": [
@@ -1933,83 +2709,58 @@
                             "name": "footerBackground",
                             "label": "Background color",
                             "type": "color",
-                            "default": "#00263e",
-                            "preview": {
+                            "defaultValue": "#871E0F",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-background"
+                                "cssSelector": ".Footer",
+                                "cssProperty": "background-color"
                             }
                         },
                         {
-                            "name": "footerColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "name": "footerSpacing",
+                            "label": "Spacing",
+                            "type": "spacing",
+                            "padding": {
+                                "defaultValue": "20px 0"
+                            },
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-color"
+                                "cssVariable": "--Footer"
                             }
                         },
                         {
-                            "name": "footerColorHover",
-                            "label": "Text color (hover)",
-                            "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "name": "footerSpacingSm",
+                            "label": "Spacing (small screens)",
+                            "type": "spacing",
+                            "margin": {
+                                "label": "Margin (small screens)"
+                            },
+                            "padding": {
+                                "label": "Padding (small screens)",
+                                "defaultValue": "10px 0"
+                            },
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-color--hover"
+                                "cssVariable": "--Footer-sm"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Padding",
+                    "name": "Typography",
                     "fields": [
                         {
-                            "name": "footerPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "80",
-                            "preview": {
+                            "name": "footerTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "color": {
+                                "defaultValue": "#fff"
+                            },
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-paddingVertical",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "footerPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "160",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Footer-paddingHorizontal",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "footerPaddingVerticalSm",
-                            "label": "Vertical padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Footer-paddingVertical--sm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "footerPaddingHorizontalSm",
-                            "label": "Horizontal padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Footer-paddingHorizontal--sm",
-                                "template": "{{ value }}px"
+                                "cssSelector": ".Footer"
                             }
                         }
                     ]
@@ -2018,19 +2769,103 @@
                     "name": "Navigation",
                     "fields": [
                         {
-                            "name": "footerNavTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
+                            "name": "footerNavigationTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "useHover": true,
+                            "color": {
+                                "defaultValue": "#fff"
                             },
-                            "preview": {
+                            "colorHover": {
+                                "defaultValue": "#fff"
+                            },
+                            "textDecoration": {
+                                "defaultValue": "none"
+                            },
+                            "textDecorationHover": {
+                                "defaultValue": "underline"
+                            },
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--FooterNav-textTransform"
+                                "cssSelector": ".FooterNav-link"
+                            },
+                            "colorRender": {
+                                "cssSelector": "",
+                                "cssVariable": "--FooterNav"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Footer links",
+                    "description": "This is for other links in the footer like an email link.",
+                    "fields": [
+                        {
+                            "name": "footerLinkTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "useHover": true,
+                            "color": {
+                                "defaultValue": "#fff"
+                            },
+                            "colorHover": {
+                                "defaultValue": "#fff"
+                            },
+                            "textDecoration": {
+                                "defaultValue": "none"
+                            },
+                            "textDecorationHover": {
+                                "defaultValue": "underline"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-link"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Footer credit",
+                    "description": "Styles for the Aptuitiv credit text at the bottom of the footer.",
+                    "fields": [
+                        {
+                            "name": "footerCreditTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "useHover": true,
+                            "color": {
+                                "defaultValue": "#fff"
+                            },
+                            "colorHover": {
+                                "defaultValue": "#fff"
+                            },
+                            "fontSize": {
+                                "defaultValue": "1.4rem"
+                            },
+                            "textDecoration": {
+                                "defaultValue": "none"
+                            },
+                            "textDecorationHover": {
+                                "defaultValue": "underline"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-attributeLink"
+                            }
+                        },
+                        {
+                            "name": "footerCreditPadding",
+                            "label": "Padding around the footer credit text",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-attribution"
                             }
                         }
                     ]
@@ -2042,148 +2877,179 @@
             "description": "Styles for all forms on the website.",
             "groups": [
                 {
-                    "name": "Text Field",
+                    "name": "Button",
                     "fields": [
                         {
-                            "name": "textInputBackground",
-                            "label": "Background color",
-                            "type": "color",
-                            "defaultValue": "#fff",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--TextInput-background"
+                            "name": "formButtonSize",
+                            "label": "Button size",
+                            "type": "radio",
+                            "defaultValue": "defaultValue",
+                            "options": {
+                                "defaultValue": "Default",
+                                "sm": "Small",
+                                "lg": "Large"
                             }
                         },
                         {
-                            "name": "textInputColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "defaultValue": "#333",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--TextInput-color"
+                            "name": "formButtonStyle",
+                            "label": "Button style",
+                            "type": "radio",
+                            "defaultValue": "defaultValue",
+                            "options": {
+                                "defaultValue": "Default",
+                                "alt": "Alternate 1",
+                                "alt2": "Alternate 2"
                             }
                         },
                         {
-                            "name": "textInputBorderRadius",
-                            "label": "Border radius",
-                            "type": "borderRadius",
-                            "after": "px",
+                            "name": "formButtonAlign",
+                            "label": "Button alignment",
+                            "type": "textAlign",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FormButton-text-align"
+                            }
+                        },
+                        {
+                            "name": "formButtonMargin",
+                            "label": "Margin",
+                            "type": "margin",
                             "defaultValue": "0",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-border-radius"
+                                "cssVariable": "--FormButton-margin"
                             }
                         },
                         {
-                            "name": "textInputBorderWidth",
-                            "label": "Border width",
+                            "name": "formButtonFullWidthSmallScreens",
+                            "label": "Have the button be full width on small screens",
+                            "type": "switch",
+                            "defaultValue": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "Checkbox",
+                    "description": "Styles for the checkbox",
+                    "fields": [
+                        {
+                            "name": "checkboxBackgroundColor",
+                            "label": "Background color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Checkbox-background-color"
+                            }
+                        },
+                        {
+                            "name": "checkboxBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "defaultValue": "#3D3D3D",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Checkbox-border-color"
+                            }
+                        },
+                        {
+                            "name": "checkboxBorderSize",
+                            "label": "Checkbox border size",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
                             "defaultValue": "1px",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-border-width"
+                                "cssVariable": "--Checkbox-border-size"
                             }
                         },
                         {
-                            "name": "textInputBorderColor",
-                            "label": "Border color",
-                            "type": "color",
-                            "defaultValue": "#777",
+                            "name": "checkboxBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "defaultValue": "4px",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-border-color"
+                                "cssVariable": "--Checkbox-border-radius"
                             }
                         },
                         {
-                            "name": "textInputPadding",
-                            "label": "Padding",
-                            "type": "padding",
+                            "name": "checkboxColor",
+                            "label": "Checkbox color",
+                            "type": "color",
+                            "description": "The color of the checkmark when the field is selected",
+                            "defaultValue": "#3D3D3D",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Checkbox-color"
+                            }
+                        },
+                        {
+                            "name": "checkboxSize",
+                            "label": "Checkbox field height and width",
+                            "type": "size",
+                            "defaultValue": "16px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Checkbox-size"
+                            }
+                        },
+                        {
+                            "name": "checkboxCheckmarkHeight",
+                            "label": "Checkmark height",
+                            "type": "size",
+                            "defaultValue": "10px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Checkbox-checkmark-height"
+                            }
+                        },
+                        {
+                            "name": "checkboxCheckmarkWidth",
+                            "label": "Checkmark width",
+                            "type": "size",
                             "defaultValue": "5px",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-padding"
+                                "cssVariable": "--Checkbox-checkmark-width"
+                            }
+                        },
+                        {
+                            "name": "checkboxCheckmarkThickness",
+                            "label": "Checkmark thickness",
+                            "type": "size",
+                            "defaultValue": "2px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Checkbox-checkmark-thickness"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Select Menu",
+                    "name": "Field Descriptions",
                     "fields": [
                         {
-                            "name": "selectInputBackground",
-                            "label": "Background color",
-                            "type": "color",
-                            "defaultValue": "#fff",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--SelectInput-background"
+                            "name": "formDescriptionPosition",
+                            "label": "Where to display the description",
+                            "type": "radio",
+                            "defaultValue": "belowExceptRadioCheckbox",
+                            "options": {
+                                "above": "Above the field",
+                                "below": "Below the field",
+                                "belowExceptRadioCheckbox": "Below the field unless the field type is radio or checkbox"
                             }
                         },
                         {
-                            "name": "selectInputColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "defaultValue": "#333",
+                            "name": "formDescriptionTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useMargin": true,
+                            "fontSize": {
+                                "defaultValue": "1.4rem"
+                            },
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--SelectInput-color"
-                            }
-                        },
-                        {
-                            "name": "selectInputBorderRadius",
-                            "label": "Border radius",
-                            "type": "borderRadius",
-                            "defaultValue": "0",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--SelectInput-border-radius"
-                            }
-                        },
-                        {
-                            "name": "selectInputBorderWidth",
-                            "label": "Border width",
-                            "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
-                            "defaultValue": "1px",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--SelectInput-border-width"
-                            }
-                        },
-                        {
-                            "name": "selectInputBorderColor",
-                            "label": "Border color",
-                            "type": "color",
-                            "defaultValue": "#777",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--SelectInput-border-color"
-                            }
-                        },
-                        {
-                            "name": "selectInputArrowColor",
-                            "label": "Arrow color",
-                            "type": "color",
-                            "defaultValue": "#777",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--SelectInput-arrow-color"
-                            }
-                        },
-                        {
-                            "name": "selectInputPadding",
-                            "label": "Padding",
-                            "type": "padding",
-                            "defaultValue": "5px",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--SelectInput-padding"
+                                "cssSelector": ".FormDescription"
                             }
                         }
                     ]
@@ -2207,6 +3073,119 @@
                             "render": {
                                 "type": "css-head",
                                 "cssSelector": ".FormLabel"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "File upload field",
+                    "description": "Styles for the file upload field on a form",
+                    "fields": [
+                        {
+                            "name": "fileUploadButtonBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#5D5D5D",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FileButton-background"
+                            }
+                        },
+                        {
+                            "name": "fileUploadButtonBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "defaultValue": "#5D5D5D",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FileButton-border-color"
+                            }
+                        },
+                        {
+                            "name": "fileUploadButtonColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "defaultValue": "#ffffff",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FileButton-color"
+                            }
+                        },
+                        {
+                            "name": "fileUploadButtonBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "defaultValue": "#3D3D3D",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FileButton-background-hover"
+                            }
+                        },
+                        {
+                            "name": "fileUploadButtonBorderColorHover",
+                            "label": "Border color (hover)",
+                            "type": "color",
+                            "defaultValue": "#3D3D3D",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FileButton-border-color-hover"
+                            }
+                        },
+                        {
+                            "name": "fileUploadButtonColorHover",
+                            "label": "Text color (hover)",
+                            "type": "color",
+                            "defaultValue": "#ffffff",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FileButton-color-hover"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Form Overlay",
+                    "description": "Styles for the overlay which pops up on a form submission.",
+                    "fields": [
+                        {
+                            "name": "formOverlayBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#000000b3",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".FormOverlay",
+                                "cssProperty": "background-color"
+                            }
+                        },
+                        {
+                            "name": "formOverlayTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "color": {
+                                "defaultValue": "#fff"
+                            },
+                            "fontSize": {
+                                "defaultValue": "3rem"
+                            },
+                            "textShadow": {
+                                "defaultValue": "0 1px 2px rgba(0, 0, 0, 0.5)"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".FormOverlay"
+                            }
+                        },
+                        {
+                            "name": "formOverlayTextShadow",
+                            "label": "Text shadow",
+                            "type": "textShadow",
+                            "defaultValue": "0 1px 2px rgba(0, 0, 0, 0.5)",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".FormOverlay-text"
                             }
                         }
                     ]
@@ -2272,130 +3251,154 @@
                     ]
                 },
                 {
-                    "name": "Field Descriptions",
+                    "name": "Select Menu",
                     "fields": [
                         {
-                            "name": "formDescriptionPosition",
-                            "label": "Where to display the description",
-                            "type": "radio",
-                            "defaultValue": "belowExceptRadioCheckbox",
-                            "options": {
-                                "above": "Above the field",
-                                "below": "Below the field",
-                                "belowExceptRadioCheckbox": "Below the field unless the field type is radio or checkbox"
-                            }
-                        },
-                        {
-                            "name": "formDescriptionTypography",
-                            "label": "Typography",
-                            "type": "typography",
-                            "collapsable": false,
-                            "useMargin": true,
-                            "fontSize": {
-                                "defaultValue": "1.4rem"
-                            },
+                            "name": "selectMenuBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#fff",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".FormDescription"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Button",
-                    "fields": [
-                        {
-                            "name": "formButtonSize",
-                            "label": "Button size",
-                            "type": "radio",
-                            "defaultValue": "defaultValue",
-                            "options": {
-                                "defaultValue": "Default",
-                                "sm": "Small",
-                                "lg": "Large"
+                                "cssVariable": "--SelectMenu-background"
                             }
                         },
                         {
-                            "name": "formButtonStyle",
-                            "label": "Button style",
-                            "type": "radio",
-                            "defaultValue": "defaultValue",
-                            "options": {
-                                "defaultValue": "Default",
-                                "alt": "Alternate 1",
-                                "alt2": "Alternate 2"
-                            }
-                        },
-                        {
-                            "name": "formButtonAlign",
-                            "label": "Button alignment",
-                            "type": "textAlign",
+                            "name": "selectMenuColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "defaultValue": "#333",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--FormButton-text-align"
+                                "cssVariable": "--SelectMenu-color"
                             }
                         },
                         {
-                            "name": "formButtonMargin",
-                            "label": "Margin",
-                            "type": "margin",
+                            "name": "selectMenuBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
                             "defaultValue": "0",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--FormButton-margin"
+                                "cssVariable": "--SelectMenu-border-radius"
                             }
                         },
                         {
-                            "name": "formButtonFullWidthSmallScreens",
-                            "label": "Have the button be full width on small screens",
-                            "type": "switch",
-                            "defaultValue": "yes"
+                            "name": "selectMenuBorderWidth",
+                            "label": "Border width",
+                            "type": "size",
+                            "allowedUnits": ["px"],
+                            "defaultValue": "1px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SelectMenu-border-width"
+                            }
+                        },
+                        {
+                            "name": "selectMenuBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "defaultValue": "#777",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SelectMenu-border-color"
+                            }
+                        },
+                        {
+                            "name": "selectMenuArrowType",
+                            "label": "Arrow type",
+                            "type": "select",
+                            "defaultValue": "triangle",
+                            "options": {
+                                "caret": "Caret",
+                                "triangle": "Triangle"
+                            }
+                        },
+                        {
+                            "name": "selectMenuArrowColor",
+                            "label": "Arrow color",
+                            "type": "color",
+                            "defaultValue": "#777",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SelectMenu-arrow-color"
+                            }
+                        },
+                        {
+                            "name": "selectMenuPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "defaultValue": "5px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SelectMenu-padding"
+                            }
                         }
                     ]
                 },
                 {
-                    "name": "Form Overlay",
-                    "description": "Styles for the overlay which pops up on a form submission.",
+                    "name": "Text Field",
                     "fields": [
                         {
-                            "name": "formOverlayBackground",
+                            "name": "textInputBackground",
                             "label": "Background color",
                             "type": "color",
-                            "defaultValue": "#000000b3",
+                            "defaultValue": "#fff",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".FormOverlay",
-                                "cssProperty": "background-color"
+                                "cssVariable": "--TextInput-background"
                             }
                         },
                         {
-                            "name": "formOverlayTypography",
-                            "label": "Typography",
-                            "type": "typography",
-                            "collapsable": false,
-                            "useTextAlign": false,
-                            "color": {
-                                "defaultValue": "#fff"
-                            },
-                            "fontSize": {
-                                "defaultValue": "3rem"
-                            },
-                            "textShadow": {
-                                "defaultValue": "0 1px 2px rgba(0, 0, 0, 0.5)"
-                            },
+                            "name": "textInputColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "defaultValue": "#333",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".FormOverlay"
+                                "cssVariable": "--TextInput-color"
                             }
                         },
                         {
-                            "name": "formOverlayTextShadow",
-                            "label": "Text shadow",
-                            "type": "textShadow",
-                            "defaultValue": "0 1px 2px rgba(0, 0, 0, 0.5)",
+                            "name": "textInputBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "after": "px",
+                            "defaultValue": "0",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".FormOverlay-text"
+                                "cssVariable": "--TextInput-border-radius"
+                            }
+                        },
+                        {
+                            "name": "textInputBorderWidth",
+                            "label": "Border width",
+                            "type": "size",
+                            "allowedUnits": ["px"],
+                            "defaultValue": "1px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--TextInput-border-width"
+                            }
+                        },
+                        {
+                            "name": "textInputBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "defaultValue": "#777",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--TextInput-border-color"
+                            }
+                        },
+                        {
+                            "name": "textInputPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "defaultValue": "5px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--TextInput-padding"
                             }
                         }
                     ]
@@ -2405,56 +3408,316 @@
         {
             "name": "Header",
             "description": "Styles for the header of the website.",
-            "sections": [
+            "groups": [
                 {
                     "name": "Padding",
                     "fields": [
                         {
-                            "name": "headerPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "30",
-                            "preview": {
+                            "name": "headerPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "defaultValue": "20px 0",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-paddingVertical",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Header-padding"
                             }
                         },
                         {
-                            "name": "headerPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "65",
-                            "preview": {
+                            "name": "headerPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "defaultValue": "20px 0",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Header-padding-sm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Text Logo",
+                    "description": "Styles for the text logo if in use.",
+                    "fields": [
+                        {
+                            "name": "headerTextLogoFontSizeSm",
+                            "label": "Font size (small screens)",
+                            "type": "size",
+                            "defaultValue": "4rem",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-text-logo-font-size-sm"
                             }
                         },
                         {
-                            "name": "headerPaddingVerticalSm",
-                            "label": "Vertical padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "20",
-                            "preview": {
+                            "name": "headerTextLogoTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "useTextDecoration": false,
+                            "fontSize": {
+                                "defaultValue": "6rem"
+                            },
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-paddingVertical--sm",
-                                "template": "{{ value }}px"
+                                "cssSelector": ".Header-textLogo"
+                            },
+                            "fontSizeRender": {
+                                "cssSelector": "",
+                                "cssVariable": "--Header-text-logo"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "General typography",
+                    "description": "General typography styles for the header",
+                    "fields": [
+                        {
+                            "name": "headerTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "useTextDecoration": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-content"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Header links",
+                    "description": "This is for other links in the footer like an email link.",
+                    "fields": [
+                        {
+                            "name": "headerLinkTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "useHover": true,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-link"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Skip to Main Button",
+                    "description": "Styles for the \"Skip to Main\" button when using a keyboard to navigate the site. It shows at the very top of the page when it has focus.",
+                    "fields": [
+                        {
+                            "name": "skipMainButtonBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#fff",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-skipMain-background"
                             }
                         },
                         {
-                            "name": "headerPaddingHorizontalSm",
-                            "label": "Horizontal padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "35",
-                            "preview": {
+                            "name": "skipMainButtonColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "defaultValue": "#008576",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-paddingHorizontal--sm",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Header-skipMain-color"
+                            }
+                        },
+                        {
+                            "name": "skipMainButtonFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "defaultValue": "bold",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-skipMain-font-weight"
+                            }
+                        },
+                        {
+                            "name": "skipMainButtonPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "defaultValue": "5px 10px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-skipMain-padding"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Social icons",
+                    "fields": [
+                        {
+                            "name": "headerSocialColor",
+                            "label": "Color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-socialLink",
+                                "cssProperty": "color"
+                            }
+                        },
+                        {
+                            "name": "headerSocialColorHover",
+                            "label": "Color (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-socialLink",
+                                "cssProperty": "color",
+                                "state": "hover"
+                            }
+                        },
+                        {
+                            "name": "headerSocialBackground",
+                            "label": "Background",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-socialLink",
+                                "cssProperty": "background-color"
+                            }
+                        },
+                        {
+                            "name": "headerSocialBackgroundHover",
+                            "label": "Background (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-socialLink",
+                                "cssProperty": "background-color",
+                                "state": "hover"
+                            }
+                        },
+                        {
+                            "name": "headerSocialSize",
+                            "label": "Size",
+                            "type": "size",
+                            "defaultValue": "30px",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-socialLink",
+                                "cssProperty": "height"
+                            }
+                        },
+                        {
+                            "name": "headerSocialBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "defaultValue": "50%",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-socialLink"
+                            }
+                        },
+                        {
+                            "name": "headerSocialPadding",
+                            "label": "Padding around all the icons",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Header-socialIcons"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Header buttons",
+                    "fields": [
+                        {
+                            "name": "headerButtonBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button",
+                                "cssProperty": "background-color"
+                            }
+                        },
+                        {
+                            "name": "headerButtonBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button",
+                                "cssProperty": "background-color",
+                                "state": "hover"
+                            }
+                        },
+                        {
+                            "name": "headerButtonTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button"
+                            }
+                        },
+                        {
+                            "name": "headerButtonBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button",
+                                "cssProperty": "border-color"
+                            }
+                        },
+                        {
+                            "name": "headerButtonBorderColorHover",
+                            "label": "Border color (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button",
+                                "cssProperty": "border-color",
+                                "state": "hover"
+                            }
+                        },
+                        {
+                            "name": "headerButtonBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button",
+                                "config": {
+                                    "defaultValue": ""
+                                }
+                            }
+                        },
+                        {
+                            "name": "headerButtonBorderWidth",
+                            "label": "Border width",
+                            "type": "size",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button",
+                                "cssProperty": "border-width"
+                            }
+                        },
+                        {
+                            "name": "headerButtonPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Button.Header-button",
+                                "config": {
+                                    "defaultValue": ""
+                                }
                             }
                         }
                     ]
@@ -2466,13 +3729,41 @@
             "description": "Styles for the main website navigation.",
             "groups": [
                 {
-                    "name": "Items",
+                    "name": "Navigation Bar",
                     "fields": [
                         {
-                            "name": "mainNavAlignment",
+                            "name": "navBarBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#871E0F",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--NavBar-background"
+                            }
+                        },
+                        {
+                            "name": "navBarPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--NavBar-padding"
+                            }
+                        },
+                        {
+                            "name": "navBarPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--NavBar-padding-sm"
+                            }
+                        },
+                        {
+                            "name": "navBarAlignment",
                             "label": "Navigation horizontal alignment",
                             "type": "radio",
-                            "defaultValue": "end",
+                            "defaultValue": "center",
                             "options": {
                                 "start": "Left",
                                 "center": "Center",
@@ -2482,12 +3773,17 @@
                                 "type": "css-head",
                                 "cssVariable": "--MainNav-horizontal-alignment"
                             }
-                        },
+                        }
+                    ]
+                },
+                {
+                    "name": "Items",
+                    "fields": [
                         {
                             "name": "mainNavItemGap",
                             "label": "Gap between items",
                             "type": "size",
-                            "defaultValue": "20px",
+                            "defaultValue": "10px",
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--MainNav-item-gap"
@@ -2500,8 +3796,6 @@
                             "collapsable": false,
                             "useHover": true,
                             "useFontSizeHover": false,
-                            "useTextDecoration": false,
-                            "useTextDecorationHover": false,
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--MainNav"
@@ -2546,83 +3840,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "Items (small screens)",
-                    "fields": [
-                        {
-                            "name": "mainNavItemBackgroundSm",
-                            "label": "Background color (small screens)",
-                            "type": "color",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-link-background-sm"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemBackgroundHoverSm",
-                            "label": "Hover/active background color (small screens)",
-                            "type": "color",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-link-background-hover-sm"
-                            }
-                        },
-                        {
-                            "name": "mmainNavItemColorSm",
-                            "label": "Text color (small screens)",
-                            "type": "color",
-                            "defaultValue": "#fff",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-color-sm"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemColorHoverSm",
-                            "label": "Hover/active text color (small screens)",
-                            "type": "color",
-                            "defaultValue": "#fff",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-color-hover-sm"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Menu small screen styles",
-                    "fields": [
-                        {
-                            "name": "mainNavBackgroundSm",
-                            "label": "Background (small screens)",
-                            "type": "color",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-background-sm"
-                            }
-                        },
-                        {
-                            "name": "mainNavMarginSm",
-                            "label": "Margin (small screens)",
-                            "type": "margin",
-                            "defaultValue": "10px 0",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-margin-sm"
-                            }
-                        },
-                        {
-                            "name": "mainNavPaddingSm",
-                            "label": "Padding (small screens)",
-                            "type": "padding",
-                            "defaultValue": "10px 0",
-                            "render": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-padding-sm"
-                            }
-                        }
-                    ]
                 }
             ]
         },
@@ -2646,9 +3863,7 @@
                             "name": "dropdownMinWidth",
                             "label": "Minimum width",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "defaultValue": "220",
                             "render": {
                                 "type": "css-head",
@@ -2659,9 +3874,7 @@
                             "name": "dropdownMaxWidth",
                             "label": "Maximum width",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "defaultValue": "300",
                             "render": {
                                 "type": "css-head",
@@ -2722,7 +3935,7 @@
                             "name": "mainNavDropdownBackground",
                             "label": "Background color",
                             "type": "color",
-                            "defaultValue": "#008576",
+                            "defaultValue": "#871E0F",
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-link-background"
@@ -2757,7 +3970,7 @@
                             "name": "navDropdownBackgroundSm",
                             "label": "Background color (small screens)",
                             "type": "color",
-                            "defaultValue": "#008576",
+                            "defaultValue": "#871E0F",
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Dropdown-link-background-sm"
@@ -2794,7 +4007,7 @@
                     "name": "smScBtnColor",
                     "label": "Hamburger color",
                     "type": "color",
-                    "defaultValue": "#008576",
+                    "defaultValue": "#871E0F",
                     "render": {
                         "type": "css-head",
                         "cssVariable": "--SmScBtn-color"
@@ -3504,6 +4717,398 @@
             ]
         },
         {
+            "name": "Sidebar Navigation",
+            "description": "Styles for the sidebar navigation used in two-column page templates.",
+            "groups": [
+                {
+                    "name": "Heading",
+                    "description": "The heading above each block of sidebar content",
+                    "fields": [
+                        {
+                            "name": "sidebarHeadingBackground",
+                            "label": "Background",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SidebarBox-heading-background"
+                            }
+                        },
+                        {
+                            "name": "sidebarHeadingBackgroundHover",
+                            "label": "Background (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SidebarBox-heading-background-hover"
+                            }
+                        },
+                        {
+                            "name": "sidebarHeadingTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "fontSize": {
+                                "defaultValue": "2rem"
+                            },
+                            "fontWeight": {
+                                "defaultValue": "700"
+                            },
+                            "useHover": true,
+                            "usePadding": true,
+                            "padding": {
+                                "defaultValue": "0"
+                            },
+                            "textAlignRender": {
+                                "cssVariable": "--SidebarBox-heading"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".SidebarBox-heading"
+                            }
+                        },
+                        {
+                            "name": "sidebarHeadingBorder",
+                            "label": "Border",
+                            "type": "border",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".SidebarBox-heading"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Links",
+                    "fields": [
+                        {
+                            "name": "sideNavBackground",
+                            "label": "Background",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SidebarNav-background"
+                            }
+                        },
+                        {
+                            "name": "sideNavBackgroundHover",
+                            "label": "Background (hover)",
+                            "type": "color",
+                            "defaultValue": "#008576",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SidebarNav-background-hover"
+                            }
+                        },
+                        {
+                            "name": "sideNavTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "usePadding": true,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SidebarNav"
+                            }
+                        },
+                        {
+                            "name": "sideNavCurrentColor",
+                            "label": "Current link color",
+                            "type": "color",
+                            "description": "The link for the page page number a given user is on.",
+                            "defaultValue": "#008576",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SidebarNav-current-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Parent Link",
+                    "description": "Styles for the current page's parent link.",
+                    "fields": [
+                        {
+                            "name": "sideNavParentTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "usePadding": true,
+                            "padding": {
+                                "defaultValue": "0 0 8px 0"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--SidebarNav-parent"
+                            }
+                        },
+                        {
+                            "name": "sideNavBorder",
+                            "label": "Border",
+                            "type": "border",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".SidebarNav-link--isParent"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Secondary content",
+                    "description": "This is used for smaller text in the sidebar. The blog sidebar uses this for dates and post counts.",
+                    "fields": [
+                        {
+                            "name": "sidebarSecondaryTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "color": {
+                                "defaultValue": "#4D4D4D"
+                            },
+                            "fontSize": {
+                                "defaultValue": "1.4rem"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".SidebarBox-secondary"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Tables",
+            "description": "Styles for themed tables.",
+            "groups": [
+                {
+                    "name": "General table styles",
+                    "fields": [
+                        {
+                            "name": "tableBorderSize",
+                            "label": "Border",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-border-size"
+                            }
+                        },
+                        {
+                            "name": "tableBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-border-color"
+                            }
+                        },
+                        {
+                            "name": "tablePadding",
+                            "label": "Cell padding",
+                            "type": "padding",
+                            "defaultValue": "8px 16px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-padding"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Header row",
+                    "fields": [
+                        {
+                            "name": "tableHeaderBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-background"
+                            }
+                        },
+                        {
+                            "name": "tableHeaderColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-color"
+                            }
+                        },
+                        {
+                            "name": "tableHeaderFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "defaultValue": "700",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-font-weight"
+                            }
+                        },
+                        {
+                            "name": "tableHeaderBorderTopSize",
+                            "label": "Border top size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-border-top-size"
+                            }
+                        },
+                        {
+                            "name": "tableHeaderBorderRightSize",
+                            "label": "Border right size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-border-right-size"
+                            }
+                        },
+                        {
+                            "name": "tableHeaderBorderBottomSize",
+                            "label": "Border bottom size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-border-bottom-size"
+                            }
+                        },
+                        {
+                            "name": "tableHeaderBorderLeftSize",
+                            "label": "Border left size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-border-left-size"
+                            }
+                        },
+                        {
+                            "name": "tableHeaderBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-header-border-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Table cells",
+                    "description": "Table cell styles that aren't in the header row",
+                    "fields": [
+                        {
+                            "name": "tableCellColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-color"
+                            }
+                        },
+                        {
+                            "name": "tableCellFontWeight",
+                            "label": "Font weight",
+                            "type": "fontWeight",
+                            "defaultValue": "700",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-font-weight"
+                            }
+                        },
+                        {
+                            "name": "tableCellBorderTopSize",
+                            "label": "Border top size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-border-top-size"
+                            }
+                        },
+                        {
+                            "name": "tableCellBorderRightSize",
+                            "label": "Border right size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-border-right-size"
+                            }
+                        },
+                        {
+                            "name": "tableCellBorderBottomSize",
+                            "label": "Border bottom size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-border-bottom-size"
+                            }
+                        },
+                        {
+                            "name": "tableCellBorderLeftSize",
+                            "label": "Border left size",
+                            "type": "size",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-border-left-size"
+                            }
+                        },
+                        {
+                            "name": "tableCellBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-border-color"
+                            }
+                        },
+                        {
+                            "name": "tableCellOddBackground",
+                            "label": "Background color for odd rows",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-odd-background"
+                            }
+                        },
+                        {
+                            "name": "tableCellOddColor",
+                            "label": "Text color for odd rows",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-odd-color"
+                            }
+                        },
+                        {
+                            "name": "tableCellEvenBackground",
+                            "label": "Background color for even rows",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-even-background"
+                            }
+                        },
+                        {
+                            "name": "tableCellEvenColor",
+                            "label": "Text color for even rows",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Table-cell-even-color"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Typography",
             "description": "Styles for typography throughout the website.",
             "groups": [
@@ -3525,9 +5130,7 @@
                             "label": "Horizontal rule size",
                             "type": "size",
                             "defaultValue": "1px",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-hrule-width"
