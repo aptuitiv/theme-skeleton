@@ -44,14 +44,15 @@ npm run icons   # regenerates src/templates/snippets/svg-icons.twig after adding
 Skeleton's grid, heading, and html-code blocks ignore the block Margin and Width fields. Carmine commits: `265e272`, `81c6c37`.
 
 - [ ] Confirm in the CMS that these block definitions have Margin and Width fields for Skeleton sites (the definitions live in the CMS, not the repo — `_export/src/theme.json` is legacy and gitignored).
-- [ ] `blocks/grid-2-columns.twig` — replace `<div class="Container Container--pad">` with `<div class="{{ macros.blockMargin(margin) }}{{ macros.blockWidth(width, true) }}">`
-- [ ] `blocks/grid-3-columns.twig` — same change
-- [ ] `blocks/grid-4-columns.twig` — same change (also add the missing newline at EOF)
-- [ ] `blocks/grid-5-columns.twig` — same change
-- [ ] `blocks/grid-6-columns.twig` — same change
-- [ ] `blocks/heading.twig` — add `{% import 'macros/macros' as macros %}` and the margin/width wrapper `<div>`
-- [ ] `blocks/html-code.twig` — add the import and the margin/width wrapper `<div>`
-- [ ] `blocks/image-grid.twig` — **bug fix**: remove `{% set width = 800 %}` and the `width:` values in `count2`–`count6` and every `{% set width = countN.width %}`. These overwrite the block's Width field, so `blockWidth()` gets a number and the Width setting never takes effect. Copy Carmine's (now fixed) file (commit `1745710`).
+- [x] `blocks/grid-2-columns.twig` — replace `<div class="Container Container--pad">` with `<div class="{{ macros.blockMargin(margin) }}{{ macros.blockWidth(width, true) }}">`
+- [x] `blocks/grid-3-columns.twig` — same change
+- [x] `blocks/grid-4-columns.twig` — same change (also add the missing newline at EOF)
+- [x] `blocks/grid-5-columns.twig` — same change
+- [x] `blocks/grid-6-columns.twig` — same change
+- [x] Grid blocks — add `{% import 'macros/macros' as macros %}` at the top. Carmine's grid templates are missing it (bug from commit `265e272`, noted in Carmine's plan), so Skeleton's grids differ from Carmine by this one line.
+- [x] `blocks/heading.twig` — add `{% import 'macros/macros' as macros %}` and the margin/width wrapper `<div>`
+- [x] `blocks/html-code.twig` — add the import and the margin/width wrapper `<div>`
+- [x] `blocks/image-grid.twig` — **bug fix**: remove `{% set width = 800 %}` and the `width:` values in `count2`–`count6` and every `{% set width = countN.width %}`. These overwrite the block's Width field, so `blockWidth()` gets a number and the Width setting never takes effect. Copy Carmine's (now fixed) file (commit `1745710`).
 
 ## Phase 2 — Autoplay video pause/play toggle (WCAG 2.2.2)
 
