@@ -18,8 +18,9 @@
                                 {% import 'macros/macros' as macros %}
                                 {% set socialNames = {facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', pinterest: 'Pinterest', x: 'X', youtube: 'YouTube'} %}
                                 {% for social in _core.theme.settings.social %}
-                                    <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopenner noreferrer" class="Footer-socialLink">
+                                    <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopener noreferrer" class="Footer-socialLink">
                                         {{ macros.iconImg(social.icon, attribute(socialNames, social.icon)|default(social.icon), "Footer-icon") }}
+                                        <span class="visually-hidden"> (opens in a new window)</span>
                                     </a>
                                 {% endfor %}
                             </div>
@@ -35,7 +36,7 @@
                             </a>
                         {% endif %}
                         <div>&copy; {{ _core.settings.companyName }}, {{ _core.date.year }}</div>
-                        <a href="https://www.aptuitiv.com" target="_blank" class="Footer-link Footer-creditLink">Website by Aptuitiv</a>
+                        <a href="https://www.aptuitiv.com" target="_blank" rel="noopener" class="Footer-link Footer-creditLink">Website by Aptuitiv<span class="visually-hidden"> (opens in a new window)</span></a>
                     </div>
                 </div>
             </div>
