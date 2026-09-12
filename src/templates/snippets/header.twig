@@ -35,6 +35,7 @@
                         <a href="/" title="return to home page" class="Header-logoLink">
                             {% set _core.theme.settings.headerLogo.class = "Header-logo" %}
                             {% do _core.theme.settings.headerLogo.resize(_core.theme.settings.headerLogoWidth + 100) %}
+                            {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
                             {{ _core.theme.settings.headerLogo.tag }}
                         </a>
                     {% endif %}
