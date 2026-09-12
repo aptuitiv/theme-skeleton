@@ -94,6 +94,7 @@
         {
             "name": "Social Icons",
             "description": "Set the links and icons to use for your social networks in the footer of each page.",
+            "sidebarSize": "medium",
             "fields": [
                 {
                     "name": "social",
