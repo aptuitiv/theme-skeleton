@@ -58,16 +58,16 @@ Skeleton's grid, heading, and html-code blocks ignore the block Margin and Width
 
 Autoplaying banner videos and video blocks without controls have no way to pause. Carmine commit: `a470cb2`.
 
-- [ ] `templates/macros/macros.twig` — add the `videoToggle(videoId, class)` macro
-- [ ] `templates/macros/banner.twig` — add `videoId`, `id` and `js-video` on the `<video>`, and the `macros.videoToggle(videoId, 'Banner-videoToggle')` call
-- [ ] `templates/blocks/video.twig` — add `hasControls`/`needsToggle`/`videoId`, the `Video` wrapper, `Video-player` class, and the toggle
-- [ ] `src/js/video.js` — copy from Carmine (includes `prefers-reduced-motion` handling)
-- [ ] `src/js/main.js` — `import video from './video';` and `video.init();` (do not add stickyHeader)
-- [ ] `src/css/components/video/index.css` and `video.css` — copy from Carmine
-- [ ] `src/css/components/index.css` — add `@import './video';`
-- [ ] `src/css/components/banner/banner.css` — add the `.Banner-videoToggle { z-index: 4; }` rule
-- [ ] `src/icons/pause.svg` and `play.svg` — copy from Carmine, then run `npm run icons`
-- [ ] `src/config/theme-styles.json` — add the "Blocks - Video" group (7 `--Video-toggle-*` fields) in the same position as Carmine
+- [x] `templates/macros/macros.twig` — add the `videoToggle(videoId, class)` macro
+- [x] `templates/macros/banner.twig` — add `videoId`, `id` and `js-video` on the `<video>`, and the `macros.videoToggle(videoId, 'Banner-videoToggle')` call
+- [x] `templates/blocks/video.twig` — add `hasControls`/`needsToggle`/`videoId`, the `Video` wrapper, `Video-player` class, and the toggle
+- [x] `src/js/video.js` — copy from Carmine (includes `prefers-reduced-motion` handling)
+- [x] `src/js/main.js` — `import video from './video';` and `video.init();` (do not add stickyHeader)
+- [x] `src/css/components/video/index.css` and `video.css` — copy from Carmine
+- [x] `src/css/components/index.css` — add `@import './video';`
+- [x] `src/css/components/banner/banner.css` — add the `.Banner-videoToggle { z-index: 4; }` rule
+- [x] `src/icons/pause.svg` and `play.svg` — copy from Carmine (the file watcher regenerated `svg-icons.twig`)
+- [x] `src/config/theme-styles.json` — add the "Blocks - Video" group (7 `--Video-toggle-*` fields) in the same position as Carmine
 
 ## Phase 3 — Add the missing blocks
 
