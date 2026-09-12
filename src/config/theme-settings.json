@@ -53,7 +53,7 @@
                     "label": "Logo width",
                     "type": "stepper",
                     "after": "px",
-                    "default": "425",
+                    "defaultValue": "425",
                     "preview": {
                         "type": "css-head",
                         "cssVariable": "--Footer-logo-width",
@@ -82,7 +82,7 @@
                     "label": "Logo width",
                     "type": "stepper",
                     "after": "px",
-                    "default": "425",
+                    "defaultValue": "425",
                     "preview": {
                         "type": "css-head",
                         "cssVariable": "--Header-logo-width",
