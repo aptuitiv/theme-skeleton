@@ -1,0 +1,9 @@
+<div class="Breadcrumb">
+    {% for item in items %}
+        {% if item.isActive %}
+            {{ item.text }}
+        {% else %}
+            <a href="{{ item.link }}" class="Breadcrumb-link">{{ item.text }}</a> &gt;
+        {% endif %}
+    {% endfor %}
+</div>
