@@ -113,17 +113,17 @@ Skeleton's theme-styles.json already has the style groups for these blocks, but 
 
 ## Phase 5 — Config, CSS, and template clean-up
 
-- [ ] `config/theme-styles.json` — change the 9 remaining `"default":` keys to `"defaultValue":` (Calendar groups; Carmine commit `eed9808`)
-- [ ] `config/theme-settings.json` — change the 2 remaining `"default":` keys to `"defaultValue":`
-- [ ] `config/theme-styles.json` — remove the default `700` value from `tableCellFontWeight` (Carmine commit `b3dca07`)
-- [ ] `macros/form-macros.twig` — remove the duplicate `buildFieldDescription` macro (Carmine commit `91b5acd`)
-- [ ] `widgets/collections/notifications.twig` and `popups.twig` — remove the unused class (Carmine commit `1a86bc2`)
-- [ ] `css/components/message/message.css` — add `.Message--failure a { color: var(--Message-color-failure); }`
-- [ ] `config/theme-settings.json` — Social Icons group: add `"sidebarSize": "medium"` to match Carmine
-- [ ] **Calendar templates** — port Carmine's `calendar/*.twig`. Skeleton has `{{ events|debug }}` in `search-results.twig:7`, `<div class="h2">` event titles in `list.twig`, and `agenda.twig`/`list.twig` extend `two-column.twig`, which doesn't exist
-- [ ] **Calendar CSS** — port `css/apps/calendar/` and add `@import './calendar';` to `css/apps/index.css` (Skeleton's calendar pages are currently unstyled; the Calendar theme-styles groups already exist)
+- [x] `config/theme-styles.json` — change the 9 remaining `"default":` keys to `"defaultValue":` (Calendar groups; applied Carmine commit `eed9808`)
+- [x] `config/theme-settings.json` — change the 2 remaining `"default":` keys to `"defaultValue":` (`headerLogoWidth`, `footerLogoWidth`)
+- [x] `config/theme-styles.json` — remove the default `700` value from `tableCellFontWeight` (applied Carmine commit `b3dca07`)
+- [x] `macros/form-macros.twig` — remove the duplicate `buildFieldDescription` macro (applied Carmine commit `91b5acd`)
+- [x] `widgets/collections/notifications.twig` and `popups.twig` — remove the unused `Modal-slide` class (applied Carmine commit `1a86bc2`)
+- [x] `css/components/message/message.css` — add `.Message--failure a { color: var(--Message-color-failure); }`
+- [x] `config/theme-settings.json` — Social Icons group: add `"sidebarSize": "medium"` to match Carmine
+- [x] **Calendar templates** — copied Carmine's `calendar/*.twig` (fixes the `{{ events|debug }}` output, the `<div class="h2">` event titles, and the `two-column.twig` layout that doesn't exist). Removed the undefined `u-margBottom4` class from `calendar/sidebar.twig` (noted in Carmine's plan).
+- [x] **Calendar CSS** — copied `css/apps/calendar/` and added `@import './calendar';` to `css/apps/index.css`
 - [ ] Optional: replace `js/fslightbox.js` with Carmine's copy (Skeleton's is a reformatted copy of the library)
-- [ ] Optional: sidebar navigation CSS (`css/components/sidebar/`) — the Sidebar Navigation theme-styles variables are unused in Skeleton
+- [x] Sidebar box CSS (`css/components/sidebar/`) — copied from Carmine and imported in `css/components/index.css`. Needed because Carmine's calendar sidebar templates use the `SidebarBox` classes; it also puts the Sidebar Navigation theme-styles variables (`--SidebarBox-heading-*`) to use.
 
 ## Phase 6 — Accessibility fixes shared by all themes (after Carmine parity)
 
