@@ -129,22 +129,24 @@ Skeleton's theme-styles.json already has the style groups for these blocks, but 
 
 Carmine has these problems too, so there's nothing to port — each needs a new fix. The same items are in each of the other themes' `ai-plans/block-and-accessibility-fixes.md`.
 
-- [ ] **Accordion isn't keyboard-operable** — the heading is `<div class="Accordion-heading js-accordionHeading">` with only a click listener. Use a `<button>` with `aria-expanded` and `aria-controls` (`blocks/accordion.twig`, `js/accordion.js`). *High*
-- [ ] **Mobile submenus hidden from screen readers** — submenu `<ul>` elements render with `aria-hidden="true"` and `aria-expanded="false"` (`navigation/main.twig:4`). The small-screen tap handler only toggles classes (`js/navigation/small-screen.js`), so an opened submenu stays hidden. Move `aria-expanded` to the toggle. *High*
-- [ ] **Mobile menu** — no Escape to close, no focus trap, no focus return (`js/navigation/small-screen.js`). The `role="menubar"`/`menuitem` pattern is the wrong fit for site navigation; consider plain `<nav><ul>` with disclosure buttons.
-- [ ] **Modals** — the close button `<button class="Modal-close" data-micromodal-close></button>` has no accessible name; the dialog has no `aria-labelledby`; the popup uses `disableFocus: true` so focus doesn't move into it; the notification icon has no `aria-hidden` (`widgets/collections/popups.twig`, `notifications.twig`).
-- [ ] **Pagination** — wrap in `<nav aria-label="Pagination">`, add `aria-current="page"` to the current page, and change the chevron icons from `role="img"` to `aria-hidden="true"` (`snippets/pagination.twig`).
-- [ ] **`iconImg` macro** outputs `<svg role="img" alt="…">` — `alt` isn't valid on `<svg>`. Use `aria-label` or a `<title>` (`macros/macros.twig`).
-- [ ] **`rel="noopenner"` typo** — should be `noopener`.
-- [ ] **`title` as the only label** on social and logo links; social links open in a new window with no warning.
-- [ ] **Form errors** — `formErrorContainer` has no `role="alert"`/`aria-live`; `form.js` never sets `aria-invalid` or `aria-describedby` (`macros/form-macros.twig`, `js/form.js`).
-- [ ] **Required marker** — add `aria-hidden="true"` to the `*` in labels (the `required` attribute already conveys it).
-- [ ] **Upload previews** use `alt="Image"` (`macros/form-macros.twig`).
-- [ ] **No `prefers-reduced-motion` CSS** — accordion transitions, Splide fade/autoplay, and `Modal-slide` ignore it; the image-gallery slider can autoplay with no pause control.
-- [ ] **Video/audio** — no `<track>` captions or transcript option (`blocks/video.twig`, `blocks/audio.twig`).
-- [ ] **Landmark labels** — footer navs and sidebar `<aside>` elements have no `aria-label`.
-- [ ] **`lang="en"` is hardcoded** in `snippets/header.twig`.
-- [ ] **Menu button** — visible "Menu" text differs from `aria-label="Navigation menu"`. Make the accessible name include the visible text.
+- [x] **Accordion keyboard support** — the heading is now a `<button type="button">` with `aria-expanded` and `aria-controls` pointing to the content's `id`. `js/accordion.js` keeps `aria-expanded` in sync. The icon is `aria-hidden`. CSS: the button gets `width: 100%`, and closed content gets `visibility: hidden` (transitioned, so the closing animation still shows) so links inside a closed item are out of the tab order.
+- [x] **Mobile submenus** — `navigation/main.twig`: removed the invalid `aria-expanded` from the dropdown `<ul>` and added `aria-expanded="false"` to the links that open dropdowns. `js/navigation/small-screen.js`: tapping a dropdown link now toggles its `aria-expanded` and the submenu's `aria-hidden`.
+- [x] **Mobile menu Escape and focus return** — Escape closes the open small-screen menu and moves focus back to the menu button (`js/navigation/small-screen.js`).
+- [ ] **Mobile menu pattern (decide later)** — the `role="menubar"`/`menuitem` pattern is the wrong fit for site navigation; plain `<nav><ul>` with disclosure buttons would be simpler. This is a rewrite of `navigation/main.twig`, `small-screen.js`, and `accessibility.js`. A focus trap isn't needed for the current disclosure-style menu.
+- [x] **Modals** — close buttons are `type="button"` with `aria-label="Close"`; dialogs use `aria-labelledby` pointing to the title (the popup falls back to `aria-label="Announcement"` when it has no heading); removed `disableFocus: true` from `MicroModal.init()` in `main.js` and from the popup's `MicroModal.show()` so focus moves into the dialog; notification icons are `aria-hidden`; the "more info" button's `aria-label` was removed so its visible text is its name, and it has `aria-haspopup="dialog"`; the notification close button is "Close notification".
+- [x] **Pagination** — `snippets/pagination.twig` is now `<nav class="Pagination" aria-label="Pagination">`, the current page has `aria-current="page"`, and the chevron icons are `aria-hidden="true"` instead of `role="img"`.
+- [x] **`iconImg` macro** — removed the invalid `alt` attribute from the `<svg>`; the `<title>` + `aria-labelledby` already name it.
+- [x] **`rel="noopenner"` typo** — fixed to `noopener` on the footer social links. Added `rel="noopener"` to the footer credit link.
+- [x] **New-window links** — the footer social links and credit link include a `.visually-hidden` "(opens in a new window)". Logo links get their name from the logo's alt text (fallback added in Phase 4), so the `title` is no longer the only label.
+- [x] **Form errors** — `role="alert"` on the `formErrorContainer` and `formErrorContainerSingleMessage` containers, and on the element passed to `setErrorContainerSelector()` in `form.js`. `form.js` uses Just-Validate's `onValidate` to set `aria-invalid="true"` on invalid fields and link them to their error message with `aria-describedby` (other `aria-describedby` values are kept).
+- [x] **Required marker** — the `*` in labels is `aria-hidden="true"`.
+- [x] **Upload previews** — `alt="Preview of the uploaded image"` instead of `alt="Image"`.
+- [x] **Reduced motion** — `css/base/base.css` shortens all transitions and animations to 0.01ms when `prefers-reduced-motion: reduce` is set (not 0, so the accordion's `transitionend` still fires). Splide 4.1.4 already pauses autoplay and removes slide animation for reduced motion by default.
+- [ ] **Slider pause control (decide later)** — the image-gallery slider can autoplay with no visible pause button (WCAG 2.2.2). Splide supports a play/pause toggle (`splide__toggle`), but it needs markup and styling in `blocks/image-gallery.twig`.
+- [ ] **Video/audio captions (needs CMS)** — no `<track>` captions or transcript option. The video and audio blocks need a captions (VTT) file field in the CMS block definition before the templates can output a `<track>`.
+- [x] **Landmark labels** — the footer navigation is wrapped in `<nav aria-label="Footer">`; the two-column layouts' sidebars are `<aside aria-label="Section navigation">` and `<aside aria-label="Sidebar">`.
+- [ ] **`lang="en"` is hardcoded (needs CMS)** — `snippets/header.twig` needs a site language setting from the CMS to replace it. Leave as-is for English sites.
+- [x] **Menu button** — removed `aria-label="Navigation menu"` so the visible "Menu" text is the button's accessible name.
 
 ## Not planned (layout/style differences — decide later)
 
