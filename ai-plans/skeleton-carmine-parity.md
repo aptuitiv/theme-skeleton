@@ -74,30 +74,31 @@ Autoplaying banner videos and video blocks without controls have no way to pause
 Skeleton's theme-styles.json already has the style groups for these blocks, but no CSS uses them.
 
 **Columned Content**
-- [ ] `templates/blocks/columned-content.twig` — copy from Carmine
-- [ ] `css/components/column-content/` (`index.css`, `column-content.css`) — copy from Carmine
-- [ ] `css/components/index.css` — add `@import './column-content';`
+- [x] `templates/blocks/columned-content.twig` — copy from Carmine
+- [x] `css/components/column-content/` (`index.css`, `column-content.css`) — copy from Carmine
+- [x] `css/components/index.css` — add `@import './column-content';`
 
 **Google Ratings Bar**
-- [ ] `templates/blocks/google-ratings-bar.twig` — copy from Carmine, then fix the star labels: one label for the rating (e.g. "Rated 4.5 out of 5") and `aria-hidden` stars
-- [ ] `css/components/google-rating-bar/` (`index.css`, `rating-bar.css`) — copy from Carmine
-- [ ] `css/components/index.css` — add `@import './google-rating-bar';`
-- [ ] `icons/star.svg`, `star-empty.svg`, `star-half.svg` — copy from Carmine, then run `npm run icons`
-- [ ] `config/theme-settings.json` — add the "Customer Reviews & Ratings" group (`customerRatingsBarAverageRating`, `customerRatingsBarTotalReviews`)
+- [x] `templates/blocks/google-ratings-bar.twig` — copy from Carmine, then fix the star labels. The visible text already states the rating, so the stars and number are wrapped in `aria-hidden="true"` and use `iconAriaHidden` instead of `iconImg`.
+- [x] `css/components/google-rating-bar/` (`index.css`, `rating-bar.css`) — copy from Carmine
+- [x] `css/components/index.css` — add `@import './google-rating-bar';`
+- [x] `icons/star.svg`, `star-empty.svg`, `star-half.svg` — copy from Carmine
+- [x] `config/theme-settings.json` — add the "Customer Reviews & Ratings" group (`customerRatingsBarAverageRating`, `customerRatingsBarTotalReviews`)
+- [x] Single reviews link setting — the template now uses the "URL to view reviews" field in Settings (`customerRatingsBarReviewsLink`). Removed `googleRatingsBarReviewsLink` and its "Review link" subgroup from the "Blocks - Google Ratings Bar" styles group. This differs from Carmine until Carmine's plan item is done.
 
 **Image Row**
-- [ ] `templates/blocks/image-row.twig` — copy from Carmine, then fix `href="{image.url}"` → `href="{{ image.url }}"` and handle `target="_blank"` (drop it, or add a "(opens in a new window)" visually hidden label)
-- [ ] `css/components/image/image-row.css` — copy from Carmine
-- [ ] `css/components/image/index.css` — add `@import './image-row.css';`
+- [x] `templates/blocks/image-row.twig` — copy from Carmine, then fix `href="{image.url}"` → `href="{{ image.url }}"`. Kept `target="_blank"`, added `rel="noopener"` and a `.visually-hidden` "(opens in a new window)" label.
+- [x] `css/components/image/image-row.css` — copy from Carmine
+- [x] `css/components/image/index.css` — add `@import './image-row.css';`
 
 **Recent Blog Posts**
-- [ ] `templates/blocks/recent-blog-posts.twig` — copy from Carmine
-- [ ] `css/apps/blog/recent-posts.css` and `css/apps/blog/index.css` — copy from Carmine
-- [ ] `css/apps/index.css` + `@import './apps';` in `css/main.css` — decide whether to import only `blog` (and `calendar`, see Phase 5) or also `gallery` (Skeleton has no gallery templates)
-- [ ] `icons/chevron-thin-right.svg` — copy from Carmine, then run `npm run icons`
+- [x] `templates/blocks/recent-blog-posts.twig` — copy from Carmine
+- [x] `css/apps/blog/recent-posts.css` and `css/apps/blog/index.css` — copy from Carmine
+- [x] `css/apps/index.css` + `@import './apps';` in `css/main.css` — imports only `blog` for now; `calendar` gets added in Phase 5; `gallery` left out (Skeleton has no gallery templates)
+- [x] `icons/chevron-thin-right.svg` — copy from Carmine
 
 **Staff**
-- [ ] `templates/blocks/staff.twig` — copy from Carmine (uses utility classes only, no CSS needed)
+- [x] `templates/blocks/staff.twig` — copy from Carmine (uses utility classes only, no CSS needed)
 
 ## Phase 4 — Accessibility (bring up to Carmine/Harvest)
 
@@ -120,7 +121,7 @@ Skeleton's theme-styles.json already has the style groups for these blocks, but 
 - [ ] `css/components/message/message.css` — add `.Message--failure a { color: var(--Message-color-failure); }`
 - [ ] `config/theme-settings.json` — Social Icons group: add `"sidebarSize": "medium"` to match Carmine
 - [ ] **Calendar templates** — port Carmine's `calendar/*.twig`. Skeleton has `{{ events|debug }}` in `search-results.twig:7`, `<div class="h2">` event titles in `list.twig`, and `agenda.twig`/`list.twig` extend `two-column.twig`, which doesn't exist
-- [ ] **Calendar CSS** — port `css/apps/calendar/` (Skeleton's calendar pages are currently unstyled; the Calendar theme-styles groups already exist)
+- [ ] **Calendar CSS** — port `css/apps/calendar/` and add `@import './calendar';` to `css/apps/index.css` (Skeleton's calendar pages are currently unstyled; the Calendar theme-styles groups already exist)
 - [ ] Optional: replace `js/fslightbox.js` with Carmine's copy (Skeleton's is a reformatted copy of the library)
 - [ ] Optional: sidebar navigation CSS (`css/components/sidebar/`) — the Sidebar Navigation theme-styles variables are unused in Skeleton
 

@@ -1,0 +1,16 @@
+{% if images|length > 0 %}
+    {% import 'macros/macros' as macros %}
+    <div class="ImageRow{% if _core.theme.settings.blockImageRowImageGrayscale == 'yes' %} ImageRow--grayscale{% endif %}{{ macros.blockMargin(margin) }}">
+        <div class="ImageRow-inner{{ macros.blockWidth(width, true) }}">
+            {% for image in images %}
+                {% set image.image.class = 'ImageRow-image' %}
+                {% do image.image.lazy() %}
+                {% if image.url %}
+                    <a href="{{ image.url }}" target="_blank" rel="noopener" class="ImageRow-link">{{ image.image.tag }}<span class="visually-hidden"> (opens in a new window)</span></a>
+                {% else %}
+                    {{ image.image.tag }}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

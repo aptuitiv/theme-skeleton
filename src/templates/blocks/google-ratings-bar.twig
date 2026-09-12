@@ -1,0 +1,63 @@
+{% import 'macros/macros' as macros %}
+<div class="GoogleRatingsBar">
+    <div class="Container Container--pad">
+        <span class="GoogleRatingsBar-company">{{ _core.settings.companyName }}</span>
+        received an average rating of
+        <span class="GoogleRatingsBar-rating">{{ _core.theme.settings.customerRatingsBarAverageRating }}</span>
+        out of
+        <span class="GoogleRatingsBar-rating">5 stars</span>
+        from
+        <span class="GoogleRatingsBar-rating">{{ _core.theme.settings.customerRatingsBarTotalReviews }} reviews</span>.
+        <span class="block inline-lg">
+            {# The number and stars repeat the rating in the text above, so they're hidden from screen readers #}
+            <span class="GoogleRatingsBar-stars" aria-hidden="true">
+                <span class="GoogleRatingsBar-starsNumber">{{ _core.theme.settings.customerRatingsBarAverageRating }}</span>
+                {% if _core.theme.settings.customerRatingsBarAverageRating %}
+                    {# Get just the decimal part of the rating #}
+                    {% set decimal = _core.theme.settings.customerRatingsBarAverageRating - _core.theme.settings.customerRatingsBarAverageRating|floor %}
+                    {# Set up the number of whole, half, and empty stars to show #}
+                    {% set numWholeStars = _core.theme.settings.customerRatingsBarAverageRating|floor %}
+                    {% set numHalfStars = 0 %}
+                    {% if decimal > 0.3 && decimal < 0.9 %}
+                        {% set numHalfStars = 1 %}
+                    {% elseif decimal >= 0.9 %}
+                        {% set numWholeStars = numWholeStars + 1 %}
+                    {% endif %}
+                {% else %}
+                    {% set numWholeStars = 0 %}
+                    {% set numHalfStars = 0 %}
+                {% endif %}
+
+                {# Set up the number of empty stars to show #}
+                {% if _core.theme.settings.customerRatingsBarAverageRating %}
+                    {% set numEmptyStars = 5 - numWholeStars - numHalfStars %}
+                {% else %}
+                    {% set numEmptyStars = 5 %}
+                {% endif %}
+
+                {% set numEmptyStars = 5 - numWholeStars - numHalfStars %}
+
+                {# Output the stars #}
+                {% if numWholeStars > 0 %}
+                    {% for num in 1..numWholeStars %}
+                        {{ macros.iconAriaHidden('star', "GoogleRatingsBar-star") }}
+                    {% endfor %}
+                {% endif %}
+                {% if numHalfStars > 0 %}
+                    {% for num in 1..numHalfStars %}
+                        {{ macros.iconAriaHidden('star-half', "GoogleRatingsBar-star") }}
+                    {% endfor %}
+                {% endif %}
+                {% if numEmptyStars > 0 %}
+                    {% for num in 1..numEmptyStars %}
+                        {{ macros.iconAriaHidden('star-empty', "GoogleRatingsBar-star") }}
+                    {% endfor %}
+                {% endif %}
+            </span>
+            {% if _core.theme.settings.customerRatingsBarReviewsLink %}
+                {% set _core.theme.settings.customerRatingsBarReviewsLink.class = 'GoogleRatingsBar-link' %}
+                {{ _core.theme.settings.customerRatingsBarReviewsLink.tag }}
+            {% endif %}
+        </span>
+    </div>
+</div>
