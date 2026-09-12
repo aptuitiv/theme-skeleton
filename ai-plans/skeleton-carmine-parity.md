@@ -102,14 +102,14 @@ Skeleton's theme-styles.json already has the style groups for these blocks, but 
 
 ## Phase 4 — Accessibility (bring up to Carmine/Harvest)
 
-- [ ] **Skip link** — add `<a class="Header-skipToMain" href="#main">skip to main content …</a>` as the first element in `<body>` in `snippets/header.twig` (Carmine `header.twig:44`)
-- [ ] **Skip link CSS** — port Harvest's `css/components/header/skip-to-main.css` (z-index above the sticky header) and import it in `css/components/header/index.css`. Reconcile the class name (Carmine `Header-skipToMain` vs Harvest `HeaderSkipToMain`) and use the existing `--Header-skipMain-*` variables from theme-styles.json
-- [ ] **`<nav>` landmark** — wrap the main menu in `<nav class="NavBar js-navBar" id="navbar" aria-label="Main">` (Carmine `header.twig:143`), and remove `id="navbar"` from the `<ul>` in `navigation/main.twig:47-48`
-- [ ] `js/navigation/small-screen.js:15` — change `.js-mainNav` to `.js-navBar` to match the new markup
-- [ ] Check the nav CSS still applies after the wrapper change (Carmine uses `css/components/navigation/bar.css`)
-- [ ] **Logo alt fallback** — `headerLogo.alt.default(_core.settings.companyName)` in `snippets/header.twig:32-37`, and the same for the footer logo in `snippets/footer.twig:29-34`
-- [ ] Keep Skeleton's `.Footer a:focus-visible` rule (Skeleton is ahead of Carmine here)
-- [ ] Keep Skeleton's `<main id="main">` placement in 404 and the two-column layouts
+- [x] **Skip link** — added `<a class="HeaderSkipToMain" href="#main">skip to main content …</a>` right after `_page.bodyStartCode()` in `snippets/header.twig` (same position as Carmine and Harvest)
+- [x] **Skip link CSS** — copied Harvest's `css/components/header/skip-to-main.css` (z-index above the sticky header) and imported it in `css/components/header/index.css`. Uses Harvest's `HeaderSkipToMain` class and the existing `--Header-skipMain-*` variables from theme-styles.json
+- [x] **`<nav>` landmark** — changed the existing `.Header-nav` `<div>` in `snippets/header.twig` to `<nav … id="navbar" aria-label="Main">`, and removed the duplicate `id="navbar"` from the `<ul>` in `navigation/main.twig`. The menu button's `aria-controls="navbar"` now points to the `<nav>`.
+- [x] ~~`js/navigation/small-screen.js:15` — change `.js-mainNav` to `.js-navBar`~~ — not needed. Carmine's `NavBar` wrapper depends on Carmine's navigation layout (`bar.css`), which is out of scope. Skeleton keeps `js-mainNav` on the `<ul>`, so small-screen.js and accessibility.js are unchanged. (Carmine and Rivera have an accessibility.js bug from dropping `js-mainNav`; it's in their plans.)
+- [x] ~~Check the nav CSS still applies after the wrapper change~~ — not needed. No wrapper was added, and `.Header-nav` is styled by class only.
+- [x] **Logo alt fallback** — `headerLogo.alt.default(_core.settings.companyName)` in `snippets/header.twig`, and the same for the footer logo in `snippets/footer.twig`
+- [x] Keep Skeleton's `.Footer a:focus-visible` rule (Skeleton is ahead of Carmine here)
+- [x] Keep Skeleton's `<main id="main">` placement in 404 and the two-column layouts
 
 ## Phase 5 — Config, CSS, and template clean-up
 
