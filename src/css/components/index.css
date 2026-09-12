@@ -19,6 +19,7 @@
 @import './navigation';
 @import './notifications';
 @import './pagination';
+@import './sidebar';
 @import './slider';
 @import './table';
 @import './video';

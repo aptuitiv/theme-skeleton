@@ -1,0 +1,37 @@
+/* =========================================================================== *\
+    Sidebar Box Styles
+\* =========================================================================== */
+
+/* @define SidebarBox */
+.SidebarBox {
+    margin-bottom: 40px;
+}
+
+.SidebarBox:last-child {
+    margin-bottom: 0;
+}
+
+.SidebarBox-heading {
+    align-items: center;
+    background: var(--SidebarBox-heading-background);
+    display: flex;
+    gap: 5px;
+    justify-content: var(--SidebarBox-heading-text-align);
+    text-align: var(--SidebarBox-heading-text-align);
+}
+
+.SidebarBox-heading:hover {
+    background: var(--SidebarBox-heading-background-hover);
+}
+
+.SidebarBox-item {
+    border-bottom: 1px solid #e1e1e1;
+    margin: 10px 0;
+    padding-bottom: 14px;
+}
+
+.SidebarBox-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
