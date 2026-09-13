@@ -89,15 +89,15 @@ Miscellaneous subgroup:
 
 New **Social icons** subgroup. Carmine already has these fields (`footerSocial*`), so copy them. Skeleton's values are in `css/components/footer/footer.css:49-52`.
 
-- [ ] `footerSocialColor` / `footerSocialColorHover` (color)
-- [ ] `footerSocialBackground` / `footerSocialBackgroundHover` (color)
-- [ ] `footerSocialSize` (size), default `30px`
-- [ ] `footerSocialBorderRadius` (borderRadius), default `50%`
-- [ ] `footerSocialBorder` (border), default `2px solid` in the footer text color. Carmine doesn't have this one.
+- [x] `footerSocialColor` / `footerSocialColorHover` (color)
+- [x] `footerSocialBackground` / `footerSocialBackgroundHover` (color)
+- [x] `footerSocialSize` (size), default `30px`
+- [x] `footerSocialBorderRadius` (borderRadius), default `50%`
+- [x] `footerSocialBorder` (border), default `2px solid` in the footer text color. Carmine doesn't have this one.
 
 General subgroup:
 
-- [ ] `footerLogoMarginSm` (margin) → `--Footer-logo-margin-sm`, default `70px 0 0 0` (line 41, small screens only)
+- [x] `footerLogoMarginSm` (margin) → `--Footer-logo-margin-sm`, default `70px 0 0 0` (line 41, small screens only)
 
 ### Buttons
 
