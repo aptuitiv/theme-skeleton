@@ -145,8 +145,9 @@ Checkbox subgroup:
 
 ### Blocks - Accordion
 
-- [ ] `accordionIconThickness` (size) → `--Accordion-icon-thickness`, default `3px`, the thickness of the +/− lines (`css/components/accordion/accordion.css:59`)
-- [ ] `accordionItemBoxShadow` (boxShadow) → `--Accordion-item-box-shadow`, default none
+- [x] `accordionIconThickness` (size) → `--Accordion-icon-thickness`, default `3px`, the thickness of the +/− lines (`css/components/accordion/accordion.css:59`)
+- [x] `accordionItemBoxShadow` (boxShadow) → `--Accordion-item-box-shadow`, default none
+- [x] `accordionItemBorderRadius` (borderRadius) → `--Accordion-item-border-radius`, default `0`. Added on request so the item shadow can have rounded corners. No `overflow: hidden`, so the heading's focus outline isn't clipped.
 
 ### Blocks - Banners
 
