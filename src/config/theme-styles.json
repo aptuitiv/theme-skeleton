@@ -2939,6 +2939,17 @@
                                 "type": "css-head",
                                 "cssVariable": "--Footer-sm"
                             }
+                        },
+                        {
+                            "name": "footerLogoMarginSm",
+                            "label": "Logo margin (small screens)",
+                            "type": "margin",
+                            "description": "Space around the footer logo on small screens, where the footer columns stack.",
+                            "defaultValue": "70px 0 0 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-logo-margin-sm"
+                            }
                         }
                     ]
                 },
@@ -3062,6 +3073,77 @@
                             "render": {
                                 "type": "css-head",
                                 "cssSelector": ".Footer-attribution"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Social icons",
+                    "fields": [
+                        {
+                            "name": "footerSocialColor",
+                            "label": "Color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-social-color"
+                            }
+                        },
+                        {
+                            "name": "footerSocialColorHover",
+                            "label": "Color (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-social-color-hover"
+                            }
+                        },
+                        {
+                            "name": "footerSocialBackground",
+                            "label": "Background",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-social-background"
+                            }
+                        },
+                        {
+                            "name": "footerSocialBackgroundHover",
+                            "label": "Background (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-social-background-hover"
+                            }
+                        },
+                        {
+                            "name": "footerSocialSize",
+                            "label": "Size",
+                            "type": "size",
+                            "defaultValue": "30px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-social-size"
+                            }
+                        },
+                        {
+                            "name": "footerSocialBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "defaultValue": "50%",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-social-border-radius"
+                            }
+                        },
+                        {
+                            "name": "footerSocialBorder",
+                            "label": "Border",
+                            "type": "border",
+                            "description": "Leave empty for a 2px border in the icon color.",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-social-border"
                             }
                         }
                     ]

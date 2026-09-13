@@ -29,7 +29,7 @@
 }
 
 .Footer-logo {
-    margin-top: 70px;
+    margin: var(--Footer-logo-margin-sm, 70px 0 0 0);
     max-width: var(--Footer-logo-width);
     width: 100%;
 }
@@ -37,11 +37,29 @@
 .Footer-socialLink {
     align-items: center;
     aspect-ratio: 1/1;
-    border: 2px solid var(--Footer-color);
-    border-radius: 50%;
+    background-color: var(--Footer-social-background, transparent);
+    border: var(--Footer-social-border, 2px solid currentcolor);
+    border-radius: var(--Footer-social-border-radius, 50%);
+    color: var(--Footer-social-color, inherit);
     display: inline-flex;
-    height: 30px;
+    height: var(--Footer-social-size, 30px);
     justify-content: center;
+}
+
+/* The ".Footer" prefix is needed to outrank the ".Footer a" hover and focus styles above */
+
+/* postcss-bem-linter: ignore */
+.Footer .Footer-socialLink:focus-visible {
+    background-color: var(--Footer-social-background-hover, var(--Footer-social-background, transparent));
+    color: var(--Footer-social-color-hover, var(--Footer-social-color, inherit));
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* postcss-bem-linter: ignore */
+    .Footer .Footer-socialLink:hover {
+        background-color: var(--Footer-social-background-hover, var(--Footer-social-background, transparent));
+        color: var(--Footer-social-color-hover, var(--Footer-social-color, inherit));
+    }
 }
 
 /* ------------------------------------ *\
@@ -55,6 +73,6 @@
     }
 
     .Footer-logo {
-        margin-top: 0;
+        margin: 0;
     }
 }
