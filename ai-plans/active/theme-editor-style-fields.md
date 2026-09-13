@@ -80,9 +80,9 @@ Miscellaneous subgroup:
 
 ### Container Widths
 
-- [ ] **Side padding** — `containerPadding` (size) → `--Container-padding`, default `30px` (`css/components/container/container.css:27,31`, xl and up)
-- [ ] **Side padding (small screens)** — `containerPaddingSm` (size) → `--Container-padding-sm`, default `10px` (`container.css:17,22`)
-- [ ] Also update to follow the container.css pattern and usage in Carmine and Harvest.
+- [x] **Side padding** — `containerPadding` (size) → `--Container-padding`, default `30px` (`css/components/container/container.css:27,31`, xl and up)
+- [x] **Side padding (small screens)** — `containerPaddingSm` (size) → `--Container-padding-sm`, default `10px` (`container.css:17,22`)
+- [x] Also update to follow the container.css pattern and usage in Carmine and Harvest.
 
 
 ### Footer
