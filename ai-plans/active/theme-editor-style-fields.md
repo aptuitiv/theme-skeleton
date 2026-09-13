@@ -157,8 +157,8 @@ Checkbox subgroup:
 
 ### Blocks - Icon Grid
 
-- [ ] `blockIconGridBorderRadius` (borderRadius) → `--IconGrid-border-radius`
-- [ ] `blockIconGridBoxShadow` / `…Hover` (boxShadow) → `--IconGrid-box-shadow` / `--IconGrid-box-shadow-hover`, default none
+- [x] `blockIconGridBorderRadius` (borderRadius) → `--IconGrid-border-radius`
+- [x] `blockIconGridBoxShadow` / `…Hover` (boxShadow) → `--IconGrid-box-shadow` / `--IconGrid-box-shadow-hover`, default none
 
 ### Blocks - Image Gallery / Slider
 
