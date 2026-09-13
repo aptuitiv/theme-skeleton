@@ -68,15 +68,15 @@ Grouped by the theme-styles.json group they would go in. Each item lists the fie
 
 New **Blockquote** subgroup (`css/base/typography.css:71-73`):
 
-- [ ] `blockquoteBorderColor` (color) → `--base-typography-blockquote-border-color`, default `#ccc`
-- [ ] `blockquoteBorderWidth` (size) → `--base-typography-blockquote-border-width`, default `10px`
-- [ ] `blockquoteBackground` (color) → `--base-typography-blockquote-background`
-- [ ] `blockquotePadding` (padding) → `--base-typography-blockquote-padding`, default `0.5em 1em`
-- [ ] `blockquoteTypography` (typography, `useTextAlign: false`) → `--base-typography-blockquote`, for italic, larger, or colored quotes
+- [x] `blockquoteBorderColor` (color) → `--base-typography-blockquote-border-color`, default `#ccc`
+- [x] `blockquoteBorderWidth` (size) → `--base-typography-blockquote-border-width`, default `10px`
+- [x] `blockquoteBackground` (color) → `--base-typography-blockquote-background`
+- [x] `blockquotePadding` (padding) → `--base-typography-blockquote-padding`, default `0.5em 1em`
+- [x] `blockquoteTypography` (typography, `useTextAlign: false`) → `--base-typography-blockquote`, for italic, larger, or colored quotes
 
 Miscellaneous subgroup:
 
-- [ ] **Horizontal rule color** — `baseHorizontalRuleColor` (color) → `--base-typography-hrule-color`. Currently `color: inherit` in `hr`. It sits next to the existing rule-size field.
+- [x] **Horizontal rule color** — `baseHorizontalRuleColor` (color) → `--base-typography-hrule-color`. Currently `color: inherit` in `hr`. It sits next to the existing rule-size field.
 
 ### Container Widths
 
