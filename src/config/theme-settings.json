@@ -88,6 +88,17 @@
                         "cssVariable": "--Header-logo-width",
                         "template": "{{ value }}px"
                     }
+                },
+                {
+                    "name": "headerTextLogo",
+                    "label": "Text logo",
+                    "type": "text",
+                    "description": "Shown instead of the logo image when no image is uploaded.",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": "#header-logo",
+                        "template": "<div class=\"col-3-4 col-1-3-xl\" id=\"header-logo\">{% if fields.headerLogo %}<a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\"><img src=\"{{ fields.headerLogo.url }}\" class=\"Header-logo\"></a>{% elseif value %}<a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\"><span class=\"Header-textLogo\">{{ value }}</span></a>{% endif %}</div>"
+                    }
                 }
             ]
         },
