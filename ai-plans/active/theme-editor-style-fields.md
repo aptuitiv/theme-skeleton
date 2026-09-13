@@ -43,9 +43,9 @@ These fields are in theme-styles.json, but the CSS reads a different variable na
 
 ### JSON issues
 
-- [ ] The **Popups** group uses `"sections"` instead of `"groups"` (`theme-styles.json:4819`). `"sections"` are ok and are rendered, but change to `"groups"` to follow conventions.
-- [ ] `alt1ButtonTypography` → `colorHover` defaults to `"#fffff"`, which has five f's and is invalid (`theme-styles.json:2324`).
-- [ ] `breadcrumbPaddingSm` is labeled "Padding". It should say "Padding (small screens)" (`theme-styles.json:2179`).
+- [x] The **Popups** group uses `"sections"` instead of `"groups"` (`theme-styles.json:4819`). `"sections"` are ok and are rendered, but change to `"groups"` to follow conventions.
+- [x] `alt1ButtonTypography` → `colorHover` defaults to `"#fffff"`, which has five f's and is invalid (`theme-styles.json:2324`).
+- [x] `breadcrumbPaddingSm` is labeled "Padding". It should say "Padding (small screens)" (`theme-styles.json:2179`).
 
 ### Fields that target markup Skeleton doesn't have
 

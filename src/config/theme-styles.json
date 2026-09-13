@@ -2321,7 +2321,7 @@
                                 "defaultValue": "#333333"
                             },
                             "colorHover": {
-                                "defaultValue": "#fffff"
+                                "defaultValue": "#fff"
                             },
                             "fontSize": {
                                 "defaultValue": "1.8rem"
