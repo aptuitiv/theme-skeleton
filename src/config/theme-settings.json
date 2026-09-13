@@ -1,6 +1,26 @@
 {
     "groups": [
         {
+            "name": "Blog",
+            "fields": [
+                {
+                    "name": "blogMainPageBannerHeading",
+                    "label": "Banner heading",
+                    "type": "text",
+                    "defaultValue": "Blog"
+                },
+                {
+                    "name": "blogMainPageBannerImage",
+                    "label": "Banner Image",
+                    "type": "image",
+                    "description": "The image will be cropped on the page to match the Banner Bar settings. See Styles - Blocks Banner Bar - Banner Bar Images for more information.",
+                    "path": "images/banner",
+                    "maxWidth": "2000",
+                    "useAttributes": false
+                }
+            ]
+        },
+        {
             "name": "Breadcrumb",
             "fields": [
                 {

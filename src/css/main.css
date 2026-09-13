@@ -212,6 +212,7 @@
 
 @import 'cacao-css/dist/typography/align.css';
 @import 'cacao-css/dist/typography/transform.css';
+@import 'cacao-css/dist/typography/style.css';
 
 /* Typography (lg) */
 @import 'cacao-css/dist/typography/lg/align.css';
