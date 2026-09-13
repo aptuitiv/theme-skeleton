@@ -22,7 +22,7 @@
     -webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: var(--RecentPosts-abstract-lines, 3);
-    line-clamp: var(--recentposts-abstract-lines, 3);
+    line-clamp: var(--RecentPosts-abstract-lines, 3);
     overflow: hidden;
 }
 

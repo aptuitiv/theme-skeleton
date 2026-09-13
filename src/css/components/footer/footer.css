@@ -2,21 +2,12 @@
     Footer
 \* =========================================================================== */
 
-/* :root {
-    --Footer-background: #00263e;
-    --Footer-color: #fff;
-    --Footer-color--hover: #fff;
-    --Footer-paddingVertical: 80px;
-    --Footer-paddingHorizontal: 160px;
-    --Footer-paddingVertical--sm: 50px;
-    --Footer-paddingHorizontal--sm: 50px;
-} */
-
 /* @define Footer */
 .Footer {
     background-color: var(--Footer-background);
     color: var(--Footer-color);
-    padding: var(--Footer-paddingVertical--sm) var(--Footer-paddingHorizontal--sm);
+    margin: var(--Footer-sm-margin, 0);
+    padding: var(--Footer-sm-padding, 10px 0);
 }
 
 /* postcss-bem-linter: ignore */
@@ -59,9 +50,10 @@
 
 @media (--m-lg) {
     .Footer {
-        padding: var(--Footer-paddingVertical) var(--Footer-paddingHorizontal);
+        margin: var(--Footer-margin, 0);
+        padding: var(--Footer-padding, 20px 0);
     }
-    
+
     .Footer-logo {
         margin-top: 0;
     }

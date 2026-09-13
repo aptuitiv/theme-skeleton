@@ -34,7 +34,7 @@
 .FileField-button {
     background: var(--FileButton-background, var(--Button-background));
     border-color: var(--FileButton-border-color, var(--Button-border-color));
-    color: var(--FileButton-color, var(--Button-color));
+    color: var(--FileButton-color, var(--Button-typography-color));
     gap: 6px;
 }
 
@@ -54,7 +54,7 @@
 .FileField-button:active {
     background: var(--FileButton-background-hover, var(--Button-background-hover));
     border-color: var(--FileButton-border-color-hover, var(--Button-border-color-hover));
-    color: var(--FileButton-color-hover, var(--Button-color-hover));
+    color: var(--FileButton-color-hover, var(--Button-typography-color-hover));
 }
 
 /* ------------------------------------ *\
@@ -85,5 +85,5 @@
 .FileField-actionButton--remove:active,
 .FileField-actionButton--remove:focus,
 .FileField-actionButton--remove:hover {
-    color: var(--ButtonType-delete-color-hover);
+    color: var(--FormRequired-color, #b2130c);
 }

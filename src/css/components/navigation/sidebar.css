@@ -15,29 +15,61 @@
 }
 
 .SidebarNav-link {
-    color: #333;
+    background-color: var(--SidebarNav-background);
+    color: var(--SidebarNav-color, #333);
     display: block;
-    font-weight: 300;
-    padding: 4px 8px;
+    font-family: var(--SidebarNav-font-family);
+    font-size: var(--SidebarNav-font-size);
+    font-style: var(--SidebarNav-font-style);
+    font-weight: var(--SidebarNav-font-weight, 300);
+    letter-spacing: var(--SidebarNav-letter-spacing);
+    line-height: var(--SidebarNav-line-height);
+    padding: var(--SidebarNav-padding, 4px 8px);
     position: relative;
-    text-decoration: none;
+    text-decoration: var(--SidebarNav-text-decoration, none);
+    text-transform: var(--SidebarNav-text-transform);
 }
 
 .SidebarNav-link--isParent {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 30px;
+    color: var(--SidebarNav-parent-color, var(--SidebarNav-color, #333));
+    font-family: var(--SidebarNav-parent-font-family);
+    font-size: var(--SidebarNav-parent-font-size, 24px);
+    font-style: var(--SidebarNav-parent-font-style);
+    font-weight: var(--SidebarNav-parent-font-weight, 700);
+    letter-spacing: var(--SidebarNav-parent-letter-spacing);
+    line-height: var(--SidebarNav-parent-line-height, 30px);
+    padding: var(--SidebarNav-parent-padding, 0 0 8px 0);
+    text-decoration: var(--SidebarNav-parent-text-decoration, none);
+    text-transform: var(--SidebarNav-parent-text-transform);
 }
 
 .SidebarNav-link:active,
 .SidebarNav-link:focus,
 .SidebarNav-link:hover {
-    color: #333;
-    text-decoration: none;
+    background-color: var(--SidebarNav-background-hover, var(--SidebarNav-background));
+    color: var(--SidebarNav-color-hover, var(--SidebarNav-color, #333));
+    text-decoration: var(--SidebarNav-text-decoration-hover, none);
 }
 
 .SidebarNav-link.is-current,
 .SidebarNav-link.is-currentParent {
-    color: #333;
+    color: var(--SidebarNav-current-color, var(--SidebarNav-color, #333));
     text-decoration: none;
+}
+
+.SidebarNav-link.is-current:active,
+.SidebarNav-link.is-current:focus,
+.SidebarNav-link.is-current:hover,
+.SidebarNav-link.is-currentParent:active,
+.SidebarNav-link.is-currentParent:focus,
+.SidebarNav-link.is-currentParent:hover {
+    background-color: var(--SidebarNav-background-hover, var(--SidebarNav-background));
+    color: var(--SidebarNav-color-hover, var(--SidebarNav-current-color, var(--SidebarNav-color, #333)));
+    text-decoration: var(--SidebarNav-text-decoration-hover, none);
+}
+
+.SidebarNav-link--isParent.is-current,
+.SidebarNav-link--isParent.is-currentParent {
+    background-color: transparent;
+    color: var(--SidebarNav-parent-color, var(--SidebarNav-color, #333));
 }

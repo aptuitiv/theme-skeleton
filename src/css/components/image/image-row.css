@@ -33,7 +33,7 @@
 }
 
 @media (--m-md) {
-    .ImageRow {
+    .ImageRow-inner {
         gap: var(--ImageRow-gap, 30px);
     }
 }

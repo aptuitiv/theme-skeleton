@@ -54,7 +54,7 @@
 
 .WrapperWithBgImage-fg--bgDark {
     background-color: var(--Wrapper-wbgimage-background-dark);
-    color: #fff;
+    color: var(--Wrapper-wbgimage-background-dark-color, #fff);
 }
 
 .WrapperWithBgImage-content {
