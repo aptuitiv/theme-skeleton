@@ -24,8 +24,18 @@
     text-decoration: none;
 }
 
+.Header-textLogo {
+    font-size: var(--Header-text-logo-font-size-sm, 4rem);
+}
+
 .Header-nav {
     overflow: visible !important;
+}
+
+@media (--m-md) {
+    .Header-textLogo {
+        font-size: var(--Header-text-logo-font-size, 6rem);
+    }
 }
 
 @media (--m-lg) {
