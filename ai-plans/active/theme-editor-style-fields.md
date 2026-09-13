@@ -103,12 +103,12 @@ General subgroup:
 
 Add these to Default, Alternate, and Alternate 2, the same way the existing button fields work (`--Button-alt-*` falls back to `--Button-*`).
 
-- [ ] `defaultButtonBoxShadow` / `…BoxShadowHover` (boxShadow) → `--Button-box-shadow` / `--Button-box-shadow-hover`, default none
-- [ ] `alt1Button…` / `alt2Button…` versions → `--Button-alt-box-shadow…`, `--Button-alt2-box-shadow…`
+- [x] `defaultButtonBoxShadow` / `…BoxShadowHover` (boxShadow) → `--Button-box-shadow` / `--Button-box-shadow-hover`, default none
+- [x] `alt1Button…` / `alt2Button…` versions → `--Button-alt-box-shadow…`, `--Button-alt2-box-shadow…`
 
 Size variants subgroup:
 
-- [ ] `buttonIconGap` (size) → `--Button-icon-gap`, default `5px`, the space between the icon and text in `.Button--withIcon` (`css/components/button/button.css:185`)
+- [x] `buttonIconGap` (size) → `--Button-icon-gap`, default `5px`, the space between the icon and text in `.Button--withIcon` (`css/components/button/button.css:185`)
 
 ### Forms
 
