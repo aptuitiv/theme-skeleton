@@ -151,9 +151,9 @@ Checkbox subgroup:
 
 ### Blocks - Banners
 
-- [ ] `bannerSliderTextPaginationBorderRadius` (borderRadius) → `--Banner-slider-text-border-radius`. The CSS already reads this variable (`css/components/banner/banner-slider.css`), but there's no field for it.
-- [ ] `bannerSliderDotSize` (size) → `--Banner-slider-dot-size`, default `17px` (`banner-slider.css:31`)
-- [ ] `bannerContentBoxShadow` (boxShadow) → `--Banner-content-box-shadow`, default none, for when the content box has a background color
+- [x] `bannerSliderTextPaginationBorderRadius` (borderRadius) → `--Banner-slider-text-border-radius`. The CSS already reads this variable (`css/components/banner/banner-slider.css`), but there's no field for it.
+- [x] `bannerSliderDotSize` (size) → `--Banner-slider-dot-size`, default `17px` (`banner-slider.css:31`)
+- [x] `bannerContentBoxShadow` (boxShadow) → `--Banner-content-box-shadow`, default none, for when the content box has a background color
 
 ### Blocks - Icon Grid
 
