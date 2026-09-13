@@ -130,13 +130,13 @@ Checkbox subgroup:
 
 ### Popups
 
-- [ ] `modalBoxShadow` (boxShadow) → `--Modal-box-shadow`, default none (`.Modal-container`)
-- [ ] `modalScreenMargin` (size) → `--Modal-screen-margin`, default `20px`, the minimum space between the popup and the edge of the screen (`css/components/modal/modal.css:28`; the `max-height` calc on the next line needs to use it too)
+- [x] `modalBoxShadow` (boxShadow) → `--Modal-box-shadow`, default none (`.Modal-container`)
+- [x] `modalScreenMargin` (size) → `--Modal-screen-margin`, default `20px`, the minimum space between the popup and the edge of the screen (`css/components/modal/modal.css:28`; the `max-height` calc on the next line needs to use it too)
 
 ### Notifications
 
-- [ ] `notificationMoreTypography` (typography, `useHover: true`, `useTextAlign: false`) → `--Notification-more`, for the "More" link (`css/components/notifications/notification.css:14-18`)
-- [ ] `notificationMoreGap` (size) → `--Notification-more-gap`, default `20px` (line 17)
+- [x] `notificationMoreTypography` (typography, `useHover: true`, `useTextAlign: false`) → `--Notification-more`, for the "More" link (`css/components/notifications/notification.css:14-18`)
+- [x] `notificationMoreGap` (size) → `--Notification-more-gap`, default `20px` (line 17)
 
 ### Tables
 
