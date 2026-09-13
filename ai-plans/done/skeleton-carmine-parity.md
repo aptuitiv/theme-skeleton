@@ -164,3 +164,8 @@ Carmine has these problems too, so there's nothing to port — each needs a new 
 - [ ] Autoplaying banner and video blocks show a working pause/play button; the label switches between "Pause video" and "Play video"
 - [ ] Keyboard check: Tab from page load shows the skip link first and it jumps to the main content; the menu is announced as a navigation landmark
 - [ ] Mobile menu still opens and closes after the `.js-navBar` change
+
+## Follow-up fixes (2026-09-13)
+
+- [x] **`blocks/columned-content.twig` width override** — removed the `width:` values from `count2`–`count6` and every `{% set width = countN.width %}` line. They overwrote the block's Width field, so the Width setting never took effect (same fix as image-grid, Carmine commit `1745710`).
+- [x] **`blocks/columned-content.twig`** — added the missing `{% import 'macros/macros' as macros %}`; without it the margin/width classes didn't render.
