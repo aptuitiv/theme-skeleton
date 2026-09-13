@@ -140,8 +140,8 @@ Checkbox subgroup:
 
 ### Tables
 
-- [ ] `tableHeaderTypography` (typography) → `--Table-header`. This would replace the separate `tableHeaderColor` and `tableHeaderFontWeight` fields and add font size and text transform.
-- [ ] `tableMargin` (margin) → `--Table-margin`, default `0 0 20px 0` (`css/base/table.css:8`)
+- [x] `tableHeaderTypography` (typography) → `--Table-header`. This would replace the separate `tableHeaderColor` and `tableHeaderFontWeight` fields and add font size and text transform. _Done differently: the two existing fields were kept so saved values aren't lost; the typography field has `useColor`/`useFontWeight` off and writes to the same `--Table-header-*` variables._
+- [x] `tableMargin` (margin) → `--Table-margin`, default `0 0 20px 0` (`css/base/table.css:8`)
 
 ### Blocks - Accordion
 
