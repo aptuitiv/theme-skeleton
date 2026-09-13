@@ -114,14 +114,14 @@ Size variants subgroup:
 
 Text Field and Select Menu subgroups:
 
-- [ ] `textInputBorderColorFocus` (color) → `--TextInput-border-color-focus`. Needs a new `border-color` in `.TextInput:focus`.
-- [ ] `textInputPlaceholderColor` (color) → `--TextInput-placeholder-color`. Needs a new `::placeholder` rule.
-- [ ] `textInputFontSize` (fontSize) → `--TextInput-font-size`. Keep the 16px minimum on small screens in `base/base.css:133`, which stops iOS from zooming.
-- [ ] `selectMenuBorderColorFocus` (color) → `--SelectMenu-border-color-focus`
+- [x] `textInputBorderColorFocus` (color) → `--TextInput-border-color-focus`. Needs a new `border-color` in `.TextInput:focus`.
+- [x] `textInputPlaceholderColor` (color) → `--TextInput-placeholder-color`. Needs a new `::placeholder` rule.
+- [x] `textInputFontSize` (fontSize) → `--TextInput-font-size`. Keep the 16px minimum on small screens in `base/base.css:133`, which stops iOS from zooming.
+- [x] `selectMenuBorderColorFocus` (color) → `--SelectMenu-border-color-focus`
 
 Checkbox subgroup:
 
-- [ ] `checkboxLabelGap` (size) → `--Checkbox-gap`, default `10px`, the space between the box and the label (`css/components/form/checkbox.css:11`)
+- [x] `checkboxLabelGap` (size) → `--Checkbox-gap`, default `10px`, the space between the box and the label (`css/components/form/checkbox.css:11`)
 
 ### Messages
 
