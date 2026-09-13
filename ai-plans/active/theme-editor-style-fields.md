@@ -51,11 +51,11 @@ These fields are in theme-styles.json, but the CSS reads a different variable na
 
 For each one, either add the markup to the template or delete the field.
 
-- [ ] **Main Navigation → Navigation Bar** (`navBarBackground`, `navBarPadding`, `navBarPaddingSm` → `--NavBar-*`): there's no NavBar element or CSS. Either wrap `.Header-nav` in a styled bar or remove the fields. Remove the fields.
-- [ ] **Sidebar Navigation → Secondary content** targets `.SidebarBox-secondary`, which isn't in any template. This is only in the Blog templates. Port the templates from Carmine if missing.
 - [x] **Header → Text Logo** (`.Header-textLogo`, `--Header-text-logo-*`): there's no text logo markup in `snippets/header.twig` and no CSS. add text logo support similar to Carmine.
 - [x] **Header → General typography** (`.Header-content`), **Header links** (`.Header-link`), **Social icons** (`.Header-socialLink`, `.Header-socialIcons`), and **Header buttons** (`.Header-button`): none of these classes are in the header template. Remove these styles.
+- [x] **Main Navigation → Navigation Bar** (`navBarBackground`, `navBarPadding`, `navBarPaddingSm` → `--NavBar-*`): there's no NavBar element or CSS. Either wrap `.Header-nav` in a styled bar or remove the fields. Remove the fields.
 - [x] **Footer → Footer credit** targets `.Footer-attributeLink` / `.Footer-attribution`, but `snippets/footer.twig:39` uses `.Footer-creditLink`. Update to be similar to Carmine.
+- [x] **Sidebar Navigation → Secondary content** targets `.SidebarBox-secondary`, which isn't in any template. This is only in the Blog templates. Port the templates from Carmine if missing.
 
 ---
 
