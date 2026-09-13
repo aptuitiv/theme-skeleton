@@ -159,6 +159,7 @@ Checkbox subgroup:
 
 - [x] `blockIconGridBorderRadius` (borderRadius) → `--IconGrid-border-radius`
 - [x] `blockIconGridBoxShadow` / `…Hover` (boxShadow) → `--IconGrid-box-shadow` / `--IconGrid-box-shadow-hover`, default none
+- [x] Fixed the hover styles on request. Hover background, border, text color, and text decoration now fall back to their regular values. Before, hovering a linked item removed any style that had no hover value. `blockIconGridTypography` now has a `colorRender` that writes `--IconGrid-text-color`, so the hover text color can reach `.IconGrid-text`.
 
 ### Blocks - Image Gallery / Slider
 
