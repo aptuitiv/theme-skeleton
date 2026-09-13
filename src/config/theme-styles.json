@@ -3211,6 +3211,7 @@
                             "label": "Border",
                             "type": "border",
                             "description": "Leave empty for a 2px border in the icon color.",
+                            "allowUniqueSides": false,
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Footer-social-border"
