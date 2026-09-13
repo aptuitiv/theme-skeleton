@@ -4815,7 +4815,7 @@
         {
             "name": "Popups",
             "description": "Styles for the optional popup that shows on page load and the notifications under the banner.",
-            "sections": [
+            "groups": [
                 {
                     "name": "General",
                     "fields": [
