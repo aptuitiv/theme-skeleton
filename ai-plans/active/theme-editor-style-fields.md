@@ -125,8 +125,8 @@ Checkbox subgroup:
 
 ### Messages
 
-- [ ] `messageBorder` (border) → `--Message-border`
-- [ ] `messageTypography` (typography, `useColor: false`), since the colors are already set per message type → `--Message`
+- [x] `messageBorder` (border) → `--Message-border`
+- [x] `messageTypography` (typography, `useColor: false`), since the colors are already set per message type → `--Message`
 
 ### Popups
 
