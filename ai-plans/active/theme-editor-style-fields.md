@@ -170,8 +170,8 @@ Values are in `css/components/slider/slider.css`.
 
 ### Blocks - Image Grid
 
-- [ ] `blockImageGridImageBorderRadius` (borderRadius) → `--ImageGridItem-image-border-radius`. Needs `overflow: hidden` on `.ImageGridItem-image`.
-- [ ] `blockImageGridBoxShadow` (boxShadow) → `--ImageGridItem-box-shadow`, default none
+- [x] `blockImageGridImageBorderRadius` (borderRadius) → `--ImageGridItem-image-border-radius`. Needs `overflow: hidden` on `.ImageGridItem-image`. _The image link's focus outline is drawn inside the image (`outline-offset: -4px`) so `overflow: hidden` doesn't clip it._
+- [x] `blockImageGridBoxShadow` (boxShadow) → `--ImageGridItem-box-shadow`, default none _Applied to `.ImageGridItem-image`, not the whole item, so it follows the image's rounded corners._
 
 ### Blocks - Video
 
