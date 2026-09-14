@@ -185,8 +185,8 @@ Values are in `css/components/slider/slider.css`.
 
 ### Blog - Recent Posts Block
 
-- [ ] `blogRecentPostsCardBoxShadow` / `…Hover` (boxShadow). Target `.RecentPosts-card` with `cssSelector`, like the other card fields in this group.
-- [ ] `blogRecentPostsCategoriesGap` (size) → `--RecentPosts-categories-gap`, default `20px` (`css/apps/blog/recent-posts.css:14`)
+- [x] `blogRecentPostsCardBoxShadow` / `…Hover` (boxShadow). Target `.RecentPosts-card` with `cssSelector`, like the other card fields in this group.
+- [x] `blogRecentPostsCategoriesGap` (size) → `--RecentPosts-categories-gap`, default `20px` (`css/apps/blog/recent-posts.css:14`)
 
 ---
 
