@@ -175,13 +175,13 @@ Values are in `css/components/slider/slider.css`.
 
 ### Blocks - Video
 
-- [ ] `blockVideoToggleBorderRadius` (borderRadius) → `--Video-toggle-border-radius`, default `50%` (`css/components/video/video.css:20`)
+- [x] `blockVideoToggleBorderRadius` (borderRadius) → `--Video-toggle-border-radius`, default `50%` (`css/components/video/video.css:20`)
 
 ### Blocks - Wrapper / Wrapper With Background Image
 
-- [ ] `blockWrapperBorderRadius` (borderRadius) → `--Wrapper-border-radius`, for rounded color sections
-- [ ] `blockWrapperBackgroundDarkLinkColor` / `…Hover` (color) → `--Wrapper-background-dark-link-color`. Right now `.Wrapper--bgDark *` (`css/components/wrapper/wrapper.css`) makes links the same color as the text, so links on dark backgrounds can't be told apart.
-- [ ] The same link color pair for Wrapper With Background Image → `--Wrapper-wbgimage-background-dark-link-color`
+- [x] `blockWrapperBorderRadius` (borderRadius) → `--Wrapper-border-radius`, for rounded color sections _Skipped at user request (2026-09-13)._
+- [x] `blockWrapperBackgroundDarkLinkColor` / `…Hover` (color) → `--Wrapper-background-dark-link-color`. Right now `.Wrapper--bgDark *` (`css/components/wrapper/wrapper.css`) makes links the same color as the text, so links on dark backgrounds can't be told apart. _Skipped at user request (2026-09-13)._
+- [x] The same link color pair for Wrapper With Background Image → `--Wrapper-wbgimage-background-dark-link-color` _Skipped at user request (2026-09-13)._
 
 ### Blog - Recent Posts Block
 
