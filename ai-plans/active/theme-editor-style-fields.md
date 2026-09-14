@@ -165,8 +165,8 @@ Checkbox subgroup:
 
 Values are in `css/components/slider/slider.css`.
 
-- [ ] `blocksImageSliderArrowWidth` (size) → `--Slider-arrow-width`, default `50px`. Controls both the arrow width (line 55) and the slider's side padding (line 8).
-- [ ] `blocksImageSliderArrowBorderRadius` (borderRadius) → `--Slider-arrow-border-radius`, default `0` (line 51)
+- [x] `blocksImageSliderArrowWidth` (size) → `--Slider-arrow-width`, default `50px`. Controls both the arrow width (line 55) and the slider's side padding (line 8).
+- [x] `blocksImageSliderArrowBorderRadius` (borderRadius) → `--Slider-arrow-border-radius`, default `0` (line 51)
 
 ### Blocks - Image Grid
 
